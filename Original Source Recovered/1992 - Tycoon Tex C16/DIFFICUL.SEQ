@@ -1,0 +1,298 @@
+; put "difficulty"
+;
+; set up the vars for the level
+; held in variable 'level' which
+; goes from 1-99
+;
+skill1 = 176
+skill2 = 128
+skill3 = 64
+skill4 = 1
+;
+skltbl .byte 128,100,58,1
+;
+timdly .byte 24,16,8
+;
+arab   .byte 24,19,14
+;
+newlvl
+;
+sed
+;
+lda level
+clc
+adc #1
+sta level
+;
+cld
+;
+ldx area
+inx
+cpx #3
+bne ntlg
+;
+ldx #0
+;
+ntlg
+;
+stx area
+;
+; area goes 0,1,2,0,1,2,0,1,2 etc
+;
+lda level
+cmp #4
+bcs lrgcrt
+;
+; still in early level so small
+; craters only
+;
+lda #skill1
+sta bskill
+;
+lda #2
+bne grot
+;
+lrgcrt
+;
+lda #3
+;
+grot
+;
+sta maxcra
+;
+; that's the crater size set up
+;
+;-------------------------------
+;
+; now lets takkle the aliens
+;
+lda level
+cmp #1
+bne ntlv1
+;
+lda #%0000100 ;* jet
+sta alstat
+;
+bne exaln
+;
+ntlv1
+;
+cmp #2
+bne ntlv2
+;
+lda #%00000010 ;* ball
+sta alstat
+;
+bne exaln
+;
+ntlv2
+;
+cmp #3
+bne ntlv3
+;
+lda #%00001000 ;* suicide
+sta alstat
+;
+bne exaln
+;
+ntlv3
+;
+; not in level 1,2 or 3
+;
+cmp #7
+bcs ntlv7
+;
+; in level 4,5 or 6
+;
+; so choose 2 random aliens
+;
+gtnot
+;
+sei
+;
+jsr random
+;
+cli
+;
+lda rnd+2
+;
+and #7
+;
+cmp #6
+bcs gtnot
+;
+; acc = 0 - 5
+;
+tax
+lda lv4to6,x
+;
+sta alstat
+;
+lda #skill2
+sta bskill
+;
+bne exaln
+;
+ntlv7
+;
+cmp #10
+bcs ntlv10
+;
+; in level 7,8 or 9
+;
+; so choose 3 aliens
+;
+anth
+;
+sei
+;
+jsr random
+;
+cli
+;
+lda rnd+3
+;
+and #3
+tax
+;
+lda lv7to9,x
+sta alstat
+;
+lda #skill3
+sta bskill
+;
+bne exaln
+;
+ntlv10
+;
+; must be in level 10 or >
+; so all 4 aliens are present
+;
+lda #%00001111
+sta alstat
+;
+lda #skill4
+sta bskill
+;
+;-----------------------------
+;
+exaln
+;
+; now let's do the jet crater ?
+;
+lda level
+cmp #7
+bcc bjh
+;
+lda alstat
+ora #%00010000
+sta alstat
+;
+bjh
+;
+;-------------------------------
+;
+;    now frequency of aliens
+;
+lda level
+;
+and #$60
+;
+lsr a
+lsr a
+lsr a
+lsr a
+lsr a
+;
+; level / 32
+;
+tax
+lda skltbl,x
+;
+sta ballfr
+;
+sta suifrq
+;
+sta arrfrq
+;
+sta jetfrq
+;
+ldx able
+;
+lda timdly,x
+;
+sta basdly
+;
+; main loop delay
+;
+lda arab,x
+sta oiltit
+;
+; oil pressure tempo -no.
+;
+jsr setsht ;* set up new cols
+;
+lda #1
+sta boris
+;
+; dont reprint top bit on screen
+;
+jsr screen ;* init display
+;
+dec boris
+;
+jsr aliget ;* get aliens
+;
+jsr scrlnd ;* new land on
+;
+; scrolled on some road
+;
+lda #25
+sta preshi
+;
+lda #7
+sta preslo
+;
+; start pressure at maximum
+;
+lda #0
+sta bloout
+;
+sta complo
+sta comphi
+;
+sta demod
+;
+lda #12
+sta baltem
+sta suitem
+sta arrtem
+sta jettem
+;
+rts
+;
+;******************************
+;
+; here's any tables
+;
+lv4to6
+;
+.byte %00000011
+.byte %00000101
+.byte %00001001
+.byte %00000110
+.byte %00001010
+.byte %00001100
+;
+lv7to9
+;
+.byte %00000111
+.byte %00001011
+.byte %00001101
+.byte %00001110
+;
+;
+;
+;
+;
+.end

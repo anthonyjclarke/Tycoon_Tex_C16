@@ -1,0 +1,30 @@
+; put "setup"
+;
+;*****************************
+;
+; initialise all pointers etc.
+;
+;*****************************
+;
+setup
+;
+;
+lda ted+18
+and #%11111011 ;* chars from ram
+sta ted+18
+;
+;
+ldx #3
+rnl
+lda rascom  ;* timers as rnd #
+sta rnd,x
+dex
+bpl rnl
+;
+;*seed
+;
+rts
+;
+;
+;
+.end

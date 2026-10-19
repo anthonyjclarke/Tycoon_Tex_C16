@@ -1,0 +1,161 @@
+; put "buster"
+;
+; comes here when the oil
+; pressure has got to zero.
+;
+; & as decided by muff and
+; myself this will happen:-
+;
+; 1) put man in the centre.
+;
+; 2) stop everything.
+;
+; 3) print a message.
+;
+; 4) wait a while.
+;
+; 5) jump back to the normal
+;    end so as to do the 'the
+;    end' sequence.
+;
+buster
+;
+jsr scrlnd
+;
+; new land on
+;
+sei
+;
+lda #1
+sta stop
+sta title
+;
+lda #0
+sta alstat
+sta wakspd
+sta hilspd
+sta gndspd
+sta jumpin
+sta fire
+;
+jsr allkil
+;
+jsr clsdis
+;
+lda #<$0eba
+sta ml
+;
+lda #>$0eba
+sta ml+1
+;
+jsr manon
+;
+cli
+;
+; now lets print the message
+;
+ldy #29
+lda #'*
+;
+ek1
+;
+sta $d6d,y
+sta $e5d,y
+;
+dey
+bpl ek1
+;
+ldx #5
+;
+ek2
+;
+ldy hily,x
+;
+sta $d95,y
+sta $d95+29,y
+;
+dex
+bpl ek2
+;
+lda #<endmes
+sta hiscl
+;
+lda #>endmes
+sta hiscl+1
+;
+lda #<$d96
+sta sl
+;
+lda #>$d66
+sta sl+1
+;
+ldx #4
+;
+eak1
+;
+ldy #0
+;
+eak2
+;
+lda (hiscl),y
+and #$3f
+sta (sl),y
+;
+tya
+pha
+;
+txa
+pha
+;
+ldx #$20
+jsr delay+2
+;
+pla
+tax
+;
+pla
+tay
+;
+iny
+cpy #28
+bne eak2
+;
+lda hiscl
+clc
+adc #28
+sta hiscl
+;
+lda hiscl+1
+adc #0
+sta hiscl+1
+;
+lda sl
+clc
+adc #40
+sta sl
+;
+lda sl+1
+adc #0
+sta sl+1
+;
+dex
+bpl eak1
+;
+lda #10
+sta roll
+;
+eak
+;
+ldx #$00
+jsr delay+2
+;
+dec roll
+bne eak
+;
+jmp ohno
+;
+;
+;
+;
+;
+.end

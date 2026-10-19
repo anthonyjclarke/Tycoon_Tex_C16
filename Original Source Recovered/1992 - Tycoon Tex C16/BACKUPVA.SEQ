@@ -1,0 +1,309 @@
+; put "vars"
+;
+;
+;
+;
+;
+;
+*=$0002
+;
+mesl     .word 0 ;* mess pointer
+xhil     .byte 0 ;* hill col cnt
+hilchr   .byte 0 ;* hill char cnt
+hillx    .byte 0 ;* hill pixel
+;
+jleft    .byte 0 ;*
+jright   .byte 0 ;*
+jup      .byte 0 ;*
+jdown    .byte 0 ;*
+jfire    .byte 0 ;*
+jmove    .byte 0 ;*
+;
+rnd      .byte 0,0,0,0 ;* randy #
+;
+sl       .word 0 ;* irq screen
+cl       .word 0 ;* irq colour
+;
+ml       .word 0 ;* man address
+mcl      .word 0 ;* man col add
+mancol   .word 0 ;* colour
+;
+gndx     .byte 0 ;* ground pixel
+messx    .byte 0 ;* message pixel
+;
+lanl     .word 0 ;* hills on
+;
+chron    .byte 0 ;* char count
+;
+anispd   .byte 0 ;* animate speed
+aninum   .byte 0 ;* animate number
+;
+fire     .byte 0 ;* fire flag
+;
+jumpin   .byte 0 ;* jumping ?
+jumpy    .byte 0 ;* jump count
+;
+mvelr    .byte 0 ;* disable l/r
+;
+lasl     .word 0 ;* lazer add.
+;
+preslo   .byte 0 ;* pressure lo
+preshi   .byte 0 ;*     "    hi
+;
+complo   .byte 0 ;* % comp.  lo
+comphi   .byte 0 ;*      "   hi
+;
+roll     .word 0 ;* rotate
+;
+bufpoi   .byte 0 ;* buffer point
+plonk    .byte 0 ;* temp
+buflen   .byte 0 ;* temp
+roadle   .byte 0 ;* road length
+;
+number   .byte 0 ;* number/road
+;
+hiscr    .word 0 ;* hi-score scr
+hiscl    .word 0 ;* hi-score col
+;
+onlyrd   .byte 0 ;* only road on
+;
+title    .byte 0 ;* title flag
+;
+coll     .word 0 ;* colour non-irq
+;
+arrl     .word 0 ;* arrow address
+jetl     .word 0 ;* jet address
+;
+arrcl    .word 0 ;* arrow col. add
+jetcl    .word 0 ;* jet col. add
+;
+pbal     .word 0 ;* print ball add
+balc     .word 0 ;* ball col. add
+rbal     .word 0 ;* rub ball add
+;
+boml     .word 0 ;* jet bomb add.
+;
+psuil    .word 0 ;* print suicide
+rsuil    .word 0 ;* rub suicide
+csuil    .word 0 ;* color suicide
+;
+pexpl    .word 0 ;* explosion add
+cexpl    .word 0 ;* explosion col
+;
+stl      .word 0 ;* screen glop
+dtl      .word 0 ;* data pointer
+ctl      .word 0 ;* colour pointer
+;
+brkl     .word 0 ;* brk address
+;
+thel     .word 0 ;* the address
+endl     .word 0 ;* end address
+;
+lashil   .byte 0 ;* last hill #
+;
+level    .byte 0 ;* level #
+levcnt   .byte 0 ;* level count
+;
+maxcra   .byte 0 ;* crater size
+noman    .byte 0 ;* count
+;
+star1    .byte 0 ;* star count
+starct   .byte 0 ;* star count
+;
+basdly   .byte 0 ;* time delay
+;
+;
+;
+*=$033c
+;
+;
+mescol   .byte 0 ;* message col.
+;
+intype   .byte 0 ;* irq number
+;
+hilspd   .byte 1 ;* hill speed
+gndspd   .byte 4 ;* ground speed
+;
+mvetem   .byte 0 ;* move tempo
+bloout   .byte 0 ;* oil pres=0
+wakspd   .byte 0 ;* walk speed
+;
+rcnt     .byte 0 ;* move cnt
+;
+noleft   .byte 0 ;* stop left
+norigt   .byte 0 ;* stop right
+;
+scrcnt   .byte 0 ;* scroll cnt
+;
+hillcl   .byte 0 ;* hill bkgnd col
+roadcl   .byte 0 ;* road bkgnd col
+;
+jtemp    .byte 0 ;* jump tempo
+firtem   .byte 0 ;* fire tempo
+anitem   .byte 0 ;* animate tempo
+;
+death    .byte 0 ;* death flag
+dead     .byte 0 ;* dead flag
+;
+tdead    .byte 0 ;* tempo
+dcount   .byte 0 ;* death count
+finito   .byte 0 ;* all over flag
+;
+stop     .byte 0 ;* stop flag
+lives    .byte 0 ;* no. of lives
+;
+hispnt   .byte 0 ;* hi-score
+positn   .byte 0 ;* position
+letter   .byte 0 ;* letter
+incnt    .byte 0 ;* offset in tbl
+numb     .byte 0 ;* ??
+;
+xblob    .byte 0 ;* sod off.!
+altem    .byte 0 ;* sod off.!
+menatw   .byte 0 ;* sod off.!
+temcnt   .byte 0 ;* sod off.!
+wall     .byte 0 ;* sod off.!
+stopan   .byte 0 ;* halt ani.
+demo     .byte 0 ;* sod off.!
+exit     .byte 0 ;* sod off.!
+nicet    .byte 0 ;* tempo
+;
+fcol2    .byte 0 ;* tit colour
+flst1    .byte 0 ;* flash tempo
+flst2    .byte 0 ;* flash tempo
+;
+tpcnt    .byte 0 ;* pipe count
+rtem     .byte 0 ;* temp
+;
+pla1     .byte 0 ;* colour
+pla2     .byte 0 ;* colour
+placol   .byte 0 ;* colour
+;
+hil1     .byte 0 ;* colour
+hil2     .byte 0 ;* colour
+hil3     .byte 0 ;* colour
+;
+col1     .byte 0 ;* colour
+col2     .byte 0 ;* colour
+col3     .byte 0 ;* colour
+;
+done     .byte 0 ;* section done
+;
+arron    .byte 0 ;* arrow on ?
+arroff   .byte 0 ;* arrow off ?
+arrtem   .byte 0 ;* arrow tempo
+arrprn   .byte 0 ;* print arrow?
+;
+jeton    .byte 0 ;* jet on ?
+rubjet   .byte 0 ;* jet off ?
+jettem   .byte 0 ;* jet tempo
+prjet    .byte 0 ;* print jet ?
+;
+alstat   .byte 0 ;* what aliens ?
+;
+arrcol   .byte 0 ;* arrow colour
+jetcol   .byte 0 ;* plane colour
+;
+ballon   .byte 0 ;*
+balcol   .byte 0 ;* ball colour
+balcnt   .byte 0 ;*
+prball   .byte 0 ;*
+rubbal   .byte 0 ;*
+ballx    .byte 0 ;*
+balmve   .byte 0 ;*
+baltem   .byte 0 ;*
+;
+rdtm     .byte 0 ;* break freq.
+;
+compbd   .byte 0 ;* bomb down
+prbm     .byte 0 ;* print it ?
+by       .byte 0 ;* its y position
+bombd    .byte 0 ;* is it on ?
+bomcol   .byte 0 ;* colour
+bomtem   .byte 0 ;* move tempo
+;
+suicon   .byte 0 ;* suicide on ?
+suitem   .byte 0 ;* suicide tempo
+suiy     .byte 0 ;* suicide y pos
+suix     .byte 0 ;* suicide x pos
+prsuic   .byte 0 ;* print it ?
+rubsui   .byte 0 ;* rub it out ?
+suicol   .byte 0 ;* colour
+suiclf   .byte 0 ;* fall/ging left
+;
+cheat    .byte 0 ;* cheat mode on
+;
+disjum   .byte 0 ;* disable jump
+;
+explon   .byte 0 ;* on ?
+excnt    .byte 0 ;* counter
+prex     .byte 0 ;* print it?
+extem    .byte 0 ;* tempo
+exbits   .byte 0 ;* no to print
+;
+hitchr   .byte 0 ;* char hit
+bulsht   .byte 0 ;* flag
+;
+scradd   .byte 0 ;* score store
+scrtem   .byte 0 ;* score tempo
+;
+good     .byte 0 ;* hit ok.?
+;
+excol    .byte 0 ;* explos. col
+;
+ypix     .byte 0 ;* y count
+countd   .byte 0 ;* count
+bits     .word 0 ;* pixel store
+;
+otem     .byte 0 ;* oil down tem
+amdo     .byte 0 ;* down amount
+;
+dick     .byte 0 ;* alstat temp
+;
+the      .byte 0 ;* the dir
+end      .byte 0 ;* end dir
+they     .byte 0 ;* the y pos
+endy     .byte 0 ;* end y pos
+pascol   .byte 0 ;* the colour
+;
+pause    .byte 0 ;* pause toggle
+;
+whsnd    .byte 0 ;* sound
+shitso   .byte 0 ;* sound
+sohi     .byte 0 ;* sound
+so1len   .byte 0 ;* sound
+so2len   .byte 0 ;* sound
+;
+statem   .byte 0 ;* alstat store
+;
+boris    .byte 0 ;* screen flag
+;
+ballfr   .byte 0 ;* ball hz
+suifrq   .byte 0 ;* suicide hz
+arrfrq   .byte 0 ;* arrow hz
+jetfrq   .byte 0 ;* jet hz
+;
+bskill   .byte 0 ;* skill level
+;
+;***********
+;
+; constants
+;
+;***********
+;
+;
+ted     = $ff00
+;
+;
+;
+border  = ted+$19
+backgr  = ted+$15
+;
+multi1  = ted+$16
+multi2  = ted+$17
+;
+;
+ouchar  = $ffd2
+;
+;
+.end

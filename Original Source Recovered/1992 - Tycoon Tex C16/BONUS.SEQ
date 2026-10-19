@@ -1,0 +1,18 @@
+; put "bonus"
+;
+; called regulary for anything
+;
+; ??????
+;
+bonus
+;
+;
+nop
+nop
+nop
+;
+;
+rts
+;
+;
+.end

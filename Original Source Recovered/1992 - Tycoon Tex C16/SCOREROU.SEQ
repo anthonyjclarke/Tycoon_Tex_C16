@@ -1,0 +1,63 @@
+; put "score-routines"
+;
+;
+scrpos=$c00+80+6
+;
+; called with acc holding val
+; to add , why do i have to tell
+; you this you've used it in so
+; many games you dick head
+;
+score
+;
+ldy #5       ;* lsb digit
+;
+; second entry point
+;
+sta scradd
+;
+addlop
+;
+lda scradd
+;
+madona
+;
+clc
+adc scrpos,y
+cmp #$3a
+bmi scorel
+;
+sec
+sbc #$a
+sta scrpos,y
+;
+lda #1
+dey
+bpl madona
+;
+scorel
+;
+sta scrpos,y
+;
+lda scrpos+2    ;* thousands
+and #15         ;* 0 - 15
+cmp xtra
+;
+beq xargon
+;
+sta xtra
+;
+lda lives
+cmp #9
+;
+beq xargon
+;
+inc lives
+inc $c00+101
+;
+xargon
+;
+rts
+;
+;
+.end

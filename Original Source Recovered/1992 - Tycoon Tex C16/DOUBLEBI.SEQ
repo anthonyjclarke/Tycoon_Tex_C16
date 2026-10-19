@@ -1,0 +1,73 @@
+; put "double-bit"
+;
+;
+; do the bit for tycoon title
+;
+; 7 different letters = 14 chars
+;
+width
+;
+; set up chars
+;
+ldx #$6f
+;
+dblop
+;
+lda $3ee8,x
+sta dblsve,x
+;
+lda dwidth,x
+sta $3ee8,x
+;
+dex
+bpl dblop
+;
+; saved chars & move new ones in
+;
+rts
+;
+;
+;
+;
+;
+dwidth
+;
+; 't'
+;
+.byte $00,$ff,$ff,$0f,$0f,$0f,$0f,$0f
+.byte $00,$fc,$fc,$c0,$c0,$c0,$c0,$c0
+;
+; 'y'
+;
+.byte $00,$fc,$fc,$fc,$3f,$0f,$0f,$0f
+.byte $00,$fc,$fc,$fc,$f0,$c0,$c0,$c0
+;
+; 'c'
+;
+.byte $00,$3f,$ff,$f0,$f0,$f0,$ff,$3f
+.byte $00,$fc,$fc,$00,$00,$00,$fc,$fc
+;
+; 'o'
+;
+.byte $00,$3f,$ff,$f0,$f0,$f0,$ff,$3f
+.byte $00,$f0,$fc,$3c,$3c,$3c,$fc,$f0
+;
+; 'n'
+;
+.byte $00,$fc,$fc,$ff,$ff,$f3,$f0,$f0
+.byte $00,$3c,$3c,$3c,$fc,$fc,$fc,$fc
+;
+; 'e'
+;
+.byte $00,$3f,$ff,$f0,$ff,$f0,$ff,$3f
+.byte $00,$f0,$fc,$00,$c0,$00,$fc,$f0
+;
+; 'x'
+;
+.byte $00,$fc,$fc,$3f,$0f,$3f,$fc,$fc
+.byte $00,$fc,$fc,$f0,$c0,$f0,$fc,$fc
+;
+;
+;
+;
+.end

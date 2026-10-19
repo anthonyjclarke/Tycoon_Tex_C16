@@ -1,0 +1,79 @@
+; put "landscape"
+;
+;
+; to put on the boootifull hills
+;
+;
+newhil
+;
+dec xhil    ;* column count
+bpl foppy
+;
+jsr ndnew   ;* start new hill
+;
+foppy
+;
+lda #$9f    ;* top right corner
+sta lanl    ;* to put on new hill
+lda #$0c
+sta lanl+1
+;
+ldx #4
+;
+hllop
+;
+ldy hily,x
+;
+lda hilchr
+sta (lanl),y
+;
+inc hilchr
+;
+dex
+bpl hllop
+;
+rts
+;
+;
+;
+ndnew
+;
+; time to start a new hill lads!
+;
+lda rnd+2
+and #3
+pha
+;
+jsr random
+;
+pla
+tax
+;
+lda rnd,x
+;
+and #7
+tax
+;
+cpx lashil ;* same as last one ?
+beq ndnew  ;* get another
+;
+; ^ will stop 2 hills the same
+;
+stx lashil ;* this one's #
+;
+lda hillst,x
+sta hilchr
+;
+; start char of hill
+;
+lda #7
+sta xhil
+;
+; column count
+;
+rts
+;
+;
+;
+;
+.end

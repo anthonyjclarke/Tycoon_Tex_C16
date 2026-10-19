@@ -1,0 +1,279 @@
+; put "road/builder"
+;
+; this builds up the next sextion
+; of road.the type of ground is
+; dependant on the variable area
+;
+; area = 0   -   desert
+;
+;      = 1   -   ice
+;
+;      = 2   -   all pipes
+;
+;
+road
+;
+lda onlyrd   ;* only road ?
+bne dorod    ;* yes
+;
+lda rnd
+bpl dorod
+;
+dec rdtm
+bne dorod
+;
+lda #18
+sta rdtm
+;
+jmp break
+;
+dorod
+;
+lda area
+bne ntdes
+;
+; new piece of desert
+;
+jsr rady
+and #3
+;
+sta rtem
+;
+cmp #3
+bne ntdspp
+;
+; if = 3 means do count for
+; possibility of next piece
+; being an odd piece of pipe.
+;
+inc tpcnt
+lda tpcnt
+;
+cmp #9
+;
+; yes do some pipe
+;
+beq ntice
+;
+; we'll have to do some more
+; desert then.
+;
+lda ted
+and #1
+sta rtem
+;
+ntdspp
+;
+lda rtem
+;
+asl a
+;
+tax
+;
+lda deschr,x
+sta plonk
+;
+; start char
+;
+lda deschr+1,x
+sta buflen
+;
+; length of char
+;
+jmp putbuf
+;
+;******************
+;
+ntdes
+;
+; not desert so try ice
+;
+cmp #1
+bne ntice
+;
+; new piece of ice
+;
+jsr rady
+and #3
+;
+sta rtem
+;
+cmp #3
+bne nticpp
+;
+; if = 3 means do count for
+; possibility of next piece
+; being an odd piece of pipe.
+;
+inc tpcnt
+lda tpcnt
+;
+cmp #9
+;
+; yes do a pipe
+;
+beq ntice
+;
+lda ted+1
+and #1
+sta rtem
+;
+nticpp
+;
+lda rtem
+;
+asl a
+;
+tax
+;
+lda icechr,x
+sta plonk
+;
+; start char
+;
+lda icechr+1,x
+sta buflen
+;
+; length
+;
+jmp putbuf
+;
+;****************
+;
+ntice
+;
+; a jump is made to here if it
+; has been decided that an odd
+; piece of pipe is needed
+;
+lda #0
+sta tpcnt
+;
+; zero the tap frequency count
+;
+; we must be in the all pipe bit.
+;
+jsr rady
+and #3
+;
+beq stpip
+;
+tax
+dex
+;
+inc countr,x
+lda countr,x
+;
+cmp cntcmp,x
+bne fyp
+;
+lda #0
+sta countr,x
+;
+inx
+txa
+;
+bne stpip
+;
+fyp
+;
+lda #0
+;
+; count no finished so just
+; do the ordinairy piece of pipe.
+;
+stpip
+;
+asl a
+;
+tax
+;
+lda pipchr,x
+sta plonk
+;
+; start char
+;
+lda pipchr+1,x
+sta buflen
+;
+; length of char
+;
+putbuf
+;
+; shove chars into scrbuf
+;
+ldx #0
+;
+filbuf
+;
+lda plonk
+sta scrbuf,x
+;
+inc plonk
+;
+inx
+cpx buflen
+bne filbuf
+;
+lda #0
+sta bufpoi
+;
+rts
+;
+;
+;
+;
+;**********************
+;
+deschr
+;
+.byte 234,4
+.byte 238,4
+.byte 242,2
+;
+;**********************
+;
+icechr
+;
+.byte 244,4
+.byte 248,4
+.byte 252,4
+;
+;**********************
+;
+pipchr
+;
+.byte 200,4
+.byte 210,4
+.byte 204,4
+.byte 208,2
+;
+;***********
+;
+countr .byte 1,4,7
+;
+cntcmp .byte 9,14,12
+;
+;***********
+;
+;
+scrbuf
+;
+*=*+24
+;
+;
+;
+;***********
+;
+rady
+;
+lda ted
+and #3
+tax
+;
+lda rnd,x
+;
+rts
+;
+;
+.end

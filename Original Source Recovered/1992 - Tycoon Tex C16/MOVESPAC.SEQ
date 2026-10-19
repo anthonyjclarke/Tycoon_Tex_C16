@@ -1,0 +1,224 @@
+; put "move-spacey"
+;
+;
+;
+;
+mvespc
+;
+lda pause
+beq trump
+;
+rts ;* pause on
+;
+trump
+;
+lda stop
+beq yukky
+;
+jmp nelly
+;
+; if stop=1 (stop movement) then
+; just finish jumper
+;
+yukky
+;
+lda #0
+sta mvelr
+;
+lda jumpin
+bne nleft
+;
+; dont allow x movement if in air
+;
+bit jright
+bpl nright
+;
+jsr movet
+;
+bcc nright
+;
+lda norigt
+bne nright
+;
+lda ml
+cmp #$c3
+beq nright
+;
+lda #1
+sta mvelr
+;
+jsr manoff
+;
+dpinc ml
+;
+lda #0
+sta noleft
+;
+jsr setvar
+;
+nright
+;
+bit jleft
+bpl nleft
+;
+jsr movet
+;
+bcc nleft
+;
+lda noleft    ;* at extreme left
+bne nleft
+;
+lda ml
+cmp #$a9
+beq nleft
+;
+lda #1
+sta mvelr
+;
+jsr manoff
+;
+dpdec ml
+;
+lda #0
+sta norigt
+;
+jsr setvar
+;
+nleft
+;
+lda mvelr
+bne nup
+;
+; this will stop you jumping
+; and moving left and right
+;
+bit jup
+bpl nup
+;
+jsr jumper    ; all jump stuff
+;
+nup
+;
+; bit jdown
+; bpl ndwn
+;
+; lda #1
+; sta bloout
+;
+ndwn
+;
+bit jfire
+bpl nfire
+;
+lda fire
+bne nfire     ;* already firing
+;
+jsr newfir
+;
+nfire
+;
+jsr manon
+;
+nelly
+;
+jsr upjump
+;
+;
+rts
+;
+;
+;
+;
+;****************
+;
+movet
+;
+; movement tempo
+;
+dec mvetem
+bne trout
+;
+lda #3
+sta mvetem
+;
+sec
+;
+rts
+;
+trout
+;
+clc
+;
+rts
+;
+;****************
+;
+setvar
+;
+; set movement variables
+;
+ldx #7
+lda ml
+;
+cploop
+;
+cmp compar,x
+beq forit
+;
+dex
+bpl cploop
+bmi noit
+;
+forit
+;
+stx wakspd
+;
+lda landsp,x
+sta gndspd
+;
+lda hillsp,x
+sta hilspd
+;
+lda animsp,x
+sta anispd
+;
+lda #1
+sta anitem
+;
+noit
+;
+rts
+;
+;*********************
+;
+compar
+;
+.byte $a9,$ac,$af,$b2
+.byte $b5,$b8,$bb,$be
+;
+;
+;*********************
+;
+landsp
+;
+.byte 0,2,3,4,5,6,7,7
+;
+;*********************
+;
+hillsp
+;
+.byte 0,1,1,1,2,2,2,3
+;
+;*********************
+;
+animsp
+;
+.byte 00,$16,$10,$0e,10,7,3,1
+;
+;*********************
+;
+;
+;
+;
+;
+.end

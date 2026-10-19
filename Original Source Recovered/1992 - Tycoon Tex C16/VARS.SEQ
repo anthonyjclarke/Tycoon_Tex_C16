@@ -1,0 +1,319 @@
+; put "vars"
+;
+;
+;
+;
+;
+;
+*=$0002
+;
+mesl     *=*+2 ;* mess pointer
+xhil     *=*+1 ;* hill col cnt
+hilchr   *=*+1 ;* hill char cnt
+hillx    *=*+1 ;* hill pixel
+;
+jleft    *=*+1 ;*
+jright   *=*+1 ;*
+jup      *=*+1 ;*
+jdown    *=*+1 ;*
+jfire    *=*+1 ;*
+jmove    *=*+1 ;*
+;
+rnd      *=*+4 ;* randy #
+;
+sl       *=*+2 ;* irq screen
+cl       *=*+2 ;* irq colour
+;
+ml       *=*+2 ;* man address
+mcl      *=*+2 ;* man col add
+mancol   *=*+2 ;* colour
+;
+gndx     *=*+1 ;* ground pixel
+messx    *=*+1 ;* message pixel
+;
+lanl     *=*+2 ;* hills on
+;
+chron    *=*+1 ;* char count
+;
+anispd   *=*+1 ;* animate speed
+aninum   *=*+1 ;* animate number
+;
+fire     *=*+1 ;* fire flag
+;
+jumpin   *=*+1 ;* jumping ?
+jumpy    *=*+1 ;* jump count
+;
+mvelr    *=*+1 ;* disable l/r
+;
+lasl     *=*+2 ;* lazer add.
+;
+preslo   *=*+1 ;* pressure lo
+preshi   *=*+1 ;*     "    hi
+;
+complo   *=*+1 ;* % comp.  lo
+comphi   *=*+1 ;*      "   hi
+;
+roll     *=*+2 ;* rotate
+;
+bufpoi   *=*+1 ;* buffer point
+plonk    *=*+1 ;* temp
+buflen   *=*+1 ;* temp
+roadle   *=*+1 ;* road length
+;
+number   *=*+1 ;* number/road
+;
+hiscr    *=*+2 ;* hi-score scr
+hiscl    *=*+2 ;* hi-score col
+;
+onlyrd   *=*+1 ;* only road on
+;
+title    *=*+1 ;* title flag
+;
+coll     *=*+2 ;* colour non-irq
+;
+arrl     *=*+2 ;* arrow address
+jetl     *=*+2 ;* jet address
+;
+arrcl    *=*+2 ;* arrow col. add
+jetcl    *=*+2 ;* jet col. add
+;
+pbal     *=*+2 ;* print ball add
+balc     *=*+2 ;* ball col. add
+rbal     *=*+2 ;* rub ball add
+;
+boml     *=*+2 ;* jet bomb add.
+;
+psuil    *=*+2 ;* print suicide
+rsuil    *=*+2 ;* rub suicide
+csuil    *=*+2 ;* color suicide
+;
+pexpl    *=*+2 ;* explosion add
+cexpl    *=*+2 ;* explosion col
+;
+stl      *=*+2 ;* screen glop
+dtl      *=*+2 ;* data pointer
+ctl      *=*+2 ;* colour pointer
+;
+brkl     *=*+2 ;* brk address
+;
+thel     *=*+2 ;* the address
+endl     *=*+2 ;* end address
+;
+lashil   *=*+1 ;* last hill #
+;
+level    *=*+1 ;* level #
+levcnt   *=*+1 ;* level count
+;
+maxcra   *=*+1 ;* crater size
+noman    *=*+1 ;* count
+;
+star1    *=*+1 ;* star count
+starct   *=*+1 ;* star count
+;
+basdly   *=*+1 ;* time delay
+;
+oiltit   *=*+1 ;* oil tempo
+;
+;*=$033c
+;
+;
+mescol   *=*+1 ;* message col.
+;
+intype   *=*+1 ;* irq number
+;
+hilspd   *=*+1 ;* hill speed
+gndspd   *=*+1 ;* ground speed
+;
+mvetem   *=*+1 ;* move tempo
+bloout   *=*+1 ;* oil pres=0
+wakspd   *=*+1 ;* walk speed
+;
+rcnt     *=*+1 ;* move cnt
+;
+noleft   *=*+1 ;* stop left
+norigt   *=*+1 ;* stop right
+;
+scrcnt   *=*+1 ;* scroll cnt
+;
+hillcl   *=*+1 ;* hill bkgnd col
+roadcl   *=*+1 ;* road bkgnd col
+;
+jtemp    *=*+1 ;* jump tempo
+firtem   *=*+1 ;* fire tempo
+anitem   *=*+1 ;* animate tempo
+;
+death    *=*+1 ;* death flag
+dead     *=*+1 ;* dead flag
+;
+tdead    *=*+1 ;* tempo
+dcount   *=*+1 ;* death count
+finito   *=*+1 ;* all over flag
+;
+stop     *=*+1 ;* stop flag
+lives    *=*+1 ;* no. of lives
+;
+hispnt   *=*+1 ;* hi-score
+positn   *=*+1 ;* position
+letter   *=*+1 ;* letter
+incnt    *=*+1 ;* offset in tbl
+numb     *=*+1 ;* ??
+;
+xblob    *=*+1 ;* sod off.!
+altem    *=*+1 ;* sod off.!
+menatw   *=*+1 ;* sod off.!
+temcnt   *=*+1 ;* sod off.!
+wall     *=*+1 ;* sod off.!
+stopan   *=*+1 ;* halt ani.
+demod    *=*+1 ;* sod off.!
+exit     *=*+1 ;* sod off.!
+nicet    *=*+1 ;* tempo
+;
+fcol2    *=*+1 ;* tit colour
+flst1    *=*+1 ;* flash tempo
+flst2    *=*+1 ;* flash tempo
+;
+tpcnt    *=*+1 ;* pipe count
+rtem     *=*+1 ;* temp
+;
+pla1     *=*+1 ;* colour
+pla2     *=*+1 ;* colour
+placol   *=*+1 ;* colour
+;
+hil1     *=*+1 ;* colour
+hil2     *=*+1 ;* colour
+hil3     *=*+1 ;* colour
+;
+col1     *=*+1 ;* colour
+col2     *=*+1 ;* colour
+col3     *=*+1 ;* colour
+;
+done     *=*+1 ;* section done
+;
+arron    *=*+1 ;* arrow on ?
+arroff   *=*+1 ;* arrow off ?
+arrtem   *=*+1 ;* arrow tempo
+arrprn   *=*+1 ;* print arrow?
+;
+jeton    *=*+1 ;* jet on ?
+rubjet   *=*+1 ;* jet off ?
+jettem   *=*+1 ;* jet tempo
+prjet    *=*+1 ;* print jet ?
+;
+alstat   *=*+1 ;* what aliens ?
+;
+arrcol   *=*+1 ;* arrow colour
+jetcol   *=*+1 ;* plane colour
+;
+ballon   *=*+1 ;*
+balcol   *=*+1 ;* ball colour
+balcnt   *=*+1 ;*
+prball   *=*+1 ;*
+rubbal   *=*+1 ;*
+ballx    *=*+1 ;*
+balmve   *=*+1 ;*
+baltem   *=*+1 ;*
+;
+rdtm     *=*+1 ;* break freq.
+;
+compbd   *=*+1 ;* bomb down
+prbm     *=*+1 ;* print it ?
+by       *=*+1 ;* its y position
+bombd    *=*+1 ;* is it on ?
+bomcol   *=*+1 ;* colour
+bomtem   *=*+1 ;* move tempo
+;
+suicon   *=*+1 ;* suicide on ?
+suitem   *=*+1 ;* suicide tempo
+suiy     *=*+1 ;* suicide y pos
+suix     *=*+1 ;* suicide x pos
+prsuic   *=*+1 ;* print it ?
+rubsui   *=*+1 ;* rub it out ?
+suicol   *=*+1 ;* colour
+suiclf   *=*+1 ;* fall/ging left
+;
+cheat    *=*+1 ;* cheat mode on
+;
+disjum   *=*+1 ;* disable jump
+;
+explon   *=*+1 ;* on ?
+excnt    *=*+1 ;* counter
+prex     *=*+1 ;* print it?
+extem    *=*+1 ;* tempo
+exbits   *=*+1 ;* no to print
+;
+hitchr   *=*+1 ;* char hit
+bulsht   *=*+1 ;* flag
+;
+scradd   *=*+1 ;* score store
+scrtem   *=*+1 ;* score tempo
+;
+good     *=*+1 ;* hit ok.?
+;
+excol    *=*+1 ;* explos. col
+;
+ypix     *=*+1 ;* y count
+countd   *=*+1 ;* count
+bits     *=*+2 ;* pixel store
+;
+otem     *=*+1 ;* oil down tem
+amdo     *=*+1 ;* down amount
+;
+dick     *=*+1 ;* alstat temp
+;
+the      *=*+1 ;* the dir
+end      *=*+1 ;* end dir
+they     *=*+1 ;* the y pos
+endy     *=*+1 ;* end y pos
+pascol   *=*+1 ;* the colour
+;
+pause    *=*+1 ;* pause toggle
+;
+whsnd    *=*+1 ;* sound
+shitso   *=*+1 ;* sound
+sohi     *=*+1 ;* sound
+so1len   *=*+1 ;* sound
+so2len   *=*+1 ;* sound
+;
+statem   *=*+1 ;* alstat store
+;
+boris    *=*+1 ;* screen flag
+;
+ballfr   *=*+1 ;* ball hz
+suifrq   *=*+1 ;* suicide hz
+arrfrq   *=*+1 ;* arrow hz
+jetfrq   *=*+1 ;* jet hz
+;
+bskill   *=*+1 ;* skill level
+;
+escape   *=*+1 ;* exit game ?
+xtra     *=*+1 ;* extra life ?
+countl   *=*+1 ;* count
+counth   *=*+1 ;* count
+;
+;
+;
+;
+;
+;
+;***********
+;
+; constants
+;
+;***********
+;
+;
+ted     = $ff00
+;
+;
+;
+border  = ted+$19
+backgr  = ted+$15
+;
+multi1  = ted+$16
+multi2  = ted+$17
+;
+;
+ouchar  = $ffd2
+;
+;
+.end

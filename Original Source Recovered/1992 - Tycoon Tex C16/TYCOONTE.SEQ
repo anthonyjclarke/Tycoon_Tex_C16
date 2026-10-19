@@ -1,0 +1,144 @@
+; put "tycoon-tex"
+;
+;
+; ***** *   *  **   **   **  *   *
+;   *   *   * *  * *  * *  * **  *
+;   *    * *  *    *  * *  * * * *
+;   *     *   *    *  * *  * * * *
+;   *     *   *  * *  * *  * *  **
+;   *     *    **   **   **  *   *
+;
+;        ***** ***** *   *
+;          *   *     *   *
+;          *   *      * *
+;          *   ****    *
+;          *   *      * *
+;          *   *     *   *
+;          *   ***** *   *
+;
+; concept (c) '85 matthew clarke
+;               & anthony clarke !
+;               & ian stewart
+;
+; program (c) '85 micro projects
+;
+;   for gremlin graphics ltd.
+;
+;
+;
+;
+;
+;
+.opt nol
+;
+.lib vars*      ;* variables
+.lib extra-*    ;* extra memory
+;
+*=$1800
+;
+sei
+;
+jsr clvars
+;
+lda #$93
+jsr $ffd2
+;
+lda #<messt
+sta mesl
+;
+lda #>messt
+sta mesl+1
+;
+jsr road
+;
+ldy #45
+;
+getitn
+;
+tya
+pha
+;
+jsr gndhrd
+jsr harhil
+;
+pla
+tay
+;
+dey
+bpl getitn
+;
+jmp gloppy
+;
+area   .byte 0  ;* area to play
+selive .byte 3  ;* no. of lives
+soflag .byte 0  ;* sound on/off
+numsel .byte 3  ;* alter no.
+joysel .byte 1  ;* jo/ke sel.
+able   .byte 0  ;* ability
+demo   .byte 0  ;* demo flag
+;
+;
+.lib macros*    ;* maccies
+.lib joystik*   ;* joydick reader
+;.lib hexer*     ;* hex to screen
+.lib irq*       ;* er??
+.lib setup*     ;* set up !!
+.lib utils*     ;* utilities
+.lib tables*    ;* data tables
+.lib raster*    ;* raster service
+.lib screen-*   ;* screen setup
+.lib pixel-m*   ;* pixel stuff
+.lib landscap*  ;* hill on stuff
+.lib move-spac* ;* move space man
+.lib print-man* ;* print space man
+.lib animat*    ;* animations
+.lib firing/*   ;* firing stuff
+.lib jumping*   ;* jump code
+.lib oil-pres*  ;* oil/pres. gauge
+.lib complete*  ;* % comp gauge!
+.lib message*   ;* glopp !
+.lib whooppee*  ;* scrolling mess.
+.lib rotat*     ;* rotate chars
+.lib death-mar* ;* death stuff
+.lib sinker*    ;* sink into earth
+.lib road/buil* ;* road builder
+.lib scr/buffe* ;* print road
+.lib high-*     ;* high-score
+.lib title-pag* ;* title page
+.lib play-game* ;* play-game
+.lib alterable* ;* change vars
+.lib magnifice* ;* main stuff
+.lib glop-ani*  ;* ani-part2
+.lib flash-col* ;* flash colours
+.lib set-shee*  ;* set sheet cols.
+.lib interrupt* ;* irq move aliens
+.lib arrow-pri* ;* print arrow
+.lib jet/plane* ;* print jet
+.lib basic-ali* ;* basic aliens
+.lib ball-prin* ;* print ball
+.lib bounc/bal* ;* move ball
+.lib break*     ;* break in pipe
+.lib suicide*   ;* suicide plane
+.lib kamakaze*  ;* print plane
+.lib score-*    ;* scoring stuff
+.lib explosion* ;* explosions
+.lib starter*   ;* glop starter
+.lib kwaheri*   ;* end stuff
+.lib jo/ke*     ;* jo/ke selection
+.lib key-scan*  ;* scan keyboard
+.lib pauser*    ;* pause
+.lib sound*     ;* noises
+.lib alien-chr* ;* get ali chars
+.lib char-tabl* ;* alien char tbls
+.lib level-ove* ;* level over
+.lib buster*    ;* game over (oil)
+.lib diffic*    ;* increase diff.
+.lib demo*      ;* demo stuff
+.lib double-*   ;* tycoon title
+;.lib bonus*     ;* any bonuses
+;
+;
+;
+;
+;
+.end

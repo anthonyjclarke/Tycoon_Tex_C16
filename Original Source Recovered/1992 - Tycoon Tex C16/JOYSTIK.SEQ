@@ -1,0 +1,97 @@
+; put "joystik"
+;
+;*******************
+;
+; read the joystick
+;
+;*******************
+;
+jport = ted+8
+;
+;
+;
+redjos
+;
+lda demo
+beq blotto
+;
+jmp demoon
+;
+blotto
+;
+lda joysel
+bne tryjos
+;
+jmp key
+;
+tryjos
+;
+lda #$fd        ;* port 0
+sta jport
+;
+lda #$4a
+sta xtrcde      ;* 'lsr a'
+;
+lda jport
+eor #$ff
+bne naye
+;
+; try port 1
+;
+lda #$fa        ;* port 1
+sta jport
+;
+lda #$ea
+sta xtrcde      ;* 'nop'
+;
+lda jport
+eor #$ff
+;
+bne naye        ;* read some data
+;
+;
+nomove
+;
+lda #0
+ldx #4
+;
+nom1
+;
+sta jleft,x
+dex
+bpl nom1
+;
+rts
+;
+;
+naye
+;
+ror a
+ror jup
+;
+ror a
+ror jdown
+;
+ror a
+ror jleft
+;
+ror a
+ror jright
+;
+lsr a
+lsr a
+lsr a
+;
+xtrcde
+;
+nop
+;
+ror jfire
+;
+lda #1
+sta jmove
+;
+rts
+;
+;
+.end

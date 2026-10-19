@@ -1,0 +1,309 @@
+; put "firing/megacode"
+;
+;
+;
+;
+newfir
+;
+; start a new bullet
+;
+lda explon
+beq stbult
+;
+rts
+;
+stbult
+;
+lda #1
+sta fire
+sta firtem
+;
+lda ml
+clc
+adc #82
+sta lasl
+;
+lda ml+1
+adc #0
+sta lasl+1
+;
+jsr fireso  ;* start sound
+;
+rts
+;
+mvelaz
+;
+; move the lazer !
+;
+lda pause
+beq ytr
+;
+rts ;* pause on
+;
+ytr
+;
+lda fire
+bne yeson
+;
+rts
+;
+yeson
+;
+dec firtem
+bne ntfins
+;
+lda #1
+sta firtem
+;
+ntfins
+;
+jsr prntbr    ;* put line of 0's
+;
+ldy #0
+lda #32
+sta (lasl),y
+;
+dpinc lasl
+;
+lda (lasl),y
+beq hitend    ;* hit off screen
+;             ;* char
+;
+cmp #92
+bcs hitit     ;* anything >92
+;             ;* is an alien
+;
+lda #82
+sta (lasl),y
+;
+lda lasl+1
+pha
+;
+sec
+sbc #4
+sta lasl+1
+;
+lda mancol    ;* colour of laser
+sta (lasl),y
+;
+pla
+sta lasl+1
+;
+rts
+;
+hitend
+;
+lda #0
+sta fire
+;
+lda good ;* successful hit ?
+beq fkof
+;
+jsr hitsnd ;* explosion sound
+;
+lda #3
+jsr compup ;* % completed up
+;
+fkof ;* obviosly not
+;
+lda #0
+sta good
+;
+rts
+;
+;******************************
+;
+hitit
+;
+; he's hit something
+;
+sta hitchr
+;
+; save char hit
+;
+cmp #99
+bcs maybal
+;
+; must be the arrow
+;
+ldx #0
+stx arron
+stx arrprn
+;
+inx
+stx arroff
+stx good
+;
+lda rnd+1
+and #$3f
+adc arrfrq
+sta arrtem
+;
+ldy #4        ;*
+lda #2        ;*
+jsr score+2   ;* 25 points for
+;             ;* the arrow
+lda #5        ;*
+jsr score     ;*
+;
+ldx arrl
+ldy arrl+1
+;
+jsr inexpl    ;* start explosion
+;
+jmp hitend
+;
+;++++++++++++++++++++
+;
+maybal
+;
+cmp #115
+bcs mayjtb
+;
+; must be the bouncer !
+;
+ldx #0
+stx ballon
+stx prball
+;
+lda pbal
+sta rbal
+;
+lda pbal+1
+sta rbal+1
+;
+inx
+stx rubbal
+stx good
+;
+lda rnd+2
+and #$3f
+adc ballfr
+sta baltem
+;
+ldy #4        ;*
+lda #5        ;* 50 points for the
+jsr score+2   ;* ball
+;
+ldx pbal
+ldy pbal+1
+;
+jsr inexpl
+;
+jmp hitend
+;
+;++++++++++++++++++++
+;
+mayjtb
+;
+cmp #117
+bcs maysui
+;
+; must be the jets bomb
+;
+lda #1
+sta bulsht
+;
+jsr kilbm
+;
+dec bulsht
+;
+ldy #3         ;*
+lda #2         ;*
+jsr score+2    ;* 250 points for
+;              ;* the jets bomb
+lda #5         ;*
+ldy #4         ;*
+jsr score+2    ;*
+;
+lda #1
+sta good
+;
+ldx boml
+ldy boml+1
+;
+jsr inexpl
+;
+jmp hitend
+;
+;++++++++++++++++++++
+;
+maysui
+;
+cmp #123
+bcs fgetit
+;
+; must be the suicide thing
+;
+lda #1
+sta bulsht
+;
+; the flag tells the kilsui
+; routine not to put the
+; breaak in the pipe
+;
+lda psuil
+sta rsuil
+;
+lda psuil+1
+sta rsuil+1
+;
+jsr kilsui
+;
+ldx #0
+stx bulsht
+stx prsuic
+;
+inx
+stx good
+;
+ldy #3         ;*
+lda #2         ;* 200 points for
+jsr score+2    ;* the suicide job
+;
+ldx psuil
+ldy psuil+1
+;
+jsr inexpl
+;
+jmp hitend
+;
+;+++++++++++++++++++++++++++
+;
+fgetit
+;
+lda #0
+sta good
+;
+jmp hitend
+;
+;
+;***************************
+;
+prntbr
+;
+; print the off screen bar used
+; by the move bullet detection.
+; this is because the explosion
+; may have rubbed it off.
+;
+ldx #6
+lda #0
+;
+br1
+;
+ldy bary,x
+sta $e57,y
+;
+dex
+bpl br1
+;
+rts
+;
+bary
+;
+.byte 0,40,80,120,160,200,240
+;
+;
+;
+.end

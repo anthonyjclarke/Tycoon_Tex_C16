@@ -1,0 +1,97 @@
+; put "print-man"
+;
+;
+;
+;
+manon
+;
+lda ml
+sta mcl
+;
+lda ml+1
+sec
+sbc #4
+sta mcl+1
+;
+jsr chklnd ;* chek land
+;
+lda #64
+sta chron
+ldx #0
+;
+manl
+;
+ldy yval,x
+;
+lda (ml),y
+cmp #92
+bcc alive
+;
+lda #1
+sta dead
+;
+alive
+;
+lda chron
+sta (ml),y
+;
+lda mancol
+sta (mcl),y
+;
+inc chron
+;
+inx
+cpx #15
+bne manl
+;
+rts
+;
+;************
+;
+;
+manoff
+;
+ldx #14
+lda #32
+;
+mano
+;
+ldy yval,x
+sta (ml),y
+;
+dex
+bpl mano
+;
+rts
+;
+;*************
+;
+chklnd
+;
+ldy #200
+;
+lda (ml),y
+;
+cmp #217
+bcc ntdd ;* ok
+;
+cmp #219 ;* left char of r.h.brk
+beq ntdd
+;
+cmp #221 ;* right char of r.h.brk
+beq ntdd
+;
+cmp #234
+bcs ntdd ;* ok
+;
+lda #1
+sta dead
+sta disjum
+;
+ntdd
+;
+rts
+;
+;
+;
+.end

@@ -1,0 +1,180 @@
+; put "level-over"
+;
+; level completed so tell the
+; gonk that and do some nice
+; stuff.
+;
+;
+lvlovr
+;
+lda dead
+bne lvlovr
+;
+; wait for dyong to end
+;
+jsr scrlnd
+;
+; bring on new land
+;
+sei
+;
+lda #1
+sta stop
+;
+lda #0
+sta hilspd
+sta gndspd
+sta jumpin
+sta fire
+;
+jsr allkil  ;* kill alll aliens
+;
+jsr manoff
+;
+lda #<$ea9
+sta ml
+;
+lda #>$ea9
+sta ml+1
+;
+lda #0
+sta wakspd
+sta norigt
+sta done
+;
+jsr clsdis
+;
+jsr manon
+;
+cli
+;
+; man over at left of screen
+;
+ldy #20
+;
+conl1
+;
+lda #'*
+;
+sta $dc2,y
+sta $dc2+160,y
+;
+lda conscr,y
+and #$3f
+sta $dc2+80,y
+;
+lda conscr+21,y
+and #$3f
+sta $dc2+240,y
+;
+dey
+bpl conl1
+;
+lda #'*
+sta $dea
+sta $dea+80
+sta $dea+20
+sta $dea+80+20
+;
+lda level
+;
+pha
+;
+and #$f0
+lsr a
+lsr a
+lsr a
+lsr a
+;
+ora #$30
+sta $eba  ;* msb
+;
+pla
+;
+and #$f
+ora #$30
+;
+sta $ebb  ;* lsb
+;
+; level on screen
+;
+lda soflag
+beq gonad
+;
+; no sound
+;
+lda #%00100011 ;* chan #2
+sta vol
+;
+lda #3
+sta sou2hi
+;
+gonad
+;
+lda #1
+jsr score
+;
+lda #1
+jsr presdo
+;
+lda preshi
+asl a
+asl a
+asl a
+;
+ora preslo
+;
+sta sou2lo
+;
+ldx #$08
+jsr delay+2
+;
+lda bloout
+beq gonad
+;
+lda #0
+sta vol
+;
+; bonus score = oil pressure
+;
+lda #6
+sta roll
+;
+conl2
+;
+ldx #$00
+jsr delay+2
+;
+dec roll
+bne conl2
+;
+;---------------------
+;
+jsr newlvl
+;
+; set up all the variables for
+; the next level
+;
+jsr clsdis
+;
+lda #0
+sta stop
+;
+;
+;
+;
+rts
+;
+;
+;
+;
+conscr
+;
+.byte '* congratulations ! *'
+.byte ' level: 00 completed '
+;
+;
+;
+;
+;
+.end

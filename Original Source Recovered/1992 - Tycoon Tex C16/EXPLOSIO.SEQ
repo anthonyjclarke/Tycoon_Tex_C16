@@ -1,0 +1,196 @@
+; put "explosions"
+;
+; called when an alien has
+; been hit by the texans bullet
+;
+; ** note **
+;
+;  there will only ever be one
+;  explosion on the screen at
+;  any one time (1 bullet - 1
+;  explosion - ok.!)
+;
+inexpl
+;
+; start it off
+;
+; x,y are entered with the lo,hi
+; address of the tl corner of the
+; blob
+;
+;
+txa
+;
+sec
+sbc #80
+sta pexpl
+sta cexpl
+;
+tya
+;
+sbc #0
+;
+sta pexpl+1
+;
+sec
+sbc #4
+;
+sta cexpl+1  ;* colour lo
+;
+ldx #1
+stx explon   ;* one's now on
+stx prex     ;* print it
+stx extem    ;* start tempo
+;
+dex
+stx excnt    ;* count
+;
+rts
+;
+;-----------------------------
+;
+upexpl
+;
+lda pause ;* pause on
+bne shuks
+;
+lda explon
+bne theson
+;
+rts
+;
+theson
+;
+dec extem
+beq late
+;
+shuks
+;
+rts
+;
+late
+;
+lda #2
+sta extem
+;
+inc excnt
+lda excnt
+cmp #9
+beq kilex
+;
+rts
+;
+kilex
+;
+ldx #0
+stx prex
+stx explon ;* not on any more
+;
+rts
+;
+;-----------------------------
+;
+printx
+;
+;
+lda prex
+bne dexprt
+;
+rts
+;
+dexprt
+;
+; print explosion depending
+; on the excnt value
+;
+;
+;     434
+;    43234
+;    32123
+;    43234
+;     434
+;
+;
+;  format of explosion
+;
+lda #123
+;
+ldx excnt
+cpx #5
+bcc prntex
+;
+lda #32
+;
+prntex
+;
+sta chron
+;
+; set to space or char
+;
+dex
+txa
+;
+tay
+;
+asl a
+;
+tax
+;
+lda coltbl,y
+sta excol
+;
+lda exstat,x
+sta exbits    ;* no of blocks
+;
+lda exstat+1,x
+;
+;  offset into y
+;
+tax
+;
+expl1
+;
+ldy exytbl,x
+lda chron
+sta (pexpl),y
+;
+lda excol
+sta (cexpl),y
+;
+inx
+dec exbits
+bpl expl1
+;
+rts
+;
+coltbl
+;
+.byte $71,$22,$77,$52
+.byte $71,$71,$71,$71
+;
+exytbl
+;
+.byte 82
+.byte 42,81,83,122
+.byte 2,41,43,80,84,121,123,162
+.byte 1,3,40,44,120,124,161,163
+;
+exstat
+;
+; no of block,pointer into ^
+;
+.byte 0,0    ;
+.byte 3,1    ; all to be
+.byte 7,5    ; printed
+.byte 7,13   ;
+;
+.byte 7,13   ;
+.byte 7,5    ; to be rubbed out
+.byte 3,1    ;
+.byte 0,0    ;
+;
+;
+;
+;
+;
+.end

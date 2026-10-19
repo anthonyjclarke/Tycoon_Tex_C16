@@ -1,0 +1,216 @@
+; put "play-game"
+;
+plgame
+;
+jsr manoff
+;
+sei
+;
+; note all variables are cleared
+; at start of every game.
+;
+jsr clvars
+;
+lda selive
+sta lives
+;
+; no. of selected lives
+;
+lda #1
+sta noleft
+sta mvetem
+sta rdtm
+sta scrtem
+sta otem
+sta starct
+;
+jsr clsdis
+;
+jsr screen
+;
+lda chlivs+$d
+sta $c65   ;* ascii
+;
+lda #<$ea9 ;*
+sta ml     ;*  man initial
+;          ;*
+lda #>$ea9 ;*  screen position
+sta ml+1   ;*
+;
+jsr manon
+;
+cli
+;
+ldx #1
+stx stop
+stx title
+;
+;stx cheat  ;* cheat enable
+;
+dex
+stx level  ;* start level
+;
+dex
+stx area
+;
+jsr newlvl
+;
+; set up everything
+;
+jsr proilp
+jsr prcomp
+;
+jsr start ;* glop count down
+;
+lda #0
+sta stop
+sta title
+;
+loop
+;
+lda pause
+bne loop
+;
+; the irq will set pause if
+; a stop of the whole proggy
+; is required.
+;
+lda finito
+bne ohno
+;
+lda escape
+beq nesc
+;
+jmp exaped  ;* escape game
+;
+nesc
+;
+ldx basdly
+jsr delay+2
+;
+dec otem    ;* oil tempo
+bne fgp
+;
+lda oiltit  ;* oil tempo
+sta otem
+;
+lda #1
+jsr presdo  ;* pressure down
+;
+fgp
+;
+jsr basali  ;* move aliens
+;
+lda wakspd
+beq noscor  ;* not walking
+;
+dec scrtem
+bne noscor
+;
+lda #24
+sta scrtem
+;
+lda #1
+jsr score   ;* score + 1
+;
+ldx wakspd
+lda amount,x
+;
+jsr compup  ;* % + 1
+;
+noscor
+;
+lda done
+beq lazy
+;
+jsr lvlovr
+;
+lazy
+;
+lda bloout
+beq noblow
+;
+jmp buster ;* no oil left
+;
+noblow
+;
+jmp loop
+;
+ohno
+;
+lda demo
+bne exaped
+;
+; clear score first
+;
+sei
+;
+ldx #1
+stx stop
+stx title
+;
+dex
+stx pause  ;* in case pause was on
+;
+jsr allkil ;* kill all aliens
+;
+jsr clsdis
+;
+cli
+;
+jsr bye   ;* end bit
+;
+ldx #5
+;
+gtscre
+;
+lda $c56,x
+sta sikbuf,x
+;
+dex
+bpl gtscre
+;
+; copy score
+;
+jmp gloppy
+;
+; go to title page stuff
+;
+;*************************
+;
+amount
+;
+.byte 0,1,2,3,3,3,4,4
+;
+;*************************
+;
+exaped
+;
+; exited from game
+;
+sei
+;
+ldx #5
+lda #$30
+;
+tac2
+;
+sta scrpos,x
+dex
+bpl tac2
+;
+; if escaped no score allowd
+; or if demo then no score
+;
+ldx #0
+stx escape
+stx fire
+stx jumpin
+stx demo
+;
+inx
+stx onlyrd
+;
+jmp ohno
+;
+.end

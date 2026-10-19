@@ -1,0 +1,98 @@
+0 "PLATFORM        " B1 2A
+4    "ALIEN-CHRGET"     SEQ         ALIENCHR TXT      995   7-10-92  17:14
+5    "ALTERABLES"       SEQ         ALTERABL TXT     1185   7-10-92  17:14
+6    "ANIMATIONS"       SEQ         ANIMATIO TXT     1537   7-10-92  17:15
+2    "ARROW-PRINT"      SEQ         ARROWPRI TXT      505   7-10-92  17:15
+25   "BACKUP-VARS"      SEQ         BACKUPVA TXT     6475   7-10-92  17:15
+2    "BALL-PRINT"       SEQ         BALLPRIN TXT      468   7-10-92  17:15
+2    "BASIC-ALIENS"     SEQ         BASICALI TXT      553   7-10-92  17:15
+1    "BONUS"            SEQ         BONUS    TXT      117   7-10-92  17:15
+8    "BOUNC/BALL-MVE"   SEQ         BOUNCBAL TXT     2017   7-10-92  17:15
+9    "BREAK-IN-PIPE"    SEQ         BREAKINP TXT     2463   7-10-92  17:15
+5    "BUSTER"           SEQ         BUSTER   TXT     1342   7-10-92  17:15
+1    "CDATA-ARROW"      SEQ         CDATAARR TXT      253   7-10-92  17:15
+1    "CDATA-BOMB"       SEQ         CDATABOM TXT      141   7-10-92  17:15
+2    "CDATA-DESERT"     SEQ         CDATADES TXT      383   7-10-92  17:15
+7    "CDATA-HIL1"       SEQ         CDATHIL1 TXT     1613   7-10-92  17:15
+7    "CDATA-HIL2"       SEQ         CDATHIL2 TXT     1610   7-10-92  17:15
+7    "CDATA-HIL3"       SEQ         CDATHIL3 TXT     1610   7-10-92  17:15
+7    "CDATA-HIL4"       SEQ         CDATHIL4 TXT     1610   7-10-92  17:16
+7    "CDATA-HIL5"       SEQ         CDATHIL5 TXT     1610   7-10-92  17:16
+5    "CDATA-HILLS"      SEQ         CDATHIL6 TXT     1149   7-10-92  17:16
+2    "CDATA-ICELAND"    SEQ         CDATAICE TXT      498   7-10-92  17:16
+2    "CDATA-JET/PLANE"  SEQ         CDATAJET TXT      364   7-10-92  17:16
+3    "CDATA-NORM/PIPE"  SEQ         CDATANOR TXT      683   7-10-92  17:16
+3    "CDATA-PIPE/BREAK" SEQ         CDATAPIP TXT      804   7-10-92  17:16
+3    "CDATA-PIPES"      SEQ         CDATPBRK TXT      580   7-10-92  17:16
+1    "CDATA-SUICIDE"    SEQ         CDATASUI TXT      224   7-10-92  17:16
+2    "CDATA-TEXMAN"     SEQ         CDATATEX TXT      403   7-10-92  17:16
+21   "CHAR#1"           SEQ         CHAR1    TXT     5227   7-10-92  17:16
+3    "CHAR#2"           SEQ         CHAR2    TXT      695   7-10-92  17:16
+10   "CHAR-TABLES"      SEQ         CHARTABL TXT     2422   7-10-92  17:16
+4    "COMPLETED-GAUGE"  SEQ         COMPLETE TXT     1094   7-10-92  17:16
+8    "DEATH-MARCH !"    SEQ         DEATHMAR TXT     2222   7-10-92  17:16
+3    "DEMO-MEGA/CODE"   SEQ         DEMOMEGA TXT      787   7-10-92  17:16
+11   "DIFFICULTY"       SEQ         DIFFICUL TXT     2854   7-10-92  17:17
+4    "DOUBLE-BIT"       SEQ         DOUBLEBI TXT      948   7-10-92  17:17
+7    "EXPLOSIONS"       SEQ         EXPLOSIO TXT     1960   7-10-92  17:17
+1    "EXTRA-MEMORY"     SEQ         EXTRAMEM TXT      231   7-10-92  17:17
+12   "FIRING/MEGACODE"  SEQ         FIRINGME TXT     3142   7-10-92  17:17
+3    "FLASH-COLOURS"    SEQ         FLASHCOL TXT      634   7-10-92  17:17
+6    "GLOP-ANIMATIONS"  SEQ         GLOPANIM TXT     1434   7-10-92  17:17
+1    "HEXER"            SEQ         HEXER    TXT      234   7-10-92  17:17
+16   "HIGH-STUFF"       SEQ         HIGHSTUF TXT     4595   7-10-92  17:17
+5    "INIT-ALIENS"      SEQ         INITALIE TXT     1260   7-10-92  17:17
+14   "INTERRUPT-ALIENS" SEQ         INTERRUP TXT     3664   7-10-92  17:17
+5    "IRQ"              SEQ         IRQ      TXT     1282   7-10-92  17:17
+4    "JET/PLANE-PRINT"  SEQ         JETPLANE TXT      966   7-10-92  17:17
+4    "JO/KE SELECTION"  SEQ         JOKESELE TXT     1019   7-10-92  17:18
+3    "JOYSTIK"          SEQ         JOYSTIK  TXT      777   7-10-92  17:18
+4    "JUMPING-CODE"     SEQ         JUMPINGC TXT      929   7-10-92  17:18
+2    "KAMAKAZE-PRINT"   SEQ         KAMAKAZE TXT      517   7-10-92  17:18
+3    "KEY-SCAN"         SEQ         KEYSCAN  TXT      724   7-10-92  17:18
+10   "KWAHERI"          SEQ         KWAHERI  TXT     2748   7-10-92  17:18
+3    "LANDSCAPE"        SEQ         LANDSCAP TXT      748   7-10-92  17:18
+6    "LEVEL-OVER"       SEQ         LEVELOVE TXT     1567   7-10-92  17:18
+1    "MACROS"           SEQ         MACROS   TXT      193   7-10-92  17:18
+5    "MAGNIFICENT"      SEQ         MAGNIFIC TXT     1367   7-10-92  17:18
+2    "MESSAGE-STUFF"    SEQ         MESSAGES TXT      549   7-10-92  17:18
+7    "MOVE-SPACEY"      SEQ         MOVESPAC TXT     1887   7-10-92  17:18
+91   "OBJ"              SEQ         OBJ      TXT    23363   7-10-92  17:19
+6    "OIL-PRES/GAUGE"   SEQ         OILPRESG TXT     1499   7-10-92  17:19
+3    "PAUSER"           SEQ         PAUSER   TXT      654   7-10-92  17:19
+4    "PIXEL-MOVE STUFF" SEQ         PIXELMOV TXT      957   7-10-92  17:19
+8    "PLAY-GAME"        SEQ         PLAYGAME TXT     2139   7-10-92  17:19
+3    "PRINT-MAN"        SEQ         PRINTMAN TXT      738   7-10-92  17:19
+11   "RASTER-ROUTINES"  SEQ         RASTERRO TXT     2813   7-10-92  17:20
+10   "ROAD/BUILDER"     SEQ         ROADBUIL TXT     2598   7-10-92  17:20
+2    "ROTATOR-!"        SEQ         ROTATOR  TXT      548   7-10-92  17:20
+3    "SCORE-ROUTINES"   SEQ         SCOREROU TXT      619   7-10-92  17:20
+1    "SCR/BUFFER-ON"    SEQ         SCRBUFFE TXT      272   7-10-92  17:20
+6    "SCREEN-SETUP"     SEQ         SCREENSE TXT     1533   7-10-92  17:20
+2    "SET#1-CHAR/ASSEM" SEQ         SET1CHAR TXT      304   7-10-92  17:20
+1    "SET#2-CHAR/ASSEM" SEQ         SET2CHAR TXT      199   7-10-92  17:20
+8    "SET-SHEET"        SEQ         SETSHEET TXT     2193   7-10-92  17:20
+2    "SETUP"            SEQ         SETUP    TXT      304   7-10-92  17:20
+3    "SINKER !"         SEQ         SINKER   TXT      581   7-10-92  17:20
+7    "SOUND"            SEQ         SOUND    TXT     1921   7-10-92  17:20
+9    "STARTER"          SEQ         STARTER  TXT     2217   7-10-92  17:20
+8    "SUICIDE/OBJ-MOVE" SEQ         SUICIDEO TXT     2101   7-10-92  17:20
+5    "TABLES"           SEQ         TABLES   TXT     1221   7-10-92  17:20
+10   "TITLE-PAGE"       SEQ         TITLEPAG TXT     2786   7-10-92  17:21
+12   "TYCOON-TEX"       SEQ         TYCOONTE TXT     3071   7-10-92  17:21
+5    "UTILS"            SEQ         UTILS    TXT     1306   7-10-92  17:21
+24   "VARS"             SEQ         VARS     TXT     6243   7-10-92  17:21
+2    "WHOOPPEE-MESSAGE" SEQ         WHOOPPEE TXT      492   7-10-92  17:21
+1    "BOOT ALL"         PRG         BOOTALL  BAS      259   7-10-92  17:21
+5    "CHARS"            PRG         CHARS    BIN     1026   7-10-92  17:21
+1    "DB1"              PRG         DB1      BIN      146   7-10-92  17:21
+1    "DB2"              PRG         DB2      BIN      146   7-10-92  17:21
+4    "DOS5.2"           PRG         DOS52    BIN      866   7-10-92  17:21
+7    "EDITOR"           PRG         EDITOR   BIN     1626   7-10-92  17:21
+5    "FRAK!"            PRG         FRAK     BIN     1026   7-10-92  17:21
+6    "HYPRA-LOAD OBJ"   PRG         HYPRALOA BAS     6429   7-10-92  17:21
+5    "MEGA-SUPER"       PRG         MEGASUPE BIN     1026   7-10-92  17:21
+4    "SUPER-LOAD"       PRG         SUPERLOA BIN      946   7-10-92  17:21
+41   "ASM.C64"          PRG         ASMC64   BAS    44844   7-10-92  17:22
+21 BLOCKS FREE.                            98 File(s)
+             

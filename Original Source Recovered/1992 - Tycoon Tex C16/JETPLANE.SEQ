@@ -1,0 +1,118 @@
+; put "jet/plane-print"
+;
+;
+prplan
+;
+; print the jet aero-plane
+; and its bomb
+;
+lda prbm    ;* print bomb ?
+beq ntuy
+;
+jsr bomprn
+;
+ntuy
+;
+lda prjet
+beq nojprt
+;
+lda jetl
+sta jetcl
+;
+lda jetl+1
+sec
+sbc #4
+sta jetcl+1
+;
+ldx #11
+;
+jt1
+;
+lda jtchar,x
+ldy jtary,x
+sta (jetl),y
+;
+lda jetcol
+sta (jetcl),y
+;
+dex
+bpl jt1
+;
+nojprt
+;
+lda rubjet
+beq nojtrb
+;
+lda #32
+ldx #11
+;
+rbjt1
+;
+ldy jtary,x
+sta (jetl),y
+;
+dex
+bpl rbjt1
+;
+lda #0
+sta rubjet
+;
+nojtrb
+;
+rts
+;
+jtchar
+;
+.byte 32,99,100,101,102,103
+.byte 32,104,105,106,107,108
+;
+jtary
+;
+.byte 0,1,2,3,4,5
+.byte 40,41,42,43,44,45
+;
+;
+;**********
+;
+bomprn
+;
+lda #32
+;
+ldy #0
+sta (boml),y
+;
+iny
+sta (boml),y ;* char = 2x1
+;
+ldy #40
+lda #115
+sta (boml),y
+;
+iny
+lda #116
+sta (boml),y
+;
+lda boml+1
+pha
+;
+sec
+sbc #4
+;
+sta boml+1
+;
+lda bomcol
+sta (boml),y
+;
+dey
+sta (boml),y
+;
+pla
+sta boml+1
+;
+rts
+;
+;
+;
+;
+;
+.end

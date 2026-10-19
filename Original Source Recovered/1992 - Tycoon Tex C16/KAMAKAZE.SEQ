@@ -1,0 +1,64 @@
+; put "kamakaze-print"
+;
+kamaz
+;
+lda rubsui
+beq kama1
+;
+ldx #5
+lda #32
+;
+kama2
+;
+ldy kamy,x    ;* same y vals
+sta (rsuil),y
+;
+dex
+bpl kama2
+;
+lda #0
+sta rubsui    ;* done it
+;
+kama1
+;
+lda prsuic
+bne kama3
+;
+rts
+;
+kama3
+;
+lda psuil
+sta csuil
+;
+lda psuil+1
+sec
+sbc #4
+sta csuil+1
+;
+ldx #5
+lda #122
+sta chron
+;
+kama4
+;
+ldy kamy,x
+lda chron
+sta (psuil),y
+;
+lda suicol
+sta (csuil),y
+;
+dec chron
+dex
+bpl kama4
+;
+rts
+;
+;
+kamy .byte 0,1,2,40,41,42
+;
+;
+;
+;
+.end

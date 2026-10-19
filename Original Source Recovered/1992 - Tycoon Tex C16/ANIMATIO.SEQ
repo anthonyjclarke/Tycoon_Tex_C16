@@ -1,0 +1,117 @@
+; put "animations"
+;
+;
+animat
+;
+lda pause
+beq yatter
+;
+rts ;* pause on
+;
+yatter
+;
+lda stopan
+beq anik
+;
+rts
+;
+anik
+;
+lda wakspd
+bne itsmov
+;
+rts
+;
+itsmov
+;
+dec anitem
+beq anil
+;
+rts
+;
+anil
+;
+lda anispd
+sta anitem
+;
+ldx aninum
+;
+inx
+cpx #4
+;
+bne ntlsa
+;
+ldx #0
+;
+ntlsa
+;
+stx aninum
+;
+lda decode,x
+;
+tax
+lda time6,x
+;
+tay
+;
+ldx #0
+;
+anloop
+;
+lda andata,y
+sta $3e48,x
+;
+iny
+inx
+;
+cpx #48
+bne anloop
+;
+;
+;
+;
+rts
+;
+;
+andata
+;
+;
+; right walk 1
+;
+.byte $01,$00,$01,$01,$01,$02,$04,$08
+.byte $aa,$fc,$32,$12,$13,$81,$42,$20
+.byte $00,$00,$00,$00,$00,$00,$80,$80
+.byte $08,$0c,$10,$11,$0e,$51,$3c,$5b
+.byte $38,$44,$82,$81,$05,$c3,$64,$e0
+.byte $80,$58,$a4,$0c,$18,$30,$c0,$00
+;
+; right walk 2
+;
+.byte $03,$01,$02,$02,$02,$02,$05,$48
+.byte $54,$fc,$32,$12,$12,$04,$08,$34
+.byte $00,$00,$00,$00,$00,$00,$00,$00
+.byte $c8,$30,$69,$16,$12,$0a,$04,$00
+.byte $24,$44,$88,$90,$70,$88,$ec,$bc
+.byte $00,$00,$00,$00,$00,$00,$00,$00
+;
+; right walk 3
+;
+.byte $05,$03,$04,$04,$04,$04,$0a,$10
+.byte $48,$f4,$ce,$49,$48,$10,$30,$5c
+.byte $00,$00,$00,$00,$80,$80,$40,$40
+.byte $10,$18,$21,$a3,$5c,$a3,$38,$37
+.byte $48,$90,$29,$66,$32,$8b,$cd,$c6
+.byte $c0,$80,$00,$00,$00,$00,$00,$00
+;
+; right walk 4
+;
+.byte $02,$02,$01,$02,$02,$01,$13,$34
+.byte $92,$fc,$32,$12,$12,$04,$18,$84
+.byte $00,$00,$00,$00,$00,$00,$00,$00
+.byte $0b,$19,$1d,$04,$05,$02,$00,$00
+.byte $04,$04,$08,$90,$f0,$8c,$e6,$dc
+.byte $00,$00,$00,$00,$00,$00,$00,$00
+;
+;
+;
+.end

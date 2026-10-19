@@ -1,0 +1,239 @@
+; put "break-in-pipe"
+;
+; put a break in the pipe
+;
+break
+;
+ldx #3
+ldy #217
+;
+brak1
+;
+tya
+sta scrbuf,x
+;
+dey
+dex
+bpl brak1
+;
+; left break in
+;
+lda rnd+1
+and #1
+sta buflen
+;
+lda maxcra ;* size of crater
+cmp #2
+beq outiy
+;
+lda rnd+3
+and #1
+;
+clc
+adc buflen  ;* acc = 0,1,2
+sta buflen
+;
+; buflen holds size of gap
+;
+; size is 1 ,2 or 3 gaps
+;
+outiy
+;
+lda buflen
+;
+tax
+;
+brak2
+;
+txa
+pha
+;
+jsr random
+;
+pla
+tax
+;
+lda rnd+1
+and #1
+sta bufpoi
+;
+lda rnd+2
+and #1
+;
+clc
+adc bufpoi
+;
+; acc = 0,1,2
+;
+asl a
+asl a
+;
+; *4
+;
+adc #222    ;* base char
+;
+sta bufc,x
+;
+dex
+bpl brak2
+;
+; fills bufc with the start
+; numbers of the chars
+;
+;
+ldy #4   ;* start of buffer
+ldx #0
+;
+brak4
+;
+lda bufc,x
+sta plonk
+;
+txa
+pha
+;
+ldx #3
+;
+brak5
+;
+lda plonk
+sta scrbuf,y
+;
+inc plonk
+iny
+;
+dex
+bpl brak5
+;
+pla
+tax
+;
+inx
+dec buflen
+bpl brak4
+;
+; all the gaps in now just the end
+;
+ldx #3
+;
+lda #221
+sta plonk
+;
+brak6
+;
+lda plonk
+sta scrbuf,y
+;
+dec plonk
+iny
+dex
+bpl brak6
+;
+lda #0
+sta bufpoi
+;
+sty buflen
+;
+rts
+;
+;****************
+;
+bufc .byte 0,0,0,0 ;* max 4 wide
+;
+;****************
+;
+;-------------------------------
+; this routine will put a break
+; in the pipe on the screen if
+; possible,
+;
+; at time of going to press it
+; will only be used by the
+; suicide plane. !
+;
+putbrk
+;
+; x,y hold address of '*'
+;
+;      *###     *=t.l.
+;      ####
+;---------------- land
+;   a llmmrr b  ; break position
+;     llmmrr
+;
+; so check from a to b for a
+; break already there
+;
+stx brkl
+sty brkl+1
+;
+ldx #9     ;* no to check
+;
+ldy #75    ;* start at a
+;
+metlof   ;* heeeaaaavvvyyyy !
+;
+lda (brkl),y
+cmp #215       ;*
+bcc oktp       ;*
+;              ;* pipe break chars
+cmp #234       ;*
+bcs oktp       ;*
+;
+; sorry there is a pipe already
+; there so piss off !
+;
+lda #2
+jsr presdo
+;
+; pressure down a little
+;
+rts
+;
+oktp
+;
+; char ok
+;
+iny
+dex
+;
+bpl metlof
+;
+; ok go for it boris heamaglobin
+;
+ldx #0
+ldy #79
+;
+meat2
+;
+ldy holeyy,x
+lda holech,x
+sta (brkl),y
+;
+iny
+inx
+cpx #12
+bne meat2
+;
+lda #4
+jsr presdo  ;* oil pressure down
+;
+rts
+;
+;==============
+;
+holech
+;
+.byte 215,217,223,225,220,218
+.byte 214,216,222,224,221,219
+;
+;==============       ^^^ ^^^
+;                   funny order
+holeyy
+;
+.byte 79,80,81,82,83,84
+.byte 119,120,121,122,123,124
+;
+;
+;
+.end

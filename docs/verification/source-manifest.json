@@ -1,0 +1,904 @@
+{
+  "image": "Original Source Recovered/TycoonTex-C16.d64",
+  "image_sha256": "a18007eb89e184f04ed2af9ca0145fb22483f1a217d53a5ac08d27bdc1d3b18a",
+  "index_sha256": "29d05960d43cee798dce3cd73cb57206a70c55086f6d7e05f1991c20a7c8298b",
+  "files": [
+    {
+      "name": "ALIEN-CHRGET",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "678ed9ceef2fe4b827b93a38613484a9a973fd31ebc4b34e399f8611a13783c3",
+      "bytes": 904,
+      "closed": true,
+      "extracted_copy": "001_ALIEN-CHRGET.seq",
+      "fallback": false
+    },
+    {
+      "name": "ALTERABLES",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "74aa697d788cc089a066d3c37a7304458496b0bb870228c93d01d8cc92b8ac31",
+      "bytes": 1043,
+      "closed": true,
+      "extracted_copy": "002_ALTERABLES.seq",
+      "fallback": false
+    },
+    {
+      "name": "ANIMATIONS",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "290103989b7d33da1c4e392a966c8cd6be8fd6cb4e5a1c107e3bce98d17be05a",
+      "bytes": 1420,
+      "closed": true,
+      "extracted_copy": "003_ANIMATIONS.seq",
+      "fallback": false
+    },
+    {
+      "name": "ARROW-PRINT",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "a3dac4011e070f998ce84a93e2fe1ef6a8f1e7e141d443fad26fb5058938e002",
+      "bytes": 443,
+      "closed": true,
+      "extracted_copy": "004_ARROW-PRINT.seq",
+      "fallback": false
+    },
+    {
+      "name": "BACKUP-VARS",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "5fba3400ce9a4fb1a6d9d7f1125a91a3db459b866161e72c7335185cfda3f6d3",
+      "bytes": 6166,
+      "closed": true,
+      "extracted_copy": "005_BACKUP-VARS.seq",
+      "fallback": false
+    },
+    {
+      "name": "BALL-PRINT",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "589486ca08bc2259bbfd05899594445fef18259aba13a51e2792f8951073763b",
+      "bytes": 404,
+      "closed": true,
+      "extracted_copy": "006_BALL-PRINT.seq",
+      "fallback": false
+    },
+    {
+      "name": "BASIC-ALIENS",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "4392c1ea30dea4c276ec619ccd7e48b15b25cb722980eb5f209862f4f6478241",
+      "bytes": 494,
+      "closed": true,
+      "extracted_copy": "007_BASIC-ALIENS.seq",
+      "fallback": false
+    },
+    {
+      "name": "BONUS",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "8e1f205a72e448dc4ed800f82c6fc6225e31b521f2cc0e3505d158c5e9f81a82",
+      "bytes": 99,
+      "closed": true,
+      "extracted_copy": "008_BONUS.seq",
+      "fallback": false
+    },
+    {
+      "name": "BOUNC/BALL-MVE",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "e3f2ee4c91d38519ebf91fad4a8a06573d1bb13051dab00c4482cd16ee492f06",
+      "bytes": 1833,
+      "closed": true,
+      "extracted_copy": "009_BOUNC~2FBALL-MVE.seq",
+      "fallback": false
+    },
+    {
+      "name": "BREAK-IN-PIPE",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "9cd1f55258878024c0615c997212f2fbffc01c12ee35a040ba3b762d59f7f729",
+      "bytes": 2224,
+      "closed": true,
+      "extracted_copy": "010_BREAK-IN-PIPE.seq",
+      "fallback": false
+    },
+    {
+      "name": "BUSTER",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "80986cb92ca6d604f9772e096f2331c3b84100e8e4748871658b9ee286e1272f",
+      "bytes": 1181,
+      "closed": true,
+      "extracted_copy": "011_BUSTER.seq",
+      "fallback": false
+    },
+    {
+      "name": "CDATA-ARROW",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "059b0801263064102b49af5d3c9914d6aa20c1985f0704c0049ed89bb9056bbb",
+      "bytes": 236,
+      "closed": true,
+      "extracted_copy": "012_CDATA-ARROW.seq",
+      "fallback": false
+    },
+    {
+      "name": "CDATA-BOMB",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "cd9c77cb86cb79a24fba643632bf33cf5df455dde8c134f5693e49b2de3f688c",
+      "bytes": 129,
+      "closed": true,
+      "extracted_copy": "013_CDATA-BOMB.seq",
+      "fallback": false
+    },
+    {
+      "name": "CDATA-DESERT",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "694df799e6884027867b1d86c6b52bae3458ab0b95bd4fac3013c74198bb11a9",
+      "bytes": 360,
+      "closed": true,
+      "extracted_copy": "014_CDATA-DESERT.seq",
+      "fallback": false
+    },
+    {
+      "name": "CDATA-HIL1",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "d2d8b2dffe7ff113ce4f497b9e90f275c78cad48e2d9c9062bb837f568108eb5",
+      "bytes": 1564,
+      "closed": true,
+      "extracted_copy": "015_CDATA-HIL1.seq",
+      "fallback": false
+    },
+    {
+      "name": "CDATA-HIL2",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "12717a3571fb9eb5440fd23a544bfbc8abf360a21e0c4805dcfbacc489c8efc6",
+      "bytes": 1562,
+      "closed": true,
+      "extracted_copy": "016_CDATA-HIL2.seq",
+      "fallback": false
+    },
+    {
+      "name": "CDATA-HIL3",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "a7af0c8a3b9735659c0c3747a7e833edeb00cd5b98b82c5a3fa459e1b1349010",
+      "bytes": 1562,
+      "closed": true,
+      "extracted_copy": "017_CDATA-HIL3.seq",
+      "fallback": false
+    },
+    {
+      "name": "CDATA-HIL4",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "7422fb42490a0162756c7dc4898be0849a39f16876b91a5cd450586a11f9c656",
+      "bytes": 1562,
+      "closed": true,
+      "extracted_copy": "018_CDATA-HIL4.seq",
+      "fallback": false
+    },
+    {
+      "name": "CDATA-HIL5",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "4dd58cc1f436a90dfaab5cd833989b0ae79f6819cb2cf4f963f49b7f598306ae",
+      "bytes": 1562,
+      "closed": true,
+      "extracted_copy": "019_CDATA-HIL5.seq",
+      "fallback": false
+    },
+    {
+      "name": "CDATA-HILLS",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "0344c731aebe7f61be3c79e118082e8366b66e214846260b615911c4e8c26e6b",
+      "bytes": 1099,
+      "closed": true,
+      "extracted_copy": "020_CDATA-HILLS.seq",
+      "fallback": false
+    },
+    {
+      "name": "CDATA-ICELAND",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "e1410898091b347a44b7e4009abc828ed29e4a4593d944b6172a9115b565d9c4",
+      "bytes": 474,
+      "closed": true,
+      "extracted_copy": "021_CDATA-ICELAND.seq",
+      "fallback": false
+    },
+    {
+      "name": "CDATA-PIPES",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "7c6618aca6a08811976d321651d58ed6bdda54044e90ad418fd75557c6644a51",
+      "bytes": 552,
+      "closed": true,
+      "extracted_copy": "022_CDATA-PIPES.seq",
+      "fallback": false
+    },
+    {
+      "name": "CDATA-SUICIDE",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "0791081233043e8757b91b2d41a3aa10e9deac8cb5669833a5f8252bb9999e22",
+      "bytes": 211,
+      "closed": true,
+      "extracted_copy": "023_CDATA-SUICIDE.seq",
+      "fallback": false
+    },
+    {
+      "name": "CDATA-TEXMAN",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "3233e0a53765f411479e77b478fc4faf9f6a377c224afd3cf6fb48da89f0c414",
+      "bytes": 386,
+      "closed": true,
+      "extracted_copy": "024_CDATA-TEXMAN.seq",
+      "fallback": false
+    },
+    {
+      "name": "CHAR#1",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "16dcd92ff7859865d208e86f3726ac772b3c63e5295095f4f887dced99899d9c",
+      "bytes": 5140,
+      "closed": true,
+      "extracted_copy": "025_CHAR~231.seq",
+      "fallback": false
+    },
+    {
+      "name": "CHAR#2",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "a61c68af94b37f0e485c007c38a993967cd0876af3c2812324b508fff8a60af2",
+      "bytes": 682,
+      "closed": true,
+      "extracted_copy": "026_CHAR~232.seq",
+      "fallback": false
+    },
+    {
+      "name": "CHAR-TABLES",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "b3d3be8af9acdc9dc8447f5e367d5b2d29e719f7070afd1381b549cf946c2307",
+      "bytes": 2330,
+      "closed": true,
+      "extracted_copy": "027_CHAR-TABLES.seq",
+      "fallback": false
+    },
+    {
+      "name": "DEATH-MARCH !",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "06ddf7117ac55ea8ff8faae1b1ba24862813e89a93a914866f39bac0cfa9278f",
+      "bytes": 2008,
+      "closed": true,
+      "extracted_copy": "028_DEATH-MARCH_~21.seq",
+      "fallback": false
+    },
+    {
+      "name": "DEMO-MEGA/CODE",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "51c43d9d9cff6760f7c2c19166786704376f684a9414b64d6cd5c84a94e74d9c",
+      "bytes": 689,
+      "closed": true,
+      "extracted_copy": "029_DEMO-MEGA~2FCODE.seq",
+      "fallback": false
+    },
+    {
+      "name": "DIFFICULTY",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "86d93bcc3c1668514e2e7c05b9e1abad268415e2df4d4601aa3e53779edc7439",
+      "bytes": 2556,
+      "closed": true,
+      "extracted_copy": "030_DIFFICULTY.seq",
+      "fallback": false
+    },
+    {
+      "name": "DOUBLE-BIT",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "ff216c57ad33967e681f343fc401ede10fceae89c1a270b6b04a58abc0dbc75b",
+      "bytes": 875,
+      "closed": true,
+      "extracted_copy": "031_DOUBLE-BIT.seq",
+      "fallback": false
+    },
+    {
+      "name": "EXPLOSIONS",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "cb80cb1abb032f989675642a5443f260d70450667d9cbd8d0348ef998667f6dc",
+      "bytes": 1764,
+      "closed": true,
+      "extracted_copy": "032_EXPLOSIONS.seq",
+      "fallback": false
+    },
+    {
+      "name": "EXTRA-MEMORY",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "bf977dca6f01f54fce0662d128cf9fd63b49d9acce474aa2211af03b6a3e850c",
+      "bytes": 206,
+      "closed": true,
+      "extracted_copy": "033_EXTRA-MEMORY.seq",
+      "fallback": false
+    },
+    {
+      "name": "FLASH-COLOURS",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "bbcc4acc740aac60c834e6f87c350e94ab711cc24c83fafff1d320671854f263",
+      "bytes": 558,
+      "closed": true,
+      "extracted_copy": "034_FLASH-COLOURS.seq",
+      "fallback": false
+    },
+    {
+      "name": "HEXER",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "75d25d894a7257fdbcd22ea7b3105aaf0867350c9e609838de711a1909c94719",
+      "bytes": 193,
+      "closed": true,
+      "extracted_copy": "035_HEXER.seq",
+      "fallback": false
+    },
+    {
+      "name": "HIGH-STUFF",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "de5003dab63ec5f865ba5070c9461e89d31a34f1a74e7bcdd21700227a43db2a",
+      "bytes": 4054,
+      "closed": true,
+      "extracted_copy": "036_HIGH-STUFF.seq",
+      "fallback": false
+    },
+    {
+      "name": "INIT-ALIENS",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "f9164e400758466dc04f4632f9f38829fa6a6ce678e4ed79457cef851a4f6d6d",
+      "bytes": 1187,
+      "closed": true,
+      "extracted_copy": "037_INIT-ALIENS.seq",
+      "fallback": false
+    },
+    {
+      "name": "IRQ",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "9e2c756acbdee50883a7bf256eef64efb7a541d36cda195038fd496c0d97fc9b",
+      "bytes": 1125,
+      "closed": true,
+      "extracted_copy": "038_IRQ.seq",
+      "fallback": false
+    },
+    {
+      "name": "JOYSTIK",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "961d6562d046943369d3e551c60e0fcd0998cf17d6f9543b092c5db0bc872959",
+      "bytes": 680,
+      "closed": true,
+      "extracted_copy": "039_JOYSTIK.seq",
+      "fallback": false
+    },
+    {
+      "name": "JUMPING-CODE",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "dbc15e87e83ada607aab433c980abb88f2388df0f3568adbf209a0a83f15b439",
+      "bytes": 827,
+      "closed": true,
+      "extracted_copy": "040_JUMPING-CODE.seq",
+      "fallback": false
+    },
+    {
+      "name": "KAMAKAZE-PRINT",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "5e55a73c957fc2aedb762599af5842a0421d3fbb8291c90e155d6dfda8919b9d",
+      "bytes": 453,
+      "closed": true,
+      "extracted_copy": "041_KAMAKAZE-PRINT.seq",
+      "fallback": false
+    },
+    {
+      "name": "KEY-SCAN",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "7470eafc18774c78ae6013f5cc9ce8bd890c06607c1cc6ea3a4e7ee4827a3cc1",
+      "bytes": 650,
+      "closed": true,
+      "extracted_copy": "042_KEY-SCAN.seq",
+      "fallback": false
+    },
+    {
+      "name": "KWAHERI",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "66b49c5e539381710891c0ca99fad59293f72e5446282c03afa97934d78c01b3",
+      "bytes": 2448,
+      "closed": true,
+      "extracted_copy": "043_KWAHERI.seq",
+      "fallback": false
+    },
+    {
+      "name": "LANDSCAPE",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "c87e053abafaed230ceb95c7d3548605d32842b3aba1c69377a2df79b77061f7",
+      "bytes": 669,
+      "closed": true,
+      "extracted_copy": "044_LANDSCAPE.seq",
+      "fallback": false
+    },
+    {
+      "name": "LEVEL-OVER",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "fc78a1fe92b1497aa7170fe83fd8d862a114a2361c6f5226709eccefc56cfbde",
+      "bytes": 1387,
+      "closed": true,
+      "extracted_copy": "045_LEVEL-OVER.seq",
+      "fallback": false
+    },
+    {
+      "name": "MACROS",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "500c026897d00ea1a4afc635ccd2b2c846ebe6ea6c58651f94f74489fa56bcd5",
+      "bytes": 160,
+      "closed": true,
+      "extracted_copy": "046_MACROS.seq",
+      "fallback": false
+    },
+    {
+      "name": "MAGNIFICENT",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "84a093b463f6d7fe9570e1a118d61fa21cbadc491d5b42bb4220bbfc297f6a9f",
+      "bytes": 1229,
+      "closed": true,
+      "extracted_copy": "047_MAGNIFICENT.seq",
+      "fallback": false
+    },
+    {
+      "name": "MESSAGE-STUFF",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "e5da2cd1de76df7514580114e36226c5a96a57628602c4f6a2f3cce64a8af048",
+      "bytes": 469,
+      "closed": true,
+      "extracted_copy": "048_MESSAGE-STUFF.seq",
+      "fallback": false
+    },
+    {
+      "name": "MOVE-SPACEY",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "dd730ed296d05d1e1cdbfc5645f02cddfcee4391a96802cd2045bb579f0ab9f7",
+      "bytes": 1663,
+      "closed": true,
+      "extracted_copy": "049_MOVE-SPACEY.seq",
+      "fallback": false
+    },
+    {
+      "name": "OBJ",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "42e7074c5f79637b4cd6de45a8f986dc5997204897dec5e63539afd8c14301dc",
+      "bytes": 22978,
+      "closed": true,
+      "extracted_copy": "050_OBJ.seq",
+      "fallback": false
+    },
+    {
+      "name": "OIL-PRES/GAUGE",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "677ba00820b4b0eaa7306d4d8f4ce494a0d9b00625626b3d14981617eff35c2b",
+      "bytes": 1359,
+      "closed": true,
+      "extracted_copy": "051_OIL-PRES~2FGAUGE.seq",
+      "fallback": false
+    },
+    {
+      "name": "PAUSER",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "afe7123df919209d7cfe6a6db8f308a603c1c16e566494bf1dec269d965eb5cb",
+      "bytes": 578,
+      "closed": true,
+      "extracted_copy": "052_PAUSER.seq",
+      "fallback": false
+    },
+    {
+      "name": "PLAY-GAME",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "ce441ba2025825987f17eb1285dd2fd0b0c0b61f2ce48d018434c983ea95773e",
+      "bytes": 1923,
+      "closed": true,
+      "extracted_copy": "053_PLAY-GAME.seq",
+      "fallback": false
+    },
+    {
+      "name": "PRINT-MAN",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "e98e52ff45f589e2208fb57ef88e85b1fc83a8b0545960927cffc6c83f197f05",
+      "bytes": 641,
+      "closed": true,
+      "extracted_copy": "054_PRINT-MAN.seq",
+      "fallback": false
+    },
+    {
+      "name": "ROAD/BUILDER",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "b24b9595619e8057caf78f6ebfff807f7aa0fd55014429df2c68cd1b0effa095",
+      "bytes": 2319,
+      "closed": true,
+      "extracted_copy": "055_ROAD~2FBUILDER.seq",
+      "fallback": false
+    },
+    {
+      "name": "ROTATOR-!",
+      "source": "Original Source Recovered/TycoonTex-C16.d64",
+      "sha256": "89696e7ead012767f47e8c4fe709af3343a276f82dc8a45238a4f22fc2464055",
+      "bytes": 474,
+      "closed": true,
+      "extracted_copy": "056_ROTATOR-~21.seq",
+      "fallback": false
+    },
+    {
+      "name": "CDATA-JET/PLANE",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/CDATAJET.SEQ",
+      "sha256": "bad54ed214cc24d2bf95e034a17e709e936c0d18664c203e42d08a2a5f4f132e",
+      "bytes": 364,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "CDATA-NORM/PIPE",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/CDATANOR.SEQ",
+      "sha256": "6509eedbb11c228b0a0519332a35f04a44e8107b527cdf72d8e0ded6e1760167",
+      "bytes": 683,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "CDATA-PIPE/BREAK",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/CDATAPIP.SEQ",
+      "sha256": "e7dddc2e3e3666912042bb9f205ec50b14e724e98431e66d0f4c7d5e73d76021",
+      "bytes": 804,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "COMPLETED-GAUGE",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/COMPLETE.SEQ",
+      "sha256": "2a7e4520649a7fe94da832a2b7c4187c8ff289c68077718f53c722714cb302b5",
+      "bytes": 1094,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "FIRING/MEGACODE",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/FIRINGME.SEQ",
+      "sha256": "d2b762b5b89fc9d0f5059591f2be29183d242aee7b3201d5042d307adc548052",
+      "bytes": 3142,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "GLOP-ANIMATIONS",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/GLOPANIM.SEQ",
+      "sha256": "e9561411ddf71143707ae95629073fda3a65e348dfef97d07537ec08b931cd74",
+      "bytes": 1434,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "INTERRUPT-ALIENS",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/INTERRUP.SEQ",
+      "sha256": "e3f12aad405533a8b0d4004812b1fbee91d92ca0558c117c7b95db96f42c4d22",
+      "bytes": 3664,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "JET/PLANE-PRINT",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/JETPLANE.SEQ",
+      "sha256": "cf8d47ee0ce4c519996b6212677f61416f63a341892a743dd97b7196e8f4779c",
+      "bytes": 966,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "JO/KE SELECTION",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/JOKESELE.SEQ",
+      "sha256": "eb18f8c977dd9bee8645e3bf9c06947d6c1029500c80805794288f1fcb857c36",
+      "bytes": 1019,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "PIXEL-MOVE STUFF",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/PIXELMOV.SEQ",
+      "sha256": "d9e82e4417ba10c19fcc763b68ffa7148280b88861f75cbb515ae27572bd5786",
+      "bytes": 957,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "RASTER-ROUTINES",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/RASTERRO.SEQ",
+      "sha256": "47c4829529bd6b1adab780c35b6561ab3c464a41f3d6fc2ef6847e3555ef7aa5",
+      "bytes": 2813,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "SCORE-ROUTINES",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/SCOREROU.SEQ",
+      "sha256": "07b21aad30d9f027d113ee286221bc1e1e13c7f823a9efd226034dd70f5331cc",
+      "bytes": 619,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "SCR/BUFFER-ON",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/SCRBUFFE.SEQ",
+      "sha256": "7c69b5fc0635e02d9b6b43c387ac6f474ce91877e4185959d78503d11aa499e2",
+      "bytes": 272,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "SCREEN-SETUP",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/SCREENSE.SEQ",
+      "sha256": "c99e9bde63be58dc723031f2925c5bfac20f451fbf6b7a361e4249ac544ba698",
+      "bytes": 1533,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "SET#1-CHAR/ASSEM",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/SET1CHAR.SEQ",
+      "sha256": "3d78fb84c543647cc25e45d37fc838d2cf1adbedb109e02f0b8d1d911224f082",
+      "bytes": 304,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "SET#2-CHAR/ASSEM",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/SET2CHAR.SEQ",
+      "sha256": "6d68228fe66794263862786c110bdd3c829be5a54e7e591d4cb180a71dd8339d",
+      "bytes": 199,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "SET-SHEET",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/SETSHEET.SEQ",
+      "sha256": "9a56ab9ab21dbfddffd22d25bb2a3cda854fe8a4d0f1d2ccbbb04b4a917d553b",
+      "bytes": 2193,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "SETUP",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/SETUP.SEQ",
+      "sha256": "fba2554f3f7397c522ecb82559d2909044a2f67eed2e5e63c83424f65f50e3df",
+      "bytes": 304,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "SINKER !",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/SINKER.SEQ",
+      "sha256": "344ffb026911ec095e542dbf15fabf2ce2d62c7705e2d51499dfd35592c45885",
+      "bytes": 581,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "SOUND",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/SOUND.SEQ",
+      "sha256": "948bbbc2be79dd87a0c98039b0f215978a899858475bc6c31110a83835b81d5a",
+      "bytes": 1921,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "STARTER",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/STARTER.SEQ",
+      "sha256": "d8d478056a28327db3edbca1d05d603258afc3d3bfd8556ebefa7201538be838",
+      "bytes": 2217,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "SUICIDE/OBJ-MOVE",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/SUICIDEO.SEQ",
+      "sha256": "5cf209e022f9d07d59c5fafe7f822a8de840c666f7650c85044a0818fe95619e",
+      "bytes": 2101,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "TABLES",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/TABLES.SEQ",
+      "sha256": "b2110c678671317e23698dfb3d05efd4e8c3dc2e25fb3dabde680f913f1d3b4e",
+      "bytes": 1221,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "TITLE-PAGE",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/TITLEPAG.SEQ",
+      "sha256": "c5e93705f836f00c361542ac1363c810744df78b6d5ea6f0b10cf98273692ad3",
+      "bytes": 2786,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "TYCOON-TEX",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/TYCOONTE.SEQ",
+      "sha256": "278eb9caea06b39315577ad6dd278f4a0ebbcf847a142553d1705cdb4b665af3",
+      "bytes": 3071,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "UTILS",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/UTILS.SEQ",
+      "sha256": "490c436b2edb24177245bdab0255b8f76f70d1fcab38d5c59fb4003e6c7249b4",
+      "bytes": 1306,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "VARS",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/VARS.SEQ",
+      "sha256": "83a11eee93276d932d3cee2e441ce1d4b3e0ce9041555d08a93baa739556fa5e",
+      "bytes": 6243,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    },
+    {
+      "name": "WHOOPPEE-MESSAGE",
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/WHOOPPEE.SEQ",
+      "sha256": "926daaeb8c88d843d537b4dc34bed2fcb185c1fb7742bc41ea1940e906dc046e",
+      "bytes": 492,
+      "fallback": true,
+      "normalization": "upper case; universal newlines"
+    }
+  ],
+  "used_modules": [
+    "TYCOON-TEX",
+    "VARS",
+    "EXTRA-MEMORY",
+    "MACROS",
+    "JOYSTIK",
+    "IRQ",
+    "SETUP",
+    "UTILS",
+    "TABLES",
+    "RASTER-ROUTINES",
+    "SCREEN-SETUP",
+    "PIXEL-MOVE STUFF",
+    "LANDSCAPE",
+    "MOVE-SPACEY",
+    "PRINT-MAN",
+    "ANIMATIONS",
+    "FIRING/MEGACODE",
+    "JUMPING-CODE",
+    "OIL-PRES/GAUGE",
+    "COMPLETED-GAUGE",
+    "MESSAGE-STUFF",
+    "WHOOPPEE-MESSAGE",
+    "ROTATOR-!",
+    "DEATH-MARCH !",
+    "SINKER !",
+    "ROAD/BUILDER",
+    "SCR/BUFFER-ON",
+    "HIGH-STUFF",
+    "TITLE-PAGE",
+    "PLAY-GAME",
+    "ALTERABLES",
+    "MAGNIFICENT",
+    "GLOP-ANIMATIONS",
+    "FLASH-COLOURS",
+    "SET-SHEET",
+    "INTERRUPT-ALIENS",
+    "ARROW-PRINT",
+    "JET/PLANE-PRINT",
+    "BASIC-ALIENS",
+    "BALL-PRINT",
+    "BOUNC/BALL-MVE",
+    "BREAK-IN-PIPE",
+    "SUICIDE/OBJ-MOVE",
+    "KAMAKAZE-PRINT",
+    "SCORE-ROUTINES",
+    "EXPLOSIONS",
+    "STARTER",
+    "KWAHERI",
+    "JO/KE SELECTION",
+    "KEY-SCAN",
+    "PAUSER",
+    "SOUND",
+    "ALIEN-CHRGET",
+    "CHAR-TABLES",
+    "LEVEL-OVER",
+    "BUSTER",
+    "DIFFICULTY",
+    "DEMO-MEGA/CODE",
+    "DOUBLE-BIT",
+    "SET#1-CHAR/ASSEM",
+    "CDATA-HIL1",
+    "CDATA-HIL2",
+    "CDATA-HIL3",
+    "CDATA-HIL4",
+    "CDATA-HIL5",
+    "CDATA-NORM/PIPE",
+    "CDATA-PIPE/BREAK",
+    "CDATA-DESERT",
+    "CDATA-ICELAND",
+    "SET#2-CHAR/ASSEM",
+    "CDATA-TEXMAN",
+    "CDATA-ARROW",
+    "CDATA-JET/PLANE",
+    "CDATA-BOMB",
+    "CDATA-SUICIDE"
+  ],
+  "assets": [
+    {
+      "source": "Original Source Recovered/1992 - Tycoon Tex C16/FRAK.BIN",
+      "sha256": "1f649474244b67ebea5e6f67ba1fc7a88f848f94540dbfb12457d4f869aa0219",
+      "address": "$3C00",
+      "bytes": 1024
+    },
+    {
+      "address": "$1000",
+      "bytes": 320,
+      "source": "SET#1-CHAR/ASSEM",
+      "included_in_prg": true
+    },
+    {
+      "address": "$1140",
+      "bytes": 320,
+      "source": "SET#1-CHAR/ASSEM",
+      "included_in_prg": true
+    },
+    {
+      "address": "$1280",
+      "bytes": 320,
+      "source": "SET#1-CHAR/ASSEM",
+      "included_in_prg": true
+    },
+    {
+      "address": "$13C0",
+      "bytes": 320,
+      "source": "SET#1-CHAR/ASSEM",
+      "included_in_prg": true
+    },
+    {
+      "address": "$1500",
+      "bytes": 320,
+      "source": "SET#1-CHAR/ASSEM",
+      "included_in_prg": true
+    },
+    {
+      "address": "$1640",
+      "bytes": 112,
+      "source": "SET#1-CHAR/ASSEM",
+      "included_in_prg": true
+    },
+    {
+      "address": "$16B0",
+      "bytes": 160,
+      "source": "SET#1-CHAR/ASSEM",
+      "included_in_prg": true
+    },
+    {
+      "address": "$1750",
+      "bytes": 80,
+      "source": "SET#1-CHAR/ASSEM",
+      "included_in_prg": true
+    },
+    {
+      "address": "$17A0",
+      "bytes": 96,
+      "source": "SET#1-CHAR/ASSEM",
+      "included_in_prg": true
+    },
+    {
+      "address": "$3E00",
+      "bytes": 72,
+      "source": "SET#2-CHAR/ASSEM",
+      "included_in_prg": false
+    },
+    {
+      "address": "$3EE8",
+      "bytes": 48,
+      "source": "SET#2-CHAR/ASSEM",
+      "included_in_prg": false
+    },
+    {
+      "address": "$3F18",
+      "bytes": 80,
+      "source": "SET#2-CHAR/ASSEM",
+      "included_in_prg": false
+    },
+    {
+      "address": "$3F98",
+      "bytes": 16,
+      "source": "SET#2-CHAR/ASSEM",
+      "included_in_prg": false
+    },
+    {
+      "address": "$3FA8",
+      "bytes": 48,
+      "source": "SET#2-CHAR/ASSEM",
+      "included_in_prg": false
+    }
+  ]
+}

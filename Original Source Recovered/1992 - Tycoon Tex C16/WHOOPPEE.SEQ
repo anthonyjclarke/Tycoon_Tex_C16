@@ -1,0 +1,31 @@
+; put "whooppee-message"
+;
+;
+;
+;
+;
+messt
+;
+.byte ' tycoon-tex @ 1985 , '
+;
+;
+.byte 'another classic from gremlin graphics'
+.byte ' by the tycoons at'
+.byte ' micro-projects ltd. ** try our other'
+.byte ' games - xargon wars and the '
+.byte 'petals of doom. ** as usual'
+.byte ' thanks to matthew,jason,mark,ian '
+.byte 'and everyone at gremlin !'
+.byte ' ** hi to kath,john,chris,dave and '
+.byte 'the others ! **--**         '
+;
+;
+;
+;
+;
+.byte $ff
+;
+;
+;
+;
+.end

@@ -1,0 +1,34 @@
+; put "scr/buffer-on"
+;
+;
+newrod
+;
+ldx bufpoi  ;* buffer pointer
+;
+lda scrbuf+1,x
+sta $f97
+;
+lda scrbuf,x
+sta $f97+40
+;
+inc bufpoi
+inc bufpoi
+;
+lda bufpoi
+cmp buflen
+;
+beq scrap
+;
+rts
+;
+scrap
+;
+jsr road
+;
+; build new bit
+;
+rts
+;
+;
+;
+.end

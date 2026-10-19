@@ -1,0 +1,64 @@
+; put "sinker !"
+;
+;
+sink
+;
+; the mega code to slow the man
+; down and sink him into the
+; ground.
+;
+;
+; first slow him down
+;
+lda dcount
+and #1
+bne stoped
+;
+;lda inpot   ;* fell into hole
+;bne stoped
+;
+lda gndspd
+beq stoped
+;
+dec gndspd
+lda gndspd
+lsr a
+sta hilspd
+;
+stoped
+;
+lda #0
+sta $3e00
+sta $3e18
+sta $3e30
+sta $3e48
+sta $3e60
+;
+ldx #22
+;
+sinkl
+;
+lda $3e00,x
+sta $3e01,x
+;
+lda $3e18,x
+sta $3e19,x
+;
+lda $3e30,x
+sta $3e31,x
+;
+lda $3e48,x
+sta $3e49,x
+;
+lda $3e60,x
+sta $3e61,x
+;
+dex
+bpl sinkl
+;
+rts
+;
+;
+;
+;
+.end

@@ -1,0 +1,164 @@
+; put "set-sheet"
+;
+; set up all the colours etc.
+; for each sheet
+;
+setsht
+;
+lda area
+;
+asl a
+asl a
+asl a
+asl a
+;
+tax
+;
+; x = area*16
+;
+lda shtcol,x   ;*
+sta col1       ;*
+;              ;*
+lda shtcol+1,x ;* the colours for
+sta col2       ;* the road type
+;              ;*
+lda shtcol+2,x ;*
+sta col3       ;*
+;
+lda shtcol+3,x
+sta roadcl
+;
+; road background colour
+;
+lda shtcol+4,x ;*
+sta hil1       ;*
+;              ;*
+lda shtcol+5,x ;* the three hill
+sta hil2       ;* colours
+;              ;*
+lda shtcol+6,x ;*
+sta hil3
+;
+lda shtcol+7,x
+sta hillcl
+;
+; the hill background colour
+;
+lda shtcol+8,x ;* the two multi
+sta pla1       ;* colours for
+;              ;* the play area
+lda shtcol+9,x ;* in the middle
+sta pla2       ;* of the screen
+;
+lda shtcol+10,x
+sta placol
+;
+; play area screen backgrnd colour
+;
+lda shtcol+11,x
+sta mancol
+;
+; tex-man colour
+;
+lda shtcol+12,x
+sta mescol
+;
+; message colour
+;
+lda shtcol+13,x ;*
+sta cols        ;* two colours
+;               ;* for the end
+lda shtcol+14,x ;*
+sta cols+1      ;*
+;
+;
+;
+;
+;
+;
+rts
+;
+;
+;
+;
+;
+;
+;
+;****************************
+;
+shtcol
+;
+; 1)ground 4 colours :-
+;   col1,col2,col3,roadcl
+;
+; 2)hill 4 colours :-
+;   hil1,hil2,hil3,hillcl
+;
+; 3)play area 3 colours :-
+;   pla1,pla2,placol
+;
+; 4)man colour :-
+;   mancol
+;
+; 5)message colour :-
+;   mescol
+;
+; 6)two colours for the end flash
+;
+;
+;
+;
+;********************
+;
+; sheet1 - desert
+;
+.byte $41,$61,$39,$57
+.byte $59,$29,$68,$16
+;
+.byte $22,$64,$57 ;*play area cols
+;
+.byte $70 ;* man col
+;
+.byte $06 ;* message colour
+;
+.byte $71,$06 ;* the end cols
+;
+.byte 0
+;
+;********************
+;
+; sheet2 - ice
+;
+.byte $56,$71,$3e,$63
+.byte $56,$2e,$68,$41
+;
+.byte $26,$45,$63 ;*play area cols
+;
+.byte $70 ;* man col
+;
+.byte $70 ;* message colour
+;
+.byte $25,$71 ;* the end cols
+;
+.byte 0
+;
+;********************
+;
+; sheet3 - pipes
+;
+.byte $41,$61,$39,$01
+.byte $51,$21,$78,$ee
+;
+.byte $12,$67,$01 ;*play area cols
+;
+.byte $71 ;* man col
+;
+.byte $71 ;* message colour
+;
+.byte $42,$77 ;* the end col
+;
+.byte 0
+;
+;
+;
+.end

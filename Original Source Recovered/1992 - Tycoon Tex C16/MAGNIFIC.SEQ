@@ -1,0 +1,138 @@
+; put "magnificent"
+;
+;
+; co-ordinate the title stuff.
+;
+;
+gloppy
+;
+sei
+;
+lda #1
+sta stop
+sta title
+;
+jsr setsht
+;
+jsr setup
+;
+ldx #$70
+stx placol ;* both play area and
+stx roadcl ;* road bakgrnd col=$70
+;
+inx
+stx mancol ;* man white
+stx mescol ;* message col
+;
+jsr clsdis
+;
+lda #$32
+sta pla1
+;
+lda #$62
+sta pla2
+;
+; tell all irq stuff we are in the
+; title stuff and not in the game
+;
+lda #<$0ebb
+sta ml
+;
+lda #>$0ebb
+sta ml+1
+;
+jsr manon
+;
+; print the man in the centre
+; of the screen
+;
+lda #$03
+sta gndspd
+;
+lda #$07
+sta anispd
+;
+ldx #2
+stx nicet
+stx flst1
+stx flst2
+;
+dex
+stx hilspd
+stx anitem
+stx wakspd
+;
+; set the speeds of the hills
+; and ground & animation
+;
+stx onlyrd
+;
+; only have road (no pot-holes)
+;
+dex
+stx exit
+stx fire
+stx demo
+stx countl   ;* counter fo demo
+;
+jsr screen
+;
+jsr prbann
+;
+jsr prmenu
+;
+jsr setirq
+;
+cli
+;
+jsr high
+;
+; did we have a high score ?
+;
+titlop
+;
+inc countl
+beq stdemo
+;
+ldx #$40
+jsr delay+2
+;
+jsr prhisc  ;* print hi-scores
+;
+jsr funkit  ;* do selection stuff
+;
+lda exit
+beq titlop
+;
+; returns will exit=1 if ready
+; to play
+;
+dogbrt
+;
+ldx #$6f
+;
+brest
+;
+lda dblsve,x
+sta $3ee8,x
+;
+dex
+bpl brest
+;
+; get chars back
+;
+jmp plgame
+;
+stdemo
+;
+lda #1
+sta demo
+;
+bne dogbrt
+;
+;
+;
+;
+;
+;
+.end

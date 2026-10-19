@@ -1,0 +1,76 @@
+; put "pauser"
+;
+chkpas
+;
+; called under irq to check
+; for pause
+;
+lda title
+beq rngme
+;
+gorf
+;
+rts ;* in title page
+;
+rngme
+;
+lda dead
+bne gorf
+;
+lda #$10   ;* 'escape' to escape
+ldy #$bf   ;* from game
+;
+jsr keyit
+;
+bcc walter
+;
+ldx #1
+stx escape
+; stx stop
+;
+; dex
+; stx jumpin
+;
+rts
+;
+walter
+;
+lda pause
+bne pseon  ;* already on
+;
+lda #$10
+ldy #$7f
+;
+jsr keyit  ;* space pressed
+;
+bcs waitrl
+;
+rts ;* not pressed
+;
+waitrl
+;
+lda #1
+sta pause
+;
+rts
+;
+pseon
+;
+lda #$20
+ldy #$7f
+;
+jsr keyit  ;* cbm key to un-pause
+;
+bcs stppse
+;
+rts
+;
+stppse
+;
+lda #0
+sta pause
+;
+rts
+;
+;
+.end

@@ -1,0 +1,92 @@
+; put "char-tables"
+;
+; char definitions for the
+; different aliens for each
+; sheet
+;
+arrchr
+;
+; arrow chars
+;
+.byte $00,$00,$00,$00,$00,$03,$03,$0d
+.byte $00,$00,$00,$00,$00,$f0,$70,$7f
+.byte $03,$03,$0f,$0f,$3f,$3b,$fb,$eb
+.byte $0d,$3f,$fa,$ff,$ff,$00,$00,$00
+.byte $7f,$fa,$af,$fb,$fe,$ff,$00,$00
+.byte $ef,$bf,$ff,$ff,$ab,$ff,$00,$00
+;
+.byte $02,$2a,$2f,$af,$bf,$bf,$b7,$b7
+.byte $aa,$fe,$ff,$df,$f5,$fd,$ff,$ff
+.byte $00,$a0,$e0,$e8,$f8,$78,$78,$78
+.byte $b7,$bd,$bd,$af,$2f,$2a,$02,$00
+.byte $ff,$ff,$ff,$5f,$ff,$fe,$aa,$00
+.byte $78,$f8,$f8,$e8,$e0,$a0,$00,$00
+;
+.byte $00,$0a,$2b,$2f,$ad,$b7,$b7,$b7
+.byte $00,$aa,$ff,$ff,$f7,$77,$77,$77
+.byte $00,$a0,$e8,$f8,$7a,$7e,$7e,$7e
+.byte $b7,$b7,$b7,$ad,$2f,$2b,$0a,$00
+.byte $77,$77,$77,$f7,$ff,$ff,$aa,$00
+.byte $7e,$7e,$7e,$5a,$e8,$e8,$a0,$00
+;
+;
+;
+;********************************
+;
+bachar
+;
+; bouncing ball chars
+;
+.byte $c3,$33,$3f,$ff,$e7,$e7,$eb,$eb
+.byte $c3,$cc,$fc,$ff,$db,$db,$eb,$eb
+.byte $ff,$d7,$f5,$ff,$3f,$03,$03,$03
+.byte $ff,$d7,$5f,$ff,$fc,$c0,$ff,$eb
+.byte $ff,$eb,$ff,$03,$ff,$eb,$ff,$0f
+.byte $ff,$c0,$ff,$eb,$ff,$c0,$f0,$f0
+;
+.byte $3c,$ef,$eb,$ed,$3d,$0d,$3d,$ed
+.byte $3c,$fb,$eb,$7b,$7c,$70,$7c,$7b
+.byte $eb,$ed,$3d,$0d,$35,$dd,$d7,$dc
+.byte $eb,$7b,$7c,$70,$5c,$77,$d7,$37
+.byte $dc,$dc,$3f,$03,$3f,$eb,$eb,$fc
+.byte $37,$37,$fc,$c0,$fc,$eb,$eb,$3f
+;
+.byte $03,$ff,$eb,$f3,$03,$3d,$d5,$d5
+.byte $c0,$ff,$eb,$cf,$c0,$bc,$ab,$ab
+.byte $d5,$0d,$d5,$dd,$fd,$d5,$dd,$0d
+.byte $ab,$b0,$ab,$bb,$bf,$ab,$bb,$b0
+.byte $3f,$03,$03,$03,$03,$0f,$0e,$0f
+.byte $fc,$c0,$c0,$c0,$c0,$f0,$b0,$f0
+;
+;
+;--------------------------------
+;
+suchar
+;
+; suicide char
+;
+.byte $00,$00,$00,$03,$0f,$3b,$de,$df
+.byte $00,$30,$f0,$73,$ff,$b5,$e5,$f7
+.byte $03,$0f,$fb,$ab,$ff,$57,$5f,$fb
+.byte $de,$3b,$0f,$03,$00,$00,$00,$00
+.byte $e5,$b5,$ff,$73,$f0,$30,$00,$00
+.byte $5f,$57,$ff,$ab,$fb,$0f,$03,$00
+;
+.byte $00,$0f,$3a,$df,$37,$37,$df,$7f
+.byte $aa,$eb,$aa,$aa,$aa,$eb,$ff,$7d
+.byte $00,$f0,$ac,$f7,$dc,$dc,$f7,$fd
+.byte $d7,$37,$37,$35,$3f,$00,$00,$00
+.byte $7d,$7d,$7d,$55,$55,$d7,$d7,$3c
+.byte $d7,$dc,$dc,$5c,$fc,$00,$00,$00
+;
+.byte $3f,$c0,$00,$0f,$3f,$37,$f5,$d7
+.byte $ff,$c0,$c0,$c0,$f0,$fc,$ef,$eb
+.byte $00,$c0,$00,$03,$0f,$3f,$3b,$fb
+.byte $ff,$ea,$ff,$37,$07,$c4,$ff,$3f
+.byte $aa,$aa,$ff,$df,$d0,$13,$ff,$fc
+.byte $ef,$bc,$f0,$c0,$00,$00,$00,$00
+;
+;
+;
+;
+.end

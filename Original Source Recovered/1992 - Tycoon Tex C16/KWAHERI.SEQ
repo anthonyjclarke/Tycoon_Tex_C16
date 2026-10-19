@@ -1,0 +1,300 @@
+; put "kwaheri"
+;
+; do the gloppy game over bit
+;
+;
+bye
+;
+ldx #1   ;* direction of move
+stx the  ;* 1=down
+;        ;*
+dex      ;* move up
+stx end  ;*
+;
+stx they
+;
+lda #<$d42
+sta thel
+;
+lda #>$d42
+sta thel+1
+;
+lda #<$df6
+sta endl
+;
+lda #>$df6
+sta endl+1
+;
+lda #80
+sta countd
+;
+lda #4
+sta endy
+;
+enloop
+;
+lda #<datthe
+sta dtl
+;
+lda #>datthe
+sta dtl+1
+;
+lda thel
+sta stl
+;
+lda thel+1
+sta stl+1
+;
+ldx the
+lda cols,x
+sta pascol
+;
+; data & screen address set up
+;
+jsr dipla ;* print it
+;
+lda #<eddat
+sta dtl
+;
+lda #>eddat
+sta dtl+1
+;
+lda endl
+sta stl
+;
+lda endl+1
+sta stl+1
+;
+ldx end
+lda cols,x
+sta pascol
+;
+; data & screen address set up
+;
+jsr dipla ;* print it
+;
+ldx #$14
+jsr delay+2
+;
+jsr mvethe
+jsr mveend
+;
+dec countd
+bne enloop
+;
+rts
+;
+cols .byte $42,$77
+;
+;--------------------------
+;
+mvethe
+;
+; move the up & down
+;
+; the
+; ---
+;
+lda the
+beq thup
+;
+; going down
+;
+lda thel
+clc
+adc #40
+sta thel
+;
+lda thel+1
+adc #0
+sta thel+1
+;
+inc they
+lda they
+cmp #5
+bne rat1
+;
+lda the
+eor #1
+sta the
+;
+rat1
+;
+rts
+;
+thup
+;
+lda thel
+sec
+sbc #40
+sta thel
+;
+lda thel+1
+sbc #0
+sta thel+1
+;
+dec they
+bne rat2
+;
+lda the
+eor #1
+sta the
+;
+rat2
+;
+rts
+;
+;---------------------------
+;
+mveend
+;
+; move end up & down
+;
+; end
+; ---
+;
+lda end
+beq enup
+;
+; end down
+;
+lda endl
+clc
+adc #40
+sta endl
+;
+lda endl+1
+adc #0
+sta endl+1
+;
+inc endy
+lda endy
+cmp #5
+bne rat3
+;
+lda end
+eor #1
+sta end
+;
+rat3
+;
+rts
+;
+enup
+;
+lda endl
+sec
+sbc #40
+sta endl
+;
+lda endl+1
+sbc #0
+sta endl+1
+;
+dec endy
+bne rat4
+;
+lda end
+eor #1
+sta end
+;
+rat4
+;
+rts
+;
+;*************************
+;
+dipla
+;
+lda #8
+sta ypix
+;
+dity
+;
+ldy #0
+lda (dtl),y
+sta bits
+;
+iny
+lda (dtl),y
+sta bits+1
+;
+lda stl
+sta ctl
+;
+lda stl+1
+sec
+sbc #4
+sta ctl+1
+;
+ldy #15
+;
+ditx
+;
+lda #32
+;
+lsr bits
+ror bits+1
+bcc spte
+;
+lda #123
+;
+spte
+;
+sta (stl),y
+;
+lda pascol
+sta (ctl),y
+;
+dey
+bpl ditx
+;
+lda stl
+clc
+adc #40
+sta stl
+;
+lda stl+1
+adc #0
+sta stl+1
+;
+lda dtl
+clc
+adc #2
+sta dtl
+;
+lda dtl+1
+adc #0
+sta dtl+1
+;
+dec ypix
+bpl dity
+;
+rts
+;
+;
+datthe
+;
+.byte %00000000,%00000000
+.byte %11111010,%00101111
+.byte %00100010,%00101000
+.byte %00100010,%00101000
+.byte %00100011,%11101110
+.byte %00100010,%00101000
+.byte %00100010,%00101000
+.byte %00100010,%00101111
+.byte %00000000,%00000000
+;
+eddat
+;
+.byte %00000000,%00000000
+.byte %11110100,%01011100
+.byte %10000110,%01010010
+.byte %10000110,%01010001
+.byte %11100101,%01010001
+.byte %10000100,%11010001
+.byte %10000100,%11010010
+.byte %11110100,%01011100
+.byte %00000000,%00000000
+;
+.end

@@ -1,0 +1,73 @@
+; put "init-aliens"
+;
+; called at the start of every
+; sheet, this will set up all
+; the difficulty and frequency
+; of aliens etc.
+;
+; 'sheet' holds the sheet no.
+;
+; factors affected :-
+;
+; a) frequency of break in pipe.
+;
+; b) size of hole.
+;
+;    1) max 2 in early levels
+;    2) max 3 in later levels
+;
+; c) frequency that aliens
+;    appear :-
+;
+;    1) arrow
+;    2) bouncer
+;    3) plane
+;    4) suicide
+;
+; d) will the jet's bomb cause a
+;    crater or will it just go for
+;    your head !
+;
+; e) amount by which oil pressure
+;    goes down when a break in the
+;
+;
+; f) overall speed of basic loop -
+;    this will indirectly speed up
+;    the rate that which the oil
+;    pressure continually goes
+;    down and the speed of the
+;    bouncer & suicide thing.
+;
+;
+;
+;---------------------------------
+;
+; functions of variable 'alstat'
+;
+; bit #          alien type
+; ------------------------------
+;   0            arrow
+;   1            bouncing ball
+;   2            jet
+;   3            suicide plane
+;   4            jet bomb crater ?
+;   5            *******
+;   6            *******
+;   7            *******
+;
+inital
+;
+lda #%00011111
+;
+sta alstat
+;
+;
+;
+;
+;
+rts
+;
+;
+;
+.end

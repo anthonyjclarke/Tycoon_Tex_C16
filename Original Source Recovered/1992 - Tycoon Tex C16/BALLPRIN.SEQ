@@ -1,0 +1,64 @@
+; put "ball-print"
+;
+balls
+;
+lda rubbal
+beq norbb
+;
+ldx #5
+lda #32
+;
+bal1
+;
+ldy bally,x
+sta (rbal),y
+;
+dex
+bpl bal1
+;
+lda #0
+sta rubbal
+;
+norbb
+;
+lda prball
+bne prb
+;
+rts
+;
+prb
+;
+lda pbal
+sta balc
+;
+lda pbal+1
+sec
+sbc #4
+sta balc+1
+;
+ldx #5
+lda #114
+sta chron
+;
+bal2
+;
+ldy bally,x
+lda chron
+sta (pbal),y
+;
+lda balcol
+sta (balc),y
+;
+dec chron
+dex
+bpl bal2
+;
+rts
+;
+;
+bally
+;
+.byte 0,1,40,41,80,81
+;
+;
+.end

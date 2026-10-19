@@ -1,0 +1,346 @@
+; put "interrupt-aliens"
+;
+;
+; called by the irq  loop to
+; update / start either the
+; arrow or the jet at the top
+;
+irqali
+;
+lda title
+beq ingme
+;
+rts
+;
+ingme
+;
+lda pause
+beq upyts
+;
+rts ;* pause on
+;
+upyts
+;
+lda alstat
+and #1
+beq tryjet
+;
+;there is an arrow on this screen
+;
+lda arron  ;* arrow already on
+bne uparr
+;
+; lets see if its time to start
+; a new one.
+;
+lda rnd
+cmp bskill
+bcc nights
+;
+dec arrtem ;* tempo
+beq arryes
+;
+nights
+;
+jmp tryjet  ;* not yet
+;
+arryes
+;
+; start a new arrow
+;
+lda #<$f1c ;*
+sta arrl   ;*
+;          ;* screen position
+lda #>$f1c ;*
+sta arrl+1 ;*
+;
+ldx #1
+stx arrprn ;* now print arrow
+stx arron  ;* arrow is now on
+stx arrtem
+;
+dex
+stx arroff ;* no rub
+;
+jmp tryjet  ;* try the jet
+;
+;*****************************
+;
+uparr
+;
+; move arrow
+;
+dec arrtem
+beq junkie
+;
+jmp tryjet
+;
+junkie
+;
+lda #1
+sta arrtem
+;
+lda #0
+sta arrprn ;* dont print it
+;
+dpdec arrl ;* accross 1
+;
+lda arrl
+cmp #$f8
+beq arrkil ;* reached left
+;
+lda #1
+sta arrprn
+;
+jmp tryjet
+;
+;****************************
+;
+arrkil
+;
+lda rnd+2
+and #$3f
+clc
+adc arrfrq
+sta arrtem ;* time before next
+;          ;* arrow is to come on
+ldx #0
+stx arron  ;* dont print it
+;
+inx
+;
+stx arroff ;* rub it out
+;
+;********************************
+;
+tryjet
+;
+; try next alien
+;
+lda bombd
+beq fryt    ;* bombs not on
+;
+dec bomtem
+bne fryt    ;* do alien
+;
+lda #2
+sta bomtem
+;
+jsr mvebmb
+;
+; move bomb down & do explosion
+;
+fryt
+;
+lda alstat
+and #4
+bne yesjet
+;
+; there may be other aliens on
+; but this routine only does
+; the jet and the arrow so bye !
+;
+rts
+;
+yesjet
+;
+lda jeton ;* already on ?
+bne upjet
+;
+; shall we start a new one ?
+;
+lda rnd+2
+cmp bskill
+bcc dance
+;
+dec jettem
+beq stjet
+;
+dance
+;
+; no - sussed !
+;
+rts
+;
+stjet
+;
+lda #<$d40
+sta jetl
+;
+lda #>$d40
+sta jetl+1
+;
+lda ted
+and #$1f
+clc
+adc #$42
+sta compbd ;* when to start the
+;          ;* bomb coming down.
+;
+ldx #1
+stx prjet ;* start printing
+stx jeton ;* its on lads
+stx jettem
+;
+dex
+stx rubjet
+;
+rts
+;
+upjet
+;
+dec jettem
+beq mvejet
+;
+rts
+;
+mvejet
+;
+lda #2
+sta jettem
+;
+; lets move it then
+;
+lda #0
+sta prjet
+;
+dpinc jetl
+;
+lda jetl
+cmp #$64
+beq jetkil ;* its reached edge
+;
+cmp compbd ;* start bomb ?
+bne nttmst
+;
+jsr stbomd ;* start it up then. !
+;
+nttmst
+;
+lda #1
+sta prjet
+;
+rts
+;
+;*******
+;
+jetkil
+;
+lda rnd+3
+and #$3f
+clc
+adc jetfrq
+sta jettem ;* tempo for next one
+;
+ldx #0
+stx jeton
+;
+inx
+stx rubjet ;* rub it off
+;
+rts
+;
+;**************************
+;
+stbomd
+;
+; start the bomb coming down
+;
+lda jetl
+clc
+adc #43
+sta boml
+;
+lda jetl+1
+adc #0
+sta boml+1
+;
+ldx #0
+stx by      ;* y position so we
+;           ;* know when it has
+;           ;* hit the ground
+;
+bmbexp      ;* explosion ?
+;
+inx
+stx prbm    ;* print it
+stx bombd   ;* its all go !
+stx bomtem  ;* tempo
+;
+rts
+;
+;******************************
+;
+mvebmb
+;
+; move the nasty bomb
+;
+lda bombd
+bne frukit
+;
+rts  ;* not on !
+;
+frukit
+;
+lda #0
+sta prbm
+;
+inc by
+lda by
+cmp #12
+beq kilbm     ;* kill it
+;
+lda boml
+clc
+adc #40
+sta boml
+;
+lda boml+1
+adc #0
+sta boml+1
+;
+lda #1
+sta prbm
+;
+rts
+;
+;**********
+;
+kilbm
+;
+; kill the bomb
+;
+lda #0
+sta prbm
+sta bombd
+;
+lda #32
+;
+ldy #40
+sta (boml),y  ;* rubbed it out
+;
+iny
+sta (boml),y
+;
+lda bulsht
+bne nofud
+;
+lda alstat
+and #%00010000
+beq nofud
+;
+; we're allowd to make a hole
+;
+ldx boml
+dex
+ldy boml+1
+;
+jsr putbrk    ;* break in pipe
+;
+nofud
+;
+rts
+;
+;
+;
+.end

@@ -1,0 +1,94 @@
+; put "tables"
+;
+;**************************
+;
+;for all those wonderfull
+;look-up tables !!!
+;
+;**************************
+;
+;
+;
+;
+;
+;
+yval
+;
+.byte $00,$01,$02
+.byte $28,$29,$2a
+.byte $50,$51,$52
+.byte $78,$79,$7a
+.byte $a0,$a1,$a2
+;
+;
+fally ;* for fallen over
+;
+.byte $54,$7c,$a4
+.byte $53,$7b,$a3
+.byte $52,$7a,$a2
+.byte $51,$79,$a1
+.byte $50,$78,$a0
+;
+;************************
+;
+hily
+;
+.byte 0,40,80,120,160
+;
+hillst
+;
+.byte 0,40,80,120,160,40,80,120
+;
+;
+;************************
+;
+; for animations
+;
+decode
+;
+.byte 1,3,0,2
+;
+time6
+;
+.byte 0,48,96,144
+;
+;-----------------------
+;
+tim48
+;
+.byte 0,48,48+48
+;
+tim5
+;
+.byte 0,5,10
+;
+;-----------------------
+;
+endmes
+;
+.byte '         bad news !         '
+.byte ' oil production has ceased. '
+.byte ' you have been persuaded to '
+.byte ' hand in your resignation.! '
+.byte ' better luck next time tex. '
+;
+;***********************
+;
+histbl
+;
+.byte '005000gremlin',0
+.byte '004000*  *  *',0
+.byte '003000 * * * ',0
+.byte '002000  ***  ',0
+.byte '001000  ***  ',0
+.byte '000500 * * * ',0
+.byte '000250*  *  *',0
+.byte '000100m.p.ltd',0
+.byte '0tel 0727 34566'
+;
+;
+;
+;
+;
+;
+.end

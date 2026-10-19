@@ -1,0 +1,163 @@
+; put "glop-animations"
+;
+; nice char animations
+;
+nicani
+;
+dec nicet
+beq dti
+;
+rts
+;
+dti
+;
+lda #2
+sta nicet
+;
+lda $3ec7
+pha
+;
+lda $3ecf
+pha
+;
+ldx #6
+;
+nif1
+;
+lda $3ec0,x
+sta $3ec1,x
+;
+lda $3ec8,x
+sta $3ec9,x
+;
+dex
+bpl nif1
+;
+pla
+sta $3ec8
+;
+pla
+sta $3ec0
+;
+lda $3ed0
+pha
+;
+ldx #0
+;
+dft
+;
+lda $3ed1,x
+sta $3ed0,x
+;
+inx
+cpx #7
+bne dft
+;
+pla
+sta $3ed7
+;
+ldx #7
+;
+dft2
+;
+lsr $3ed8,x
+;
+bcc nttpbt
+;
+lda $3ed8,x
+ora #$80     ;* do a rotate
+sta $3ed8,x
+;
+nttpbt
+;
+asl $3ee0,x
+;
+bcc ntbtbt
+;
+lda $3ee0,x
+ora #1
+sta $3ee0,x
+;
+ntbtbt
+;
+dex
+bpl dft2
+;
+ldx #3
+;
+cctl
+;
+asl $3de0+24+2,x
+rol $3de0+16+2,x
+rol $3de0+8+2,x
+rol $3de0+2,x
+;
+bcc qwert
+;
+lda #1
+ora $3de0+24+2,x
+sta $3de0+24+2,x
+;
+qwert
+;
+dex
+bpl cctl
+;
+rts
+;
+;++++++++++++++++++++++++++++++
+;
+anistr
+;
+; called in the main play loop
+;
+; variable star1
+; hold the number 0-5
+;
+ldy star1
+;
+iny
+cpy #6
+bne holdon
+;
+ldy #0
+;
+holdon
+;
+sty star1
+;
+ldx ofdat,y
+;
+; start of data
+;
+ldy #0
+;
+strr1
+;
+lda pratt,x
+sta $3d50,y  ;* '*'
+;
+inx
+iny
+cpy #8
+bne strr1
+;
+rts
+;
+;----------------------------
+;
+ofdat
+;
+.byte 0,8,16,24,16,8
+;
+;----------------------------
+;
+pratt
+;
+.byte $00,$00,$00,$18,$18,$00,$00,$00
+.byte $00,$00,$24,$18,$18,$24,$00,$00
+.byte $00,$42,$24,$3c,$3c,$24,$42,$00
+.byte $81,$7e,$5a,$66,$66,$5a,$7e,$81
+;
+;
+.end

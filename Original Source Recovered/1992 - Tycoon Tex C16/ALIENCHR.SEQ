@@ -1,0 +1,91 @@
+; put "alien-chrget"
+;
+; get the alien definitions
+; & colours for each sheet
+;
+aliget
+;
+ldy area     ;* sheet type
+;
+ldx tim48,y
+;
+ldy #0
+;
+ftchtm
+;
+lda arrchr,x ;* arrow
+sta $3ee8,y
+;
+lda bachar,x ;* bouncer
+sta $3f68,y
+;
+lda suchar,x ;* suicide
+sta $3fa8,y
+;
+inx
+iny
+cpy #$30
+bne ftchtm
+;
+;---------------------------
+;
+; now set up the colours
+;
+;ldy area
+;
+;ldx tim5,y
+;
+;lda marida,x
+;sta balcol
+;
+;lda marida+1,x
+;sta arrcol
+;
+;lda marida+2,x
+;sta bomcol
+;
+;lda marida+3,x
+;sta jetcol
+;
+;lda marida+4,x
+;sta suicol
+;
+lda #$78
+;
+sta balcol
+sta arrcol
+sta bomcol
+sta jetcol
+sta suicol
+;
+rts
+;
+;
+;-------------------------
+;
+marida
+;
+; table for colours for aliens
+;
+; order = 1. bouncing ball
+;         2. arrow
+;         3. bomb
+;         4. jet
+;         5. suicide thing
+;
+; desert
+;
+.byte $78,$7a,$7b,$7c,$7d
+;
+; ice
+;
+.byte $78,$7a,$7b,$7c,$7d
+;
+; pipe
+;
+.byte $79,$7a,$7b,$7c,$7d
+;
+;
+;
+;
+.end

@@ -1,0 +1,25 @@
+; put "extra-memory"
+;
+; $0400-$0500 is free
+; $0560-$07d8 is also free
+;
+;
+*=$0400
+;
+savech
+;
+; save tex char
+;
+*=*+$a8
+;
+;-------------------
+;
+*=$0560
+;
+dblsve
+;
+; save chars for double thing
+;
+;
+;
+.end

@@ -1,0 +1,128 @@
+; put "pixel-move stuff"
+;
+;
+;
+;
+;
+;
+bitmve
+;
+lda pause
+beq ntps
+;
+rts ;* pause on
+;
+ntps
+;
+lda wakspd
+cmp #1
+bne muff
+;
+inc scrcnt
+lda scrcnt
+and #1
+bne muff
+;
+rts
+;
+muff
+;
+lda hillx
+sec
+sbc hilspd
+;
+tay
+;
+and #7
+sta hillx
+;
+tya
+;
+and #8
+bne harhil ;* need block scroll
+;
+rts
+;
+harhil
+;
+ldx #0
+;
+btl1
+;
+lda $0c79,x
+sta $0c78,x
+;
+lda $0c79+40,x
+sta $0c78+40,x
+;
+lda $0c79+80,x
+sta $0c78+80,x
+;
+lda $0c79+120,x
+sta $0c78+120,x
+;
+lda $0c79+160,x
+sta $0c78+160,x
+;
+inx
+cpx #39
+bne btl1
+;
+jsr newhil      ;* put hills on
+;
+rts
+;
+;
+;
+;
+;*************************
+;
+gndmve
+;
+lda pause
+beq hrud
+;
+rts ;* pause on
+;
+hrud
+;
+lda gndx
+sec
+sbc gndspd
+;
+tay
+;
+and #7
+sta gndx
+;
+tya
+and #8
+;
+bne gndhrd
+;
+rts
+;
+gndhrd
+;
+ldx #0
+;
+gnd1
+;
+lda $f71,x
+sta $f70,x
+;
+lda $f71+40,x
+sta $f70+40,x
+;
+inx
+cpx #39
+bne gnd1
+;
+jsr newrod
+rts
+;
+;
+;
+;
+;
+.end

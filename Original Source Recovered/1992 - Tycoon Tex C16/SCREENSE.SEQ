@@ -1,0 +1,117 @@
+; put "screen-setup"
+;
+; set up the play-screen
+;
+;
+screen
+;
+;
+ldx #0
+;
+scr1
+;
+lda boris
+bne bovril
+;
+lda scrbit,x
+and #$3f
+sta $0c00,x  ;* screen window
+;
+lda scrcol,x
+sta $0800,x  ;* screen colour
+;
+bovril
+;
+;lda #$71
+;
+;sta $0940,x
+;sta $09b8,x
+;sta $0a30,x
+;sta $0aa8,x
+;sta $0af8,x
+;
+;
+lda mescol   ;* message colour
+;
+cpx #80
+bcs fdrt
+;
+lda col3
+;
+fdrt
+;
+sta $b70,x   ;* ground colour
+;
+inx
+cpx #120
+bne scr1
+;
+ldx #0
+;
+scr2
+;
+lda hil3     ;* hill colour
+sta $0878,x
+;
+inx
+cpx #200
+bne scr2
+;
+ldx #83
+stx $0c0c
+stx $0c0c+40
+;
+inx
+stx $0c27
+stx $0c27+40
+;
+ldx #5
+;
+sdert
+;
+lda histbl,x
+sta $0c72,x
+;
+dex
+bpl sdert
+;
+; hi-score onto screen
+;
+rts
+;
+;
+scrbit
+;
+.byte 'oil pressure                        '
+.byte '    '
+.byte ' % completed                          '
+.byte '  score:000000*tycoons:0*high-sc'
+.byte 'ore:000000'
+;
+;
+scrcol
+;
+.byte $71,$71,$71,$71,$71,$71,$71,$71,$71,$71,$71,$71,$56
+.byte $46,$46,$46,$46,$46,$46,$56,$56,$56,$56
+.byte $56,$56,$66,$66,$66,$66,$66,$66,$76,$76,$76,$76,$76,$76,$76,$76,$56
+;
+;
+;
+;
+.byte $71,$71,$71,$71,$71,$71,$71,$71,$71,$71,$71,$71,$54
+.byte $44,$44,$44,$44,$44,$44,$54,$54,$54,$54
+.byte $54,$54,$64,$64,$64,$64,$64,$64,$74,$74,$74,$74,$74,$74,$74,$74,$54
+;
+;
+;
+;
+.byte $53,$53,$53,$53,$53,$71,$57,$57
+.byte $57,$57,$57,$57,$41,$42,$42,$42
+.byte $42,$42,$42,$42,$71,$44,$41,$53
+.byte $53,$53,$53,$53,$53,$53,$53,$53
+.byte $53,$71,$57,$57,$57,$57,$57,$57
+;
+;
+;
+;
+.end

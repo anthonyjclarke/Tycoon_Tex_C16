@@ -1,0 +1,59 @@
+; put "basic-aliens"
+;
+; called by the normal loop
+; to update the other aliens.
+;
+; i.e. bouncing ball
+;      suicide plane
+;
+;
+;
+basali
+;
+lda alstat
+and #2
+beq trypl
+;
+jsr mball
+;
+trypl
+;
+lda alstat
+and #8
+beq trybom
+;
+jsr msuici ;* move suicide thing
+;
+trybom
+;
+;
+rts
+;
+;***************************
+;
+allkil
+;
+; kills all the aliens
+;
+lda #0
+sta alstat
+sta prball
+sta arrprn
+sta prjet
+sta prbm
+sta prsuic
+sta ballon
+sta arron
+sta jeton
+sta suicon
+sta bombd
+;
+sta rubbal
+;
+;
+rts
+;
+;
+;
+;
+.end

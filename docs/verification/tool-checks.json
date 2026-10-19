@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-20",
+  "timezone": "Australia/Sydney",
+  "regression_tests_passed": 8,
+  "direct_platformio_release_debug_identical": true,
+  "platformio_core": "6.1.19",
+  "ca65_reported_version": "V2.18",
+  "ld65_reported_version": "V2.18",
+  "vice_version": "3.10",
+  "platformio_upload_target_launched_vice": true,
+  "c1541_obj_matches_preserved_extraction": true,
+  "output_sha256": "09c9d0e3120e847f63c19b24560d46d08f15a48bfacb6956de01230e15cffbcd",
+  "github_workflow": "prepared; not executed on GitHub",
+  "manual_keyboard_audio_and_full_playthrough": "not verified"
+}

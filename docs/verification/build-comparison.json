@@ -1,0 +1,46 @@
+{
+  "load_address": "$1000",
+  "entry_address": "$1800",
+  "code_bytes": 9203,
+  "output_bytes": 12290,
+  "sha256": "09c9d0e3120e847f63c19b24560d46d08f15a48bfacb6956de01230e15cffbcd",
+  "object_listing_bytes": 9179,
+  "reserved_code_bytes": 24,
+  "object_listing_differences": 0,
+  "first_object_differences": [],
+  "character_listing_comparison": {
+    "CHAR#1": {
+      "bytes": 2048,
+      "differences": 0,
+      "first_differences": []
+    },
+    "CHAR#2": {
+      "bytes": 263,
+      "differences": 106,
+      "first_differences": [
+        "$3F1A",
+        "$3F1C",
+        "$3F1D",
+        "$3F1E",
+        "$3F1F",
+        "$3F25",
+        "$3F26",
+        "$3F27",
+        "$3F2B",
+        "$3F2C",
+        "$3F2D",
+        "$3F2E",
+        "$3F2F",
+        "$3F33",
+        "$3F34",
+        "$3F35",
+        "$3F36",
+        "$3F37",
+        "$3F3E",
+        "$3F3F"
+      ]
+    }
+  },
+  "packed_reference_sha256": "87b99fcdbb0de146b2d373ec11ef7f759175544c37659e47aaa880d3693b253f",
+  "packed_reference_comparison": "run scripts/verify_vice.py for runtime comparison"
+}

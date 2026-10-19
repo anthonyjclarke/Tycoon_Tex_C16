@@ -1,0 +1,102 @@
+; put "jumping-code"
+;
+;
+;
+;
+;
+jumper
+;
+; main entry point whenever up
+; is pressed.
+;
+lda disjum ;* not allowd ?
+bne jex    ;* no !
+;
+lda jumpin ;* already leaping
+bne jex    ;* leave us !
+;
+lda #1
+sta jumpin
+sta jtemp
+;
+lda #10
+sta jumpy  ;* y count
+;
+jex
+;
+rts
+;
+;*******************************
+;
+upjump
+;
+; update jump
+;
+lda jumpin  ;* is he actually
+beq jex     ;* jumping ??????
+;
+dec jtemp  ;* tempo
+bne jex
+;
+lda #2
+sta jtemp
+;
+dec jumpy
+bmi ongrnd  ;* back on ground
+;
+jsr manoff
+;
+lda jumpy
+cmp #5
+bcs goinup  ;* still going up
+;
+; must be on his way down !!
+;
+lda ml
+clc
+adc #40
+sta ml
+;
+lda ml+1
+adc #0
+sta ml+1
+;
+bpl jrux
+;
+goinup
+;
+lda ml
+sec
+sbc #40
+sta ml
+;
+lda ml+1
+sbc #0
+sta ml+1
+;
+jrux
+;
+jsr manon
+;
+rts
+;
+;*************
+;
+;
+ongrnd
+;
+; back on ground again !
+;
+lda #0
+sta jumpin
+;
+rts
+;
+;
+;
+;
+;
+;
+;
+;
+.end

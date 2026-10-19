@@ -1,0 +1,74 @@
+; put "rotator-!"
+;
+;
+;  this - i hope - will rotate
+;  the man character around 90
+;  degrees.
+;
+rotate
+;
+lda #<$3e00
+sta roll
+;
+lda #>$3e00
+sta roll+1
+;
+rol1
+;
+ldx #7
+;
+rol1a
+;
+ldy #7
+;
+rol2
+;
+lda (roll),y
+;
+lsr a
+;
+sta (roll),y
+;
+rol bite,x
+;
+dey
+bpl rol2
+;
+dex
+bpl rol1a
+;
+ldy #7
+;
+rol3
+;
+lda bite,y
+sta (roll),y
+;
+dey
+bpl rol3
+;
+;
+lda roll
+clc
+adc #8
+sta roll
+;
+cmp #$78
+bne rol1
+;
+;
+rts
+;
+;****************
+;
+bite
+;
+.byte '01234567'
+;
+;
+;
+;****************
+;
+;
+;
+.end

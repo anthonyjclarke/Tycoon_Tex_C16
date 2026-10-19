@@ -1,0 +1,296 @@
+; put "title-page"
+;
+; the nice bits that sell the
+; game in the shops !!!!!!!!!
+;
+;
+prmenu
+;
+; print game menu
+;
+lda numsel
+sta wall
+;
+lda #<$0e47
+sta hiscr
+sta hiscl
+;
+lda #>$0e47
+sta hiscr+1
+;
+lda #>$0a47
+sta hiscl+1
+;
+lda #4
+sta temcnt
+;
+prmen1
+;
+lda wall
+asl a
+asl a
+asl a
+asl a
+;
+tax
+;
+ldy #0
+;
+prmen2
+;
+lda stiff,x
+and #$3f
+sta (hiscr),y
+;
+lda wall
+clc
+adc #$51
+;
+sta (hiscl),y
+;
+inx
+iny
+cpy #14
+bne prmen2
+;
+ldy wall
+iny
+cpy #5
+bne walnot
+;
+ldy #0
+;
+walnot
+;
+sty wall    ;* wall 0-4
+;
+ldy temcnt
+lda adders,y
+;
+sta roll
+;
+lda hiscr
+clc
+adc roll
+sta hiscr
+sta hiscl
+;
+lda hiscr+1
+adc #0
+sta hiscr+1
+;
+sec
+sbc #4
+sta hiscl+1
+;
+dec temcnt
+bpl prmen1
+;
+rts
+;
+;----------------
+;
+adders .byte 40,40,40,40,120
+;
+;*****************************
+;
+stiff
+;
+.byte '     easy     **'
+;
+chlivs
+;
+.byte 'no. of lives:3**'
+;
+chplan
+;
+.byte '  sound: off  **'
+.byte 'play the game **'
+.byte 'watch the demo**'
+;
+;
+;*****************************
+;
+funkit
+;
+; moving selection stuff
+;
+bit jfire
+bpl nochng
+;
+jsr alter
+;
+nochng
+;
+bit jup
+bpl noless
+;
+inc numsel
+lda numsel
+cmp #5
+bne noless
+;
+lda #0
+sta numsel
+;
+noless
+;
+bit jdown
+bpl nomore
+;
+dec numsel
+lda numsel
+bpl nomore
+;
+lda #4
+sta numsel
+;
+nomore
+;
+jsr prmenu
+;
+;
+rts
+;
+;*****************************
+;
+;
+prbann
+;
+; print stationary banners
+;
+ldx #15
+;
+ban1
+;
+lda #88
+;
+sta $d6a,x
+sta $d6a+80,x
+;
+sta $d6a+20,x
+sta $d6a+80+20,x
+;
+lda #$1e
+;
+sta $d6a-$400,x
+sta $d6a+80-$400,x
+;
+sta $d6a+20-$400,x
+sta $d6a+80+20-$400,x
+;
+lda #89
+sta $d6a+20+160,x
+;
+lda #90
+sta $d6a+80+20+160,x
+;
+dex
+bpl ban1
+;
+lda #32
+;
+sta $d6a+20+160
+sta $d6a+20+160+15
+;
+sta $d6a+20+160+80
+sta $d6a+20+160+15+80
+;
+lda #88
+;
+sta $d6a+40
+sta $d6a+40+15
+;
+sta $d6a+40+20
+sta $d6a+40+20+15
+;
+lda #$1e
+;
+sta $d6a+40-$400
+sta $d6a+40+15-$400
+;
+sta $d6a+40+20-$400
+sta $d6a+40+20+15-$400
+;
+lda #91
+sta $d6a+40+20+160
+;
+lda #92
+sta $d6a+40+20+15+160
+;
+;
+ldx #$77
+;
+sdt
+;
+lda #88
+sta $0c00,x
+;
+lda #$19
+sta $0800,x
+;
+dex
+bpl sdt
+;
+jsr width ;* double chars in
+;
+ldx #0
+;
+sdr
+;
+lda tittop,x
+beq rty
+;
+sta $0c28+$a,x
+;
+lda #$71
+sta $0828+$a,x
+;
+inx
+bne sdr
+;
+rty
+;
+ldx #11
+;
+prchs
+;
+ldy chsy,x
+lda chschr,x
+sta $0d7a,y
+;
+lda chscol,x
+sta $097a,y
+;
+dex
+bpl prchs
+;
+rts
+;
+;********
+;
+tittop
+;
+.byte 93,94,95,96,97,98
+.byte 99,100,99,100,101,102
+.byte 32,32,93,94,103,104,105,106
+;
+chsy
+;
+.byte 0,1,2,3,40,41,42,43
+.byte 80,81,82,83
+;
+chschr
+;
+.byte 60,61,62,63
+.byte 85,27,28,85
+.byte 87,29,30,87
+;
+;
+chscol
+;
+.byte $71,$71,$71,$71
+.byte $51,$42,$42,$51
+.byte $51,$46,$46,$51
+;
+.end

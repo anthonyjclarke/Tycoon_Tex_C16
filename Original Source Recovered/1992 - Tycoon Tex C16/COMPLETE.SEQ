@@ -1,0 +1,123 @@
+; put "completed-gauge"
+;
+; all the routines associated
+; with the % completed gauge.
+;
+prcomp
+;
+; print the % completed gauge
+; length dependant on:-
+;
+; complo 0-7
+; comphi 0-25
+;
+; start of gauge = $0c0d
+;
+; chars used :-
+;
+; 79 = full char
+; 86 = moving top bits
+; 81 = clear section
+;
+lda complo
+asl a
+asl a
+asl a
+;
+tax
+ldy #0
+;
+com1
+;
+lda presch,x   ;* use same char
+sta $3eb0,y
+;
+inx
+iny
+cpy #8
+bne com1
+;
+; end bit now programmed
+;
+ldy #0
+lda #79
+;
+comp2
+;
+cpy comphi    ;* end yet ?
+bpl comp1
+;
+jmpbak
+;
+sta $0c0d+40,y
+;
+iny
+cpy #26
+bne comp2
+;
+rts
+;
+;
+comp1
+;
+cmp #86
+beq disc2
+;
+cmp #81
+beq jmpbak
+;
+lda #86
+bne jmpbak
+;
+disc2
+;
+lda #81
+bne jmpbak
+;
+;
+;**********
+;
+compup
+;
+; add  'acc' to the completition
+; gauge and set the variable
+; 'done' if the gauge is full
+;
+clc
+adc complo
+;
+tay
+;
+lda comphi
+cmp #26
+beq milcom
+;
+tya
+;
+and #7
+sta complo
+;
+tya
+and #8
+beq huwwy
+;
+inc comphi
+;
+huwwy
+;
+rts
+;
+;
+milcom
+;
+;
+lda #1
+sta done
+;
+;
+;
+rts
+;
+;**********
+;
+.end

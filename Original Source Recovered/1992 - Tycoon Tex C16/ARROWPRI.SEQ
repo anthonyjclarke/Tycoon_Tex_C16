@@ -1,0 +1,62 @@
+; put "arrow-print"
+;
+;
+prarro
+;
+; print the arrow
+;
+lda arrprn
+beq noprt
+;
+lda arrl
+sta arrcl
+;
+lda arrl+1
+sec
+sbc #4
+sta arrcl+1
+;
+ldx #7
+;
+ar1
+;
+lda archar,x
+ldy ary,x
+sta (arrl),y
+;
+lda arrcol
+sta (arrcl),y
+;
+dex
+bpl ar1
+;
+noprt
+;
+lda arroff
+beq noarrb
+;
+lda #32
+ldx #7
+;
+rbar1
+;
+ldy ary,x
+sta (arrl),y
+;
+dex
+bpl rbar1
+;
+lda #0
+sta arroff
+;
+noarrb
+;
+rts
+;
+archar .byte 93,94,95,32,96,97,98,32
+;
+ary    .byte 0,1,2,3,40,41,42,43
+;
+;
+;
+.end

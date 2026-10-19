@@ -1,0 +1,10 @@
+; put "set#2-char/assem"
+;
+;
+.lib cdata-texman*    ;* man
+.lib cdata-arrow*     ;* arrow
+.lib cdata-jet/plane* ;* jet
+.lib cdata-bomb*      ;* jet's bm
+.lib cdata-suicide*   ;* kama
+;
+.end

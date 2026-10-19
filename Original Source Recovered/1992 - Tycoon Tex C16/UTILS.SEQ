@@ -1,0 +1,174 @@
+; put "utils"
+;
+;**************************
+;
+;        utilities
+;
+;**************************
+;
+random
+;
+lda ted
+and #$48
+adc ted+2
+asl a
+asl a
+rol rnd+3
+rol rnd+2
+rol rnd+1
+rol rnd
+;
+clc
+ldy #$29
+ldx #$fc
+;
+ranlop
+;
+tya
+ldy rnd+4,x
+adc rnd+4,x
+sta rnd+4,x
+inx
+bne ranlop
+;
+;
+rts
+;
+;
+;
+;******************************
+;
+;
+delay
+;
+ldx #$20
+;
+ldy #$00
+;
+dellop
+;
+nop
+nop
+nop
+;
+dey
+bne dellop
+;
+dex
+bne dellop
+;
+rts
+;
+;
+;*****************************
+;
+clsdis
+;
+; clear game play area
+;
+lda #<$d40
+sta hiscr
+sta hiscl
+;
+lda #>$d40
+sta hiscr+1
+;
+sec
+sbc #4
+sta hiscl+1
+;
+ldx #13
+;
+cls1
+;
+ldy #38
+;
+cls2
+;
+lda #32
+sta (hiscr),y
+;
+lda mancol ;* man's colour
+sta (hiscl),y
+;
+dey
+bpl cls2
+;
+lda hiscr
+clc
+adc #40
+sta hiscr
+sta hiscl
+;
+lda hiscr+1
+adc #0
+sta hiscr+1
+;
+sec
+sbc #4
+sta hiscl+1
+;
+dex
+bpl cls1
+;
+rts
+;
+;
+;*****************
+;
+;
+clvars
+;
+;
+lda #$00
+ldx #$07
+;
+cllop
+;
+sta $00,x
+;sta $033c,x
+;
+inx
+bne cllop
+;
+rts
+;
+;***************
+;
+scrlnd
+;
+; scroll land - no holes
+;
+sei
+;
+jsr road ;* start it
+;
+lda #1
+sta onlyrd
+;
+ldy #64
+;
+billy
+;
+tya
+pha
+;
+jsr gndhrd
+;
+pla
+tay
+;
+dey
+bpl billy
+;
+lda #0
+sta onlyrd
+;
+cli
+;
+rts
+;
+;
+;
+;
+.end

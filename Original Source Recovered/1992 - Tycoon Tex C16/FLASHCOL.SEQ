@@ -1,0 +1,76 @@
+; put "flash-colours"
+;
+; called by the raster only on
+; the title page sequence.
+;
+; (c) mega-coder of m.p.l
+;
+flcols
+;
+jsr flstit
+;
+; flash title
+;
+jsr nicani
+;
+; nice title animations
+;
+rts
+;
+;**********************
+;
+;
+flstit
+;
+lda $0c32
+cmp #93
+beq dafd
+;
+rts ;* not it title yet
+;
+dafd
+;
+inc flst1
+lda flst1
+cmp #20
+beq tim1
+;
+rts
+;
+tim1
+;
+lda #0
+sta flst1
+;
+ldx #19
+;
+flg1
+;
+inc $0832,x
+;
+lda $0832,x
+;
+tay
+;
+and #7
+beq flg1
+;
+tya
+;
+and #%01110111
+;
+; no flash or multi-colour
+;
+sta $0832,x
+;
+dex
+bpl flg1
+;
+rts
+;
+;**********************
+;
+;
+;
+;
+.end

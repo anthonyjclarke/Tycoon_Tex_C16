@@ -1,0 +1,14 @@
+; put "set#1-char/assem"
+;
+;
+.lib cdata-hil1*      ;* hills
+.lib cdata-hil2*      ;*
+.lib cdata-hil3*      ;*
+.lib cdata-hil4*      ;*
+.lib cdata-hil5*      ;*
+.lib cdata-norm/pipe* ;* pipes
+.lib cdata-pipe/brea* ;* break
+.lib cdata-desert*    ;* desert
+.lib cdata-iceland*   ;* ice
+;
+.end

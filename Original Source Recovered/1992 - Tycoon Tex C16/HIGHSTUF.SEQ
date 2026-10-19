@@ -1,0 +1,541 @@
+; put "high-stuff"
+;
+;*****************************
+;
+; do all the high score stuff
+;
+;*****************************
+;
+;
+;
+sikbuf .byte '000000'
+;
+; sikbuf must be filled with
+; the score from the last game
+; before high routine is called
+;
+high
+;
+lda #0
+sta hispnt
+sta positn
+;
+hlp1
+;
+lda hispnt
+clc
+adc #6
+;
+tax
+;
+sec
+ldy #6
+;
+hlp2
+;
+lda histbl-1,x
+sbc sikbuf-1,y
+;
+dex
+dey
+bne hlp2
+;
+bcc itsin ;* got in !!!
+;
+lda hispnt
+clc
+adc #14
+sta hispnt
+;
+inc positn
+;
+lda positn
+cmp #8
+bne hlp1
+;
+; not in the table - sussed
+;
+rts
+;
+;********************************
+;
+itsin
+;
+; in at positn  (0-7)
+;
+jsr mvescr   ;* move scores down
+jsr prhisc   ;* print table
+;
+rts
+;
+;
+;********************************
+;
+hofset
+;
+.byte 0,14,28,42,56
+.byte 70,84,98
+;
+;
+scroft
+;
+.word $0e13
+.word $0e13+40
+.word $0e13+40+40
+.word $0e13+40+40+40
+.word $0e13+40+40+40+40
+.word $0e13+40+40+40+40+40
+.word $0e13+40+40+40+40+40+40
+.word $0e13+40+40+40+40+40+80
+;
+;
+mvescr
+;
+ldx positn
+;
+lda hofset,x
+;
+sta incnt
+;
+cpx #7
+beq inlast
+;
+ldx #98
+;
+movesc
+;
+lda histbl,x
+sta histbl+14,x
+;
+dex
+cpx incnt
+;
+bne movesc
+;
+inlast
+;
+ldx incnt
+;
+ldy #0
+;
+mvt1
+;
+lda sikbuf,y
+sta histbl,x
+;
+lda #$30
+sta sikbuf,y
+;
+inx
+iny
+;
+cpy #6
+bne mvt1
+;
+; score in
+;
+jsr prhisc   ;* print updated tbl
+;
+lda positn
+asl a
+tax
+;
+lda scroft,x
+;
+sta hiscr
+sta coll
+;
+lda scroft+1,x
+;
+sta hiscr+1
+;
+sec
+sbc #4
+;
+sta coll+1
+;
+;
+; hiscr,hiscr+1 point to screen
+; where to enter name
+;
+;
+ldy #6
+;
+lump
+;
+lda #1
+sta strin,y
+;
+dey
+bpl lump
+;
+lda incnt
+;
+clc
+adc #6
+;
+sta xblob   ;* offset into table
+;
+lda #0
+sta letter  ;* no of letters
+;
+jmp pritit
+;
+nolop
+;
+;jsr redjos
+;
+; joystick is continually read
+;
+lda letter
+tay
+;
+;
+bit jfire   ;* fire = finished
+bpl no
+;
+rts         ;* finished
+;
+no
+;
+bit jup     ;* char=char+1
+bpl chup
+;
+ldx strin,y
+;
+inx
+cpx #59
+bne not9    ;* not z yet
+;
+ldx #1
+bne notz
+;
+not9
+;
+cpx #27
+bne notz
+;
+ldx #32     ;* now to zero
+;
+notz
+;
+txa
+sta strin,y
+;
+;
+;****************************
+;
+chup
+;
+bit jdown      ;* char=char-1
+bpl chdown
+;
+ldx strin,y
+;
+dex
+;
+bne notr
+;
+ldx #58
+bne nota
+;
+notr
+;
+cpx #31
+bne nota
+;
+ldx #26
+;
+nota
+;
+txa
+sta strin,y
+;
+;
+;****************************
+;
+chdown
+;
+bit jleft      ;* edit char -1
+bpl chleft
+;
+dey
+;
+bpl na3
+;
+ldy #0
+;
+na3
+;
+sty letter
+;
+;
+;*********************
+;
+chleft
+;
+bit jright
+bpl pritit
+;
+iny
+;
+cpy #7
+bne na4
+;
+ldy #6
+;
+na4
+;
+sty letter
+;
+;*********************
+;
+pritit
+;
+ldy #6
+;
+na5
+;
+lda strin,y
+sta (hiscr),y    ;* onto screen
+;
+dey
+bpl na5
+;
+jsr flalet    ;* flash letter
+;
+ldx xblob
+;
+ldy #0
+;
+na6
+;
+lda strin,y
+sta histbl,x
+;
+inx
+iny
+;
+cpy #7
+;
+bne na6
+;
+;
+ldx #$30
+jsr delay+2
+;
+jmp nolop
+;
+flalet
+;
+ldy #6
+;
+flp1
+;
+cpy letter
+bne noflp1
+;
+lda #$71
+bne noflp2
+;
+noflp1
+;
+lda #$11
+;
+noflp2
+;
+sta (coll),y
+;
+dey
+bpl flp1
+;
+rts
+;
+;
+;**********************
+;
+strin .byte '0123456'
+;
+; temp for name input
+;
+;
+;**********************
+;
+; all the hiscore crap
+;
+;**********************
+;
+banner
+;
+.byte 'the tycoons!'
+;
+bannre
+;
+.byte '  the menu  '
+;
+;
+prhisc
+;
+; print hi-score table
+;
+ldx #11
+;
+banl
+;
+lda banner,x
+and #$3f
+sta $d94,x
+;
+lda bannre,x
+and #$3f
+sta $da8,x
+;
+dex
+bpl banl
+;
+;
+bans
+;
+lda #$0a
+sta hiscr
+sta hiscl
+lda #$0e
+sta hiscr+1
+lda #$0a
+sta hiscl+1
+;
+;
+lda #1
+sta numb    ;* number
+;
+ldx #0
+;
+hoolop      ;* main loop
+;
+ldy #0
+sty menatw
+;
+try2
+;
+lda ted
+and #7
+beq try2
+;
+ora #$50
+sta (hiscl),y
+;
+pha
+;
+lda numb
+ora #$30    ;* digit
+;
+sta (hiscr),y
+iny  
+;
+pla
+sta (hiscl),y
+sta altem
+;
+lda #$2e
+sta (hiscr),y
+iny
+;
+lda #5
+sta temcnt
+;
+hoow
+;
+lda histbl,x
+;
+sta wall
+;
+cmp #'0
+bne foo2
+;
+cpy #6
+beq foo3
+;
+lda menatw
+bne foo3
+;
+lda #32
+bne foo1
+;
+foo2
+;
+lda #1
+;
+sta menatw
+;
+foo3
+;
+lda wall
+;
+foo1
+;
+sta (hiscr),y
+;
+iny
+;
+inx
+;
+dec temcnt
+;
+bpl hoow
+;
+;
+lda #$2d
+sta (hiscr),y
+iny
+;
+;
+lda #6
+sta temcnt
+;
+hooq
+;
+lda histbl,x
+and #$3f
+sta (hiscr),y
+;
+lda altem
+sta (hiscl),y
+;
+iny
+;
+inx
+;
+dec temcnt
+bpl hooq
+;
+lda hiscr
+clc
+adc #40
+sta hiscr
+sta hiscl
+;
+lda hiscr+1
+adc #0
+sta hiscr+1
+;
+sec
+sbc #4
+sta hiscl+1
+;
+;
+;
+inx      ;* dummy
+;
+inc numb
+;
+lda numb
+cmp #9
+beq hrr
+;
+jmp hoolop
+;
+hrr
+;
+rts
+;
+.end

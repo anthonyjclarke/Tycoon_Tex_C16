@@ -1,0 +1,184 @@
+; put "bounc/ball-mve"
+;
+; do all the moving of the ball
+;
+mball
+;
+; we're allowd a bouncing ball
+;
+lda ballon
+bne upball ;* already on
+;
+; shall we start a new one ?
+;
+lda rnd+2
+;
+cmp bskill
+bcc freggy
+;
+dec baltem
+beq stbal
+;
+freggy
+;
+rts
+;
+stbal
+;
+; start one
+;
+lda rnd+2
+and #3
+sta baltem
+;
+lda rnd+1
+and #3
+clc
+adc baltem     ;* acc = 0 to 6
+;
+pha
+;
+clc
+adc #2
+;
+sta balcnt     ;* start pos
+;
+pla
+;
+asl a
+tax
+;
+lda ballst,x   ;*
+sta pbal       ;*
+;              ;* random starting
+lda ballst+1,x ;* position
+sta pbal+1     ;*
+;
+ldx #1
+stx balmve     ;* moving down
+stx prball     ;* print balloon
+stx ballon     ;* its now on lads
+;
+dex
+stx rubbal     ;* don't rub it
+stx ballx      ;* x count
+;
+rts
+;
+;***********
+;
+upball
+;
+lda #0
+sta prball   ;* dont print it
+;
+lda pbal     ;*
+sta rbal     ;* tell it where to
+;            ;*
+lda pbal+1   ;* rub out
+sta rbal+1   ;*
+;
+inc ballx
+;
+lda ballx    ;* x count
+cmp #$26
+beq kilbal
+;
+lda balmve   ;* moving up/down
+beq bngup    ;* going up
+;
+lda pbal
+clc
+adc #39
+sta pbal
+;
+lda pbal+1
+adc #0
+sta pbal+1
+;
+inc balcnt
+lda balcnt
+cmp #9
+bne nblbt   ;* not hit bottom
+;
+lda balmve
+eor #1
+sta balmve  ;* move up next time
+;
+nblbt
+;
+lda #1
+sta prball  ;* print new pos
+;
+sta rubbal  ;* rub old pos
+;
+rts
+;
+bngup
+;
+; must be going up
+;
+lda pbal
+sec
+sbc #41
+sta pbal
+;
+lda pbal+1
+sbc #0
+sta pbal+1
+;
+dec balcnt
+bne nbtpbt
+;
+lda balmve
+eor #1     ;* reverse direction
+sta balmve
+;
+nbtpbt
+;
+; not reached top
+;
+lda #1
+sta prball
+;          ;* print & rub ball
+sta rubbal
+;
+;
+rts
+;
+;**************
+;
+kilbal
+;
+; get rid of ball
+;
+lda rnd+1
+and #$3f
+clc
+adc ballfr
+sta baltem
+;
+ldx #0
+stx ballon
+;
+inx
+stx rubbal ;* rub it out
+;
+rts
+;
+;****************
+;
+ballst ;* start positions
+;
+;
+.word $ef5-240
+.word $ef5-200,$ef5-160,$ef5-120
+.word $ef5-80,$ef5-40,$ef5
+;
+;****************
+;
+;
+;
+;
+;
+.end

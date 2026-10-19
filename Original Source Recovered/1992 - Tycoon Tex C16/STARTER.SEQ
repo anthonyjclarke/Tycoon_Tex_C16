@@ -1,0 +1,174 @@
+; put "starter"
+;
+; do the usual snazzy starter
+;
+;
+start
+;
+lda #<disdat
+sta dtl
+;
+lda #>disdat
+sta dtl+1
+;
+; data pointer
+;
+lda #0
+sta countd
+;
+stloop
+;
+lda #<$0dc5
+sta stl
+;
+lda #>$0dc5
+sta stl+1
+;
+ldx countd
+lda duchie,x
+sta pascol
+;
+; screen address set up
+;
+jsr displa ;* print it
+;
+ldx #$00
+jsr delay+2
+;
+inc countd
+lda countd
+cmp #5
+bne stloop
+;
+rts
+;
+duchie
+;
+.byte $72,$32,$12,$35,$71
+;
+;--------------------------
+;
+displa
+;
+lda #8
+sta ypix
+;
+disy
+;
+ldy #0
+lda (dtl),y
+sta bits
+;
+iny
+lda (dtl),y
+sta bits+1
+;
+lda stl
+sta ctl
+;
+lda stl+1
+sec
+sbc #4
+sta ctl+1
+;
+ldy #15
+;
+disx
+;
+lda #32
+;
+lsr bits
+ror bits+1
+bcc spce
+;
+lda #123
+;
+spce
+;
+sta (stl),y
+;
+lda pascol
+sta (ctl),y
+;
+dey
+bpl disx
+;
+lda stl
+clc
+adc #40
+sta stl
+;
+lda stl+1
+adc #0
+sta stl+1
+;
+lda dtl
+clc
+adc #2
+sta dtl
+;
+lda dtl+1
+adc #0
+sta dtl+1
+;
+dec ypix
+bpl disy
+;
+rts
+;
+;
+disdat
+;
+.byte %00000011,%11000000
+.byte %00000100,%00100000
+.byte %00000000,%00100000
+.byte %00000000,%00100000
+.byte %00000000,%11000000
+.byte %00000000,%00100000
+.byte %00000000,%00100000
+.byte %00000100,%00100000
+.byte %00000011,%11000000
+;
+.byte %00000011,%11000000
+.byte %00000100,%00100000
+.byte %00000000,%00100000
+.byte %00000000,%00100000
+.byte %00000000,%01000000
+.byte %00000000,%10000000
+.byte %00000001,%00000000
+.byte %00000010,%00000000
+.byte %00000111,%11100000
+;
+.byte %00000001,%10000000
+.byte %00000011,%10000000
+.byte %00000111,%10000000
+.byte %00000001,%10000000
+.byte %00000001,%10000000
+.byte %00000001,%10000000
+.byte %00000001,%10000000
+.byte %00000001,%10000000
+.byte %00000111,%11100000
+;
+.byte %01110001,%11000010
+.byte %10001010,%00100010
+.byte %10001010,%00100010
+.byte %10000010,%00100100
+.byte %10011010,%00100100
+.byte %10001010,%00100100
+.byte %10001010,%00100000
+.byte %10001010,%00101000
+.byte %01110001,%11001000
+;
+.byte %00000000,%00000000
+.byte %00000000,%00000000
+.byte %00000000,%00000000
+.byte %00000000,%00000000
+.byte %00000000,%00000000
+.byte %00000000,%00000000
+.byte %00000000,%00000000
+.byte %00000000,%00000000
+.byte %00000000,%00000000
+;
+;
+;
+.end

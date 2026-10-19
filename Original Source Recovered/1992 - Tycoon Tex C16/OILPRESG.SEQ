@@ -1,0 +1,140 @@
+; put "oil-pres/gauge"
+;
+; all the routines associated
+; with the oil pressure gauge.
+;
+proilp
+;
+; print the oil pressure gauge
+; length dependant on:-
+;
+; preslo 0-7
+; preshi 0-26
+;
+; start of gauge = $0c0d
+;
+; chars used :-
+;
+; 79 = full char
+; 80 = moving top bits
+; 81 = clear section
+;
+lda preslo
+asl a
+asl a
+asl a
+;
+tax
+ldy #0
+;
+pres1
+;
+lda presch,x
+sta $3e80,y
+;
+inx
+iny
+cpy #8
+bne pres1
+;
+; end bit now programmed
+;
+ldy #0
+lda #79
+;
+pres2
+;
+cpy preshi    ;* end yet ?
+bpl char1
+;
+jpbak
+;
+sta $0c0d,y
+;
+iny
+cpy #26
+bne pres2
+;
+rts
+;
+;
+char1
+;
+cmp #80
+beq char2
+;
+cmp #81
+beq jpbak
+;
+lda #80
+bne jpbak
+;
+char2
+;
+lda #81
+bne jpbak
+;
+;
+;**********
+;
+presdo
+;
+; move oil pressure down one pixel
+;
+; 'bloout' is set if pressure is 0
+;
+sta amdo    ;* amount to go down
+;
+lda bloout
+bne kript
+;
+lda preslo
+sec
+sbc amdo
+;
+sta preslo
+;
+bpl kript
+;
+dec preshi
+bpl ntzer
+;
+ldx #1
+stx bloout
+;
+lda #0
+beq setzer
+;
+ntzer
+;
+lda #7
+;
+setzer
+;
+sta preslo
+;
+kript
+;
+rts
+;
+;**************
+;
+presch
+;
+;
+.byte  $ff,000,000,000,000,000,000,$ff
+.byte  $ff,$00,$80,$80,$80,$80,$00,$ff
+.byte  $ff,$00,$c0,$c0,$c0,$c0,$00,$ff
+.byte  $ff,$00,$e0,$e0,$e0,$e0,$00,$ff
+.byte  $ff,$00,$f0,$f0,$f0,$f0,$00,$ff
+.byte  $ff,$00,$f8,$f8,$f8,$f8,$00,$ff
+.byte  $ff,$00,$fc,$fc,$fc,$fc,$00,$ff
+.byte  $ff,$00,$fe,$fe,$fe,$fe,$00,$ff
+.byte  $ff,$00,$ff,$ff,$ff,$ff,$00,$ff
+;
+;
+;
+;
+;
+;
+.end

@@ -1,0 +1,214 @@
+; put "death-march !"
+;
+;
+;  all the dead nice stuff -
+;  although i don't know whats
+;  nice about dying ?.
+;
+;
+updead
+;
+lda title
+beq yomaz
+;
+rts
+;
+yomaz
+;
+;
+; lda cheat
+; beq ncheat
+;
+; rts
+;
+; ncheat
+;
+lda dead
+bne upsok
+;
+; not actually dead, wally.
+;
+rts
+;
+upsok
+;
+lda finito
+beq doggy
+;
+jmp allovr
+;
+; if it does that jump it means
+; the basic loop has not realised
+; that you have ended the game.
+;
+doggy
+;
+lda death
+bne doingt
+;
+; we are here for the first time
+;
+lda alstat
+sta statem
+;
+lda #0
+sta alstat ;* no aliens please
+;
+lda #1
+sta death
+sta stopan ;* stop animations
+sta tdead  ;* death tempo count
+;
+lda #24
+sta dcount
+;
+jsr manoff
+;
+ldx #0
+;
+d1
+;
+lda $3e00,x
+sta savech,x
+;
+inx
+cpx #$a8
+bne d1
+;
+; copy vertical chars out
+;
+lda #<fally
+sta manl+1
+sta mano+1
+;
+lda #>fally
+sta manl+2
+sta mano+2
+;
+lda #1
+sta stop
+;
+; stop all movement,animation etc
+;
+jsr rotate
+;
+; tell the print-man that he has
+; now fallen down (dead) so print
+; him horizontally.
+;
+jsr allkil ;* kill all aliens
+;
+jsr clsdis
+;
+jsr manon
+;
+doingt
+;
+jsr manon
+;
+dec tdead
+beq dodt
+;
+rts
+;
+dodt
+;
+lda #2
+sta tdead
+;
+dec dcount
+beq deadri  ;* finished all dying
+;
+; here it will do the slowing
+; down of all the scrolling and
+; the scrolling of the man into
+; the ground.
+;
+;
+jsr sink
+;
+; sink into earth bit !
+;
+rts
+;
+deadri
+;
+; all the dying has been finished
+;
+jsr manoff
+;
+ldx #0
+;
+gtbk
+;
+lda savech,x
+sta $3e00,x
+;
+inx
+cpx #$a8
+bne gtbk
+;
+; get chars back
+;
+lda #<yval
+sta manl+1
+sta mano+1
+;
+lda #>yval
+sta manl+2
+sta mano+2
+;
+lda #0
+sta stopan
+sta dead
+sta death
+sta disjum
+;
+dec $0c65       ;* screen
+;
+dec lives
+beq allovr
+;
+; was that his last life ?
+;
+lda #<$ea9
+sta ml
+;
+lda #>$ea9
+sta ml+1
+;
+lda #0
+sta wakspd
+sta norigt
+sta finito
+sta stop
+;
+lda #1
+sta noleft
+;
+jsr scrlnd ;* new land on
+;
+lda #0
+sta demod  ;* demo count
+;
+lda statem
+sta alstat
+;
+rts
+;
+;******************************
+;
+allovr
+;
+; all lives gone - sorry buster !
+;
+lda #1
+sta finito
+sta stop
+;
+rts
+;
+;
+;******************************
+;
+.end

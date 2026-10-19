@@ -1,0 +1,142 @@
+; put "alterables"
+;
+;
+; manipulate the variables
+;
+; i.e. sound on/off
+;      select play
+;      select ability
+;      alter no. of lives
+;
+alter
+;
+lda numsel
+;
+cmp #3
+bne ntply
+;
+; has selected play game
+;
+lda #1
+sta exit
+;
+jmp sonk
+;
+ntply
+;
+cmp #1
+bne ntnliv
+;
+; wants to change no. of lives
+;
+inc selive
+lda selive
+cmp #7
+bne ant1
+;
+lda #1
+;
+ant1
+;
+sta selive
+ora #$30
+sta chlivs+$d
+;
+jmp sonk
+;
+ntnliv
+;
+cmp #2
+bne ntplnt
+;
+lda soflag
+eor #1
+sta soflag
+;
+asl a
+;
+adc soflag
+;
+; acc x 3
+;
+tax
+;
+ldy #0
+;
+pln2
+;
+lda sountt,x
+sta chplan+9,y
+;
+inx
+iny
+cpy #3
+bne pln2
+;
+jmp sonk
+;
+ntplnt
+;
+; must have selected ability
+;
+cmp #0
+bne trydem
+;
+ldy able
+iny
+cpy #3
+bne when
+;
+ldy #0
+;
+when
+;
+sty able
+;
+ldx ablofs,y
+;
+ldy #0
+;
+pilok
+;
+lda abltbl,x
+;
+beq sonk
+;
+sta stiff+1,y
+;
+iny
+inx
+bne pilok
+;
+jmp sonk
+;
+trydem
+;
+; must want a demo
+;
+lda #1
+sta demo
+sta exit
+;
+sonk
+;
+rts
+;
+;*************************
+;
+sountt
+;
+.byte 'offon '
+;
+;
+abltbl
+;
+.byte '    easy    ',0
+.byte '    hard    ',0
+.byte 'impossible !',0
+;
+ablofs .byte 0,13,26
+;
+;
+.end

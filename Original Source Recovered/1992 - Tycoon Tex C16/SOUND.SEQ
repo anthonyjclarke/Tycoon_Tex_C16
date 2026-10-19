@@ -1,0 +1,196 @@
+; put "sound"
+;
+;********************************
+;
+;hopefully this sound will be an
+;improvement over d***'s whoopee
+;sound routines & will work !!!!
+;
+;********************************
+;
+alexpf=14 ;* alien explosion freq
+;
+;--------------------------------
+;     use of channels :-
+;
+; #1  hit sound
+; #2  explosions
+;
+;
+;
+;
+;
+;
+;
+sound
+;
+; called under interrupt
+;
+lda soflag
+bne sdiu
+;
+rts
+;
+sdiu
+;
+jsr uplzso  ;* laser firing
+;
+jsr upshit  ;* alien hit sound
+;
+rts
+;
+;********************************
+;
+vol    = $ff11
+sou1lo = $ff0e
+sou1hi = $ff12
+sou2lo = $ff0f
+sou2hi = $ff10
+;
+;
+;
+;********************
+;
+; laser firing sound
+;
+;********************
+;
+;
+fireso      ;* start sound
+;
+lda soflag   ;* sound on/off
+bne souon
+;
+rts
+;
+souon
+;
+lda #3
+sta sohi
+;
+ora sou1hi
+sta sou1hi
+;
+lda #1
+sta sou1lo
+;
+lda #20
+sta so1len
+;
+lda #1
+sta whsnd   ;* laser snd on
+;
+lda #%00011111
+ora vol
+sta vol ;* chan#1 & vol 7
+;
+rts
+;
+;****************
+;
+uplzso
+;
+lda whsnd
+beq luter
+;
+dec so1len  ;* length
+bne ntfin1  ;* not ended
+;
+lda #0
+sta whsnd
+;
+luter
+;
+lda #%11101111
+and vol
+sta vol     ;* chan 1 off
+;
+rts
+;
+;
+ntfin1
+;
+lda sou1lo
+sec
+sbc #$08
+sta sou1lo
+;
+bcs nothi
+;
+dec sohi
+lda sohi
+;
+and #3
+ora sou2hi
+sta sou2hi
+;
+nothi
+;
+rts
+;
+;*******************************
+;
+;  alien hit sound
+;
+hitsnd
+;
+lda soflag
+bne hitsok
+;
+rts
+;
+hitsok
+;
+; sound on !
+;
+lda #$03
+sta sou2hi
+;
+lda #$ff
+sta sou2lo
+;
+lda vol
+ora #%01001111 ;* noise 2
+sta vol
+;
+lda #1
+sta shitso
+;
+rts
+;
+;****************************
+;
+upshit
+;
+lda shitso
+bne soon
+;
+rts
+;
+soon
+;
+lda sou2lo
+sec
+sbc #alexpf
+sta sou2lo
+;
+bcc flower ;* power its over
+;
+rts
+;
+flower
+;
+lda vol
+and #%10011111
+sta vol
+;
+; turn off anything on ch#2
+;
+lda #0
+sta shitso
+;
+rts
+;
+;
+;
+.end

@@ -1,0 +1,183 @@
+; put "suicide/obj-move"
+;
+; do all the moving/setting up
+; of the thing which falls into
+; pipe and leaves a break.
+;
+msuici
+;
+; off we go then !
+;
+lda suicon
+bne upsuic ;* already on so move
+;
+lda rnd+1
+cmp bskill
+;
+bcc victim
+;
+dec suitem
+beq stsuic
+;
+victim
+;
+rts        ;* tempo not ready
+;
+stsuic
+;
+; start one then
+;
+lda rnd+1
+and #7
+;
+sta suiy   ;* y starting position
+;
+asl a
+;
+tax
+;
+; lets get it's address then
+;
+lda sustad,x
+sta psuil
+;
+lda sustad+1,x
+sta psuil+1
+;
+lda rnd
+ora ted
+;
+and #7
+clc
+adc #3
+;
+sta suix    ;* x distance to move
+;
+ldx #1
+;
+stx suicon  ;* it's all on
+stx prsuic  ;* print it
+stx suiclf  ;* its moveing left
+;
+dex
+;
+stx rubsui  ;* don't rub it out
+;
+rts
+;
+;*********************************
+;
+upsuic
+;
+; move it then
+;
+lda #0      ;* don't print it
+sta prsuic
+;
+lda psuil   ;*
+sta rsuil   ;*
+;           ;* rub old position
+lda psuil+1 ;*
+sta rsuil+1 ;*
+;
+lda suiclf
+beq sudiag ;* its crashing down
+;
+; its still going left
+;
+dec suix
+bne nts
+;
+lda #0
+sta suiclf
+;
+; he's gone far enough left so
+; lets make him crash now.
+;
+nts
+;
+dpdec psuil
+;
+; moved left
+;
+lda #1
+sta prsuic  ;* print new pos
+sta rubsui  ;* rub   old pos
+;
+rts
+;
+sudiag
+;
+; he's fallin diagonally now
+;
+inc suiy
+lda suiy
+;
+cmp #11
+beq kilsui  ;* hit the bottom
+;
+lda psuil
+clc
+adc #39
+sta psuil
+;
+lda psuil+1
+adc #0
+sta psuil+1
+;
+; he's moved down diagonallly
+;
+lda #1
+sta prsuic ;* print
+sta rubsui ;* rub
+;
+rts
+;
+;--------------------------------
+;
+kilsui
+;
+; kill it & hopefully put a break
+; in the pipe (mega-code will be
+; required !)
+;
+ldx #0
+stx suicon
+;
+inx
+stx rubsui ;* rub it out
+;
+lda rnd
+and #$3f
+clc
+adc suifrq
+sta suitem ;* when to start nxt 1
+;
+lda bulsht
+bne nohole
+;
+ldx psuil
+ldy psuil+1
+;
+jsr putbrk ;* put a break in
+;
+nohole
+;
+rts
+;
+;
+;*******************
+;
+sustad
+;
+; starting positions
+;
+.word $db3,$db3+40,$db3+80
+.word $db3+120,$db3+160,$db3+200
+.word $db3+240,$db3+280
+;
+;
+;
+;
+;
+.end

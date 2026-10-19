@@ -1,0 +1,98 @@
+; put "demo-mega/code"
+;
+; called by the joydick reader
+; if we are in a demo.
+;
+demoon
+;
+ldx #4
+lda #0
+;
+clit
+;
+sta jleft,x
+dex
+bpl clit
+;
+lda demod
+bne inmidd
+;
+lda #$80
+sta jright
+;
+lda ml
+cmp #$b8
+beq inmdok
+;
+rts
+;
+inmdok
+;
+lda #1
+sta demod
+;
+inmidd
+;
+lda ml
+cmp #$b4
+;
+bcc guufer ;* can't go left
+;
+lda rnd+1
+cmp #$20
+bcs guufer
+;
+lda #$80
+sta jleft
+bmi gonads
+;
+guufer
+;
+lda rnd
+cmp #$e0
+bcc gonads
+;
+; let's go right - ok yah!
+;
+lda #$80
+sta jright
+;
+gonads
+;
+; shall we fire ?
+;
+lda rnd+3
+;
+cmp #$10
+bcs pisoff
+;
+lda #$80
+sta jfire
+;
+pisoff
+;
+; shall we jump ?
+;
+ldy #$cb
+lda (ml),y
+;
+cmp #221
+bcs nodmjp
+;
+cmp #214
+bcc nodmjp
+;
+lda #$80
+sta jup
+;
+nodmjp
+;
+rts
+;
+;
+;
+;
+;
+;
+;
+.end

@@ -1,0 +1,229 @@
+; put "raster-routines"
+;
+;
+; these are the routines called
+; by the raster irq programme
+;
+;
+rast1
+;
+; top window for score,energy bar
+; & must be 40 cols.
+;
+;
+lda ted+7
+and #%01100000
+ora #%00011000
+sta ted+7
+;
+; not multi-col + 40 cols
+; & reset pixel movement
+;
+;
+lda #$70
+sta backgr
+sta border
+;
+lda #$51
+sta multi1
+;
+lda #$31
+sta multi2
+;
+jsr gndmve  ;* ground pix. stuff
+jsr bitmve  ;* hill pixel stuff
+jsr messve  ;* message glopp.
+;
+lda #$3c
+sta ted+19  ;* normal char set
+;
+lda title
+bne sussed
+;
+jsr proilp  ;* print oil gauge
+jsr prcomp  ;* print % comp.gauge
+;
+jsr printx  ;* print explosion
+jsr prarro  ;* print arrow
+jsr prplan  ;* print jet plane
+jsr balls   ;* print ball
+jsr kamaz   ;* print suicide plane
+;
+jsr mvelaz  ;* move bullet
+;
+jsr chkpas  ;* pause check
+;
+jmp misst
+;
+sussed
+;
+jsr choose  ;* jo/ke selection
+jsr flcols
+;
+; flash cols on the title page
+;
+misst
+;
+jmp irqend
+;
+;********************************
+;
+rast2
+;
+; pixel scrolling landscape
+;
+; 38 cols & multi-col
+;
+;
+ldx #$24
+;
+shity
+;
+dex
+bpl shity
+;
+lda ted+7
+and #%01110000 ;*back to 38 cols
+ora #%10000000 ;*dnt invert chrs
+ora hillx      ;*hill x pixel pos.
+sta ted+7
+;
+lda #$10       ;* chars at $1000
+sta ted+19
+;
+lda hillcl
+sta backgr
+;
+lda hil1     ;* aux col.
+sta multi1
+;
+lda hil2     ;* aux col.
+sta multi2
+;
+jsr animat
+;
+jmp irqend
+;
+;********************************
+;
+rast3
+;
+; man area - no scrolling
+;
+lda placol   ;* background colour
+sta backgr
+;
+ldx #$08
+;
+srp
+;
+dex
+bpl srp
+;
+lda ted+7
+and #%01111000
+sta ted+7
+;
+lda #$3c
+sta ted+19   ;* char set at $3c00
+;
+lda pla1
+sta multi1
+;
+lda pla2
+sta multi2
+;
+; lda placol   ;* background colour
+; sta backgr
+;
+jsr random
+jsr mvespc
+jsr updead
+jsr upexpl
+;
+jsr irqali   ;* irq aliens
+;
+jmp irqend
+;
+;********************************
+;
+rast4
+;
+; bottom land - if possible pixel
+; scrolling
+;
+lda col1
+sta multi1
+;
+lda col2
+sta multi2
+;
+ldx #$11
+;
+shiy
+;
+dex
+bpl shiy
+;
+lda ted+7
+and #%01111000
+ora #%10000000
+ora gndx ;* land x pixel mvement
+;
+sta ted+7
+;
+lda #$10
+sta ted+19 ;* char set at $1000
+;          ;* use spare 55 chars
+;          ;* after hill chars
+lda roadcl ;* road colour
+sta backgr
+;
+jsr redjos
+;
+nop
+nop
+nop
+;
+jmp irqend
+;
+;
+;*******************************
+;
+rast5
+;
+; bottom line pixel scrolling
+; for the gloppy message !!
+;
+ldx #$13
+;
+r5l
+;
+dex
+bpl r5l
+;
+lda ted+7
+and #%01111000
+ora messx     ;* message x pos.
+sta ted+7
+;
+lda #$3c
+sta ted+19
+;
+jsr sound     ;* noise update
+;
+dec starct
+bne hiant
+;
+lda #4
+sta starct
+;
+jsr anistr    ;* animate stars
+;
+hiant
+;
+jmp irqend
+;
+;*******************************
+;
+.end
