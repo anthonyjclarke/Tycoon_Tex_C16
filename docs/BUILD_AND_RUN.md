@@ -2,9 +2,9 @@
 
 ## Requirements
 
-Python 3.9 or later and cc65 (`ca65`, `ld65`) are sufficient to build. VICE (`xplus4`) is needed to run the game or perform emulator verification. The Python build uses only the standard library.
+Python 3.9 or later and cc65 (`ca65`, `ld65`) are all you need to build. VICE (`xplus4`) is for running the game and the emulator checks. The Python build uses only the standard library.
 
-PlatformIO Core and VS Code are optional front ends. The validated local versions are PlatformIO Core 6.1.19, ca65/ld65 V2.18 tool binaries, and VICE 3.10. The PlatformIO native platform is pinned to `platformio/native@1.2.1`; it supplies the build framework, while the custom builder invokes the 6502 assembler rather than a host C/C++ compiler.
+PlatformIO Core and VS Code are optional front ends. I've validated against PlatformIO Core 6.1.19, ca65/ld65 V2.18 and VICE 3.10. The PlatformIO native platform is pinned to `platformio/native@1.2.1`. It supplies the build framework, but the custom builder calls the 6502 assembler, not a host C/C++ compiler.
 
 On macOS:
 
@@ -13,7 +13,7 @@ brew install cc65 vice
 python3 -m pip install platformio==6.1.19
 ```
 
-If `pio` is available only through the VS Code PlatformIO extension, use its terminal. The scripts search `PATH`, `/opt/homebrew/bin`, and `/usr/local/bin` for cc65 and VICE. On Linux, install the distribution's cc65 and VICE packages. On Windows, place the tools on `PATH` and use the Python commands below.
+If `pio` only exists inside the VS Code PlatformIO extension, use that extension's terminal. The scripts look for cc65 and VICE on `PATH`, then in `/opt/homebrew/bin` and `/usr/local/bin`. On Linux, install your distribution's cc65 and VICE packages. On Windows, put the tools on `PATH` and use the Python commands below.
 
 ---
 
@@ -23,21 +23,21 @@ If `pio` is available only through the VS Code PlatformIO extension, use its ter
 python3 scripts/restore_c16.py
 ```
 
-`./build.sh` and `make` call the same pipeline. An alternate output directory is supported:
+`./build.sh` and `make` call the same pipeline. You can also pick another output directory:
 
 ```sh
 python3 scripts/restore_c16.py --build-dir build/custom
 ```
 
-The build reads the disk image, checks the 2026 extraction and hashes, maps legacy filenames through `INDEX`, expands the original `.LIB` order, and translates MOS assembler syntax into ca65 syntax. It assembles the original fixed-origin memory layout and checks every emitted object-listing byte before reporting success.
+The build reads the disk image, checks the 2026 extraction and its hashes, maps the legacy filenames through `INDEX`, expands the original `.LIB` order and translates MOS assembler syntax into ca65 syntax. It assembles the original fixed-origin memory layout and checks every emitted object-listing byte before it reports success.
 
-Terrain data is assembled independently. The surviving `FRAK.BIN` supplies the complete upper character set. Separate actor-definition sources are assembled for comparison, but do not replace this game-ready font. The output does not depend on the packed running PRG; that file is used only for optional comparison and launch.
+Terrain data is assembled on its own. The surviving `FRAK.BIN` provides the complete upper character set. Separate actor-definition sources are assembled for comparison, but they don't replace this game-ready font. The output doesn't depend on the packed running PRG, which is used only for optional comparison and launch.
 
 ### Output Files
 
-The runnable file is `tycoon-tex.prg`. The generated main assembly is `tycoon.s`, its listing is `tycoon.lst`, and the linker emits `tycoon.labels`, `tycoon.map`, and `tycoon.dbg`. `recovered-code.bin` contains the `$1800–$3BF2` region, including the reserved work buffer.
+The runnable file is `tycoon-tex.prg`. The main assembly is generated as `tycoon.s` with its listing in `tycoon.lst`, and the linker produces `tycoon.labels`, `tycoon.map` and `tycoon.dbg`. `recovered-code.bin` holds the `$1800–$3BF2` region, including the reserved work buffer.
 
-`terrain.s` and `actors.s` expose the independently assembled graphics sources. `recovery-manifest.json` records source selection, hashes, normalization, active dependencies, and assets. `comparison.json` records the object-listing and character-listing checks. The `disk/` folder contains generated, byte-preserving copies of the disk files.
+`terrain.s` and `actors.s` are the independently assembled graphics sources. `recovery-manifest.json` records source selection, hashes, normalization, active dependencies and assets. `comparison.json` records the object-listing and character-listing checks. The `disk/` folder has generated, byte-preserving copies of the disk files.
 
 ---
 
@@ -50,15 +50,15 @@ pio run -e c16 -t upload
 pio run -e c16 -t clean
 ```
 
-Release and debug builds use the same pipeline and retain identical program bytes. Both generate the listing and debug symbols because those files are useful preservation evidence. Their outputs are in `build/platformio/c16/` and `build/platformio/c16_debug/`.
+Release and debug builds use the same pipeline and produce identical program bytes. Both generate the listing and debug symbols, since those make good preservation evidence. Outputs are in `build/platformio/c16/` and `build/platformio/c16_debug/`.
 
-The upload target opens a PAL C16 with 16 KB RAM in VICE. It does not transfer a program to physical hardware. The project does not include a source-level VS Code debug adapter; use the VICE monitor and generated labels/listings for debugging.
+The upload target opens a PAL C16 with 16 KB RAM in VICE. It doesn't send anything to physical hardware. There's no source-level VS Code debug adapter, so debug with the VICE monitor and the generated labels and listings.
 
 ### VS Code Tasks
 
-The default build task calls PlatformIO. Other tasks offer the debug build, clean, emulator upload, direct Python build, original-game launch, regression tests, and VICE verification. The original `.SEQ` files and generated `.s` files use the `ca65` language mode supplied by the recommended [ca65 extension](https://github.com/tlgkccampbell/code-ca65). Global save-time whitespace cleanup is disabled to protect historical inputs.
+The default build task calls PlatformIO. The other tasks cover the debug build, clean, emulator upload, the direct Python build, launching the original game, the regression tests and VICE verification. The original `.SEQ` files and the generated `.s` files use the `ca65` language mode from the recommended [ca65 extension](https://github.com/tlgkccampbell/code-ca65). Global save-time whitespace cleanup is turned off to protect the historical inputs.
 
-If `pio` is not found, run the task from a PlatformIO-enabled terminal or use the direct Python build task. If `ca65`, `ld65`, or `xplus4` is not found, install the relevant tools and check their paths.
+If `pio` isn't found, run the task from a PlatformIO-enabled terminal or use the direct Python build task. If `ca65`, `ld65` or `xplus4` isn't found, install the tool and check its path.
 
 ---
 
@@ -70,20 +70,20 @@ python3 scripts/run_vice.py build/platformio/c16/tycoon-tex.prg
 python3 scripts/run_vice.py --original
 ```
 
-The rebuilt PRG loads at `$1000` and enters at `$1800`. Its first 2 KB contain terrain graphics, not BASIC text; BASIC autostart is unsuitable. The launcher waits for reset to complete and uses the monitor to load at the saved address and jump to the entry point.
+The rebuilt PRG loads at `$1000` and enters at `$1800`. Its first 2 KB are terrain graphics, not BASIC text, so BASIC autostart won't work. The launcher waits for the reset to finish, then uses the monitor to load at the saved address and jump to the entry point.
 
-The supplied original is packed and has a BASIC `SYS 4109` stub. `--original` enters its decompressor at `$100D`; it then reaches the game at `$1800`. Neither launcher changes the original file.
+The original I have is packed and has a BASIC `SYS 4109` stub. `--original` enters its decompressor at `$100D`, and from there it reaches the game at `$1800`. Neither launcher changes the original file.
 
 ### Controls
 
-The original `KEY-SCAN` source documents `Z` / `X` for left / right, `;` / `/` for up / down, and Return for fire. `JO/KE SELECTION` maps `J` to joystick and `K` to keyboard on the title page. The menu controls lives, difficulty, sound, play, and demo selection. The initial selection is Play the Game; the initial control mode is joystick.
+The original `KEY-SCAN` source gives `Z` / `X` for left / right, `;` / `/` for up / down, and Return for fire. `JO/KE SELECTION` maps `J` to joystick and `K` to keyboard on the title page. The menu sets lives, difficulty and sound, and picks play or demo. It starts on Play the Game, with joystick as the control mode.
 
-These mappings are documented from source. The automated test supplies the original fire-input flag and does not exercise host keyboard mapping, sound playback, or a physical joystick. See the scanned cassette instructions on scrapbook page 5 for the contemporary packaging description.
+I took these mappings from the source. The automated test sets the original fire-input flag directly, so it never exercises host keyboard mapping, sound playback or a physical joystick. The cassette instructions on scrapbook page 5 show how the packaging described the controls at the time.
 
 ---
 
 ## Cleaning and Development
 
-`make clean` removes `build/` and `.pio/`. Original source, artwork, and documentation remain intact. PlatformIO clean removes its generated targets; use `make clean` for all generated material.
+`make clean` removes `build/` and `.pio/`, and leaves the original source, artwork and documentation alone. PlatformIO's clean only removes its own generated targets, so use `make clean` to clear everything generated.
 
-The historical inputs are the build's source of truth. Inspect `build/tycoon.s` to read the expanded assembly; editing generated files has no effect on the next build. Intentional source changes will fail strict object-listing validation. Keep experimental changes in a separate branch and explicitly revise validation if producing a derivative version. This repository's default target remains the surviving source version.
+The historical inputs are the source of truth for the build. Read `build/tycoon.s` if you want to see the expanded assembly, but editing generated files changes nothing on the next build. Any deliberate source change will fail the strict object-listing validation. Keep experiments on a separate branch, and revise the validation explicitly if you're producing a derivative version. The default target of this repository stays the surviving source version.

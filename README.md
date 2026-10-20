@@ -1,14 +1,16 @@
 # Tycoon Tex C16
 
-Reassemble the surviving **Tycoon Tex** source for the Commodore 16 and Plus/4, using PlatformIO, VS Code, and the cc65 toolchain. Anthony Clarke programmed the game at Micro Projects for Gremlin Graphics in 1985.
+This project reassembles the surviving **Tycoon Tex** source for the Commodore 16 and Plus/4 using PlatformIO, VS Code and the cc65 toolchain. I programmed the game at Micro Projects for Gremlin Graphics in 1985.
+
+Open the [complete HTML handbook](docs/TYCOON_TEX.html) for the history, artwork, build guides, validation, code analysis, graphics and reference in one offline document. It's generated from the Markdown files, which stay the source of truth. Run `make docs-html` after editing the docs, or `make docs` to refresh the build and analysis as well. [Maintaining the HTML Documentation](docs/HTML_DOCUMENTATION.md) has the details.
 
 ![Tycoon Tex artwork](Original%20Artifacts/Tycoon%20Tex%20-%20With%20Text.jpg)
 
 ## Verified Build
 
-The project assembles all **9,179 bytes recorded in the original object listing**, with zero differences. A further 24 bytes are reserved for the game's work buffer. The complete PRG is 12,290 bytes, loads at `$1000`, and starts at `$1800` (`SYS 6144`).
+The build matches all **9,179 bytes recorded in the original object listing**, with zero differences. Another 24 bytes are reserved for the game's work buffer. The complete PRG is 12,290 bytes, loads at `$1000` and starts at `$1800` (`SYS 6144`).
 
-The rebuilt game renders its title and enters gameplay on a PAL C16 with 16 KB RAM in VICE. The supplied running version is a compressed, slightly different revision: one instruction operand differs after decompression. This project preserves the source and object-listing version; it does not claim a byte-identical reproduction of that running version. See [Source and Validation](docs/SOURCE_AND_VALIDATION.md) for the comparisons and limits.
+In VICE, on a PAL C16 with 16 KB RAM, the rebuilt game draws its title and gets into gameplay. The running version I have is a compressed, slightly different revision: after decompression, one instruction operand differs. I've rebuilt the source and object-listing version, so I can't claim a byte-identical copy of the running one. [Source and Validation](docs/SOURCE_AND_VALIDATION.md) has the comparisons and limits.
 
 ![Restored title in VICE](docs/images/restored-title.png)
 
@@ -16,7 +18,7 @@ The rebuilt game renders its title and enters gameplay on a PAL C16 with 16 KB R
 
 ## Build and Run
 
-Install Python 3.9 or later and the cc65 tools (`ca65` and `ld65`). Install VICE (`xplus4`) to run the game. On macOS with Homebrew:
+You need Python 3.9 or later and the cc65 tools (`ca65` and `ld65`), plus VICE (`xplus4`) to run the game. On macOS with Homebrew:
 
 ```sh
 brew install cc65 vice
@@ -24,7 +26,7 @@ brew install cc65 vice
 python3 scripts/run_vice.py
 ```
 
-The output is `build/tycoon-tex.prg`. The launcher loads at the saved address and jumps to `$1800` after the C16 finishes resetting. This PRG has no BASIC `RUN` stub.
+The output is `build/tycoon-tex.prg`. After the C16 finishes resetting, the launcher loads it at the saved address and jumps to `$1800`. The PRG has no BASIC `RUN` stub.
 
 With PlatformIO Core installed, or from the PlatformIO terminal in VS Code:
 
@@ -33,27 +35,33 @@ pio run -e c16
 pio run -e c16 -t upload
 ```
 
-The PlatformIO output is `build/platformio/c16/tycoon-tex.prg`. The upload target launches VICE. The `c16_debug` environment retains identical game bytes and emits the same labels, listing, map, and debug information for investigation. VS Code tasks provide direct builds, emulator launch, tests, and verification. See [Build and Run](docs/BUILD_AND_RUN.md).
+PlatformIO writes to `build/platformio/c16/tycoon-tex.prg`, and the upload target launches VICE. The `c16_debug` environment produces identical game bytes, along with labels, a listing, a map and debug information for digging into problems. VS Code tasks cover direct builds, launching the emulator, tests and verification. More in [Build and Run](docs/BUILD_AND_RUN.md).
 
-The source's keyboard mapping is `Z` / `X` for left / right, `;` / `/` for up / down, and **Return** for fire and menu selection. Press `K` on the title screen to select keyboard control; `J` selects joystick control. The menu provides difficulty, lives, sound, play, and demo selections. Host keyboard mapping and physical joystick operation still need manual testing.
+In the source, the keyboard is `Z` / `X` for left / right, `;` / `/` for up / down, and **Return** for fire and menu selection. Press `K` on the title screen for keyboard control or `J` for joystick. The menu covers difficulty, lives, sound, play and demo. I still need to test the host keyboard mapping and a physical joystick by hand.
 
 ---
 
 ## Preserved Inputs
 
-`Original Source Recovered/` contains the 2026 disk image and extraction, together with the more complete 1992 text export. The build prefers the fresh disk sources, verifies them against the extracted files, and fills missing modules from the 1992 collection using its original `INDEX` filename mapping. It assembles the terrain graphics from source and loads the surviving `FRAK.BIN` font asset. No executable code or graphics are copied from the supplied running PRG into the rebuild.
+`Original Source Recovered/` holds the 2026 disk image and its extraction, along with the more complete 1992 text export. The build uses the fresh disk sources first and checks them against the extracted files. Anything missing comes from the 1992 collection, through its original `INDEX` filename mapping. Terrain graphics are assembled from source, and the font is the surviving `FRAK.BIN`. Nothing executable or graphical is copied from the running PRG into the rebuild.
 
-`Original Artifacts/` contains the running game, artwork, and a scanned scrapbook. The [Artifact Catalogue](docs/ARTIFACTS.md) includes the Tycoon Tex cassette inlay and identifies the relevant scrapbook pages.
+`Original Artifacts/` has the running game, the artwork and a scanned scrapbook. The [Artifact Catalogue](docs/ARTIFACTS.md) covers the cassette inlay and points to the relevant scrapbook pages.
 
-All generated assembly, extracted working copies, and build reports go into `build/`. The original inputs are preserved byte for byte. [Source Inventory](docs/SOURCE_INVENTORY.md) lists the dependencies and fallback files.
+Generated assembly, extracted working copies and build reports all go into `build/`, and the original inputs stay byte for byte as they were. The [Source Inventory](docs/SOURCE_INVENTORY.md) lists the dependencies and fallback files.
 
 ---
 
 ## History and Recovery Background
 
-Anthony recalls playing Moon Patrol in pubs and elsewhere at the time, and notes Tycoon Tex's resemblance to it. He no longer recalls the precise origin of the concept. The source credits the concept to **Matthew Clarke, Anthony Clarke, and Ian Stewart**, programming to **Micro Projects**, and publication to **Gremlin Graphics Ltd.** See [History and Credits](docs/HISTORY_AND_CREDITS.md).
+I remember playing Moon Patrol in pubs and elsewhere at the time, and Tycoon Tex looks a lot like it, but I can't recall exactly where the concept came from. The source credits the concept to **Matthew Clarke, Anthony Clarke, and Ian Stewart**, the programming to **Micro Projects** and the publication to **Gremlin Graphics Ltd.** See [History and Credits](docs/HISTORY_AND_CREDITS.md).
 
-The source-recovery background, original development setup, and recovery-tool acknowledgements are documented in the companion [Dorks Dilemma C16 repository](https://github.com/anthonyjclarke/Dorks_Dilemma_C16), particularly its [Development History](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/DEVELOPMENT_HISTORY.md). This project uses that restoration's build approach without repeating its recovery narrative.
+The recovery story, my original development setup and the recovery-tool acknowledgements are in my companion [Dorks Dilemma C16 repository](https://github.com/anthonyjclarke/Dorks_Dilemma_C16), especially its [Development History](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/DEVELOPMENT_HISTORY.md). This project reuses that restoration's build approach, so I haven't repeated the story here.
+
+---
+
+## Learning, Modification, and Ports
+
+[Codebase Analysis](CODEBASE_ANALYSIS.md) walks through the game states, raster scheduling, player and hazard rules, collision model, graphics, audio, scoring and the differences between revisions. The [Porting Guide](docs/PORTING_GUIDE.md) keeps the original behavior apart from the architecture I'd propose for new platforms. A [generated code reference](docs/analysis/CODE_REFERENCE.md), [asset data](docs/analysis/asset-data.json) and indexed graphics atlases help with finding your way around the source.
 
 ---
 
@@ -64,6 +72,6 @@ python3 -m unittest discover -s test -p 'test_*.py' -v
 python3 scripts/verify_vice.py
 ```
 
-Eight regression tests cover the output, object records, source selection, assets, preserved input bytes, include failures, syntax conversion, and corrupt records or disk chains. VICE verification checks title rendering, gameplay entry, and the decompressed reference. Manual keyboard testing, sound playback, level completion, and a full play-through remain pending. See [Testing](TESTING.md).
+Eight regression tests cover the output, object records, source selection, assets, preserved input bytes, include failures, syntax conversion, and corrupt records or disk chains. The VICE check covers title rendering, gameplay entry and the decompressed reference. I still haven't tested the keyboard by hand, listened to the sound, finished a level or played all the way through. See [Testing](TESTING.md).
 
-The repository is prepared for GitHub, with build outputs ignored and original PRGs and artifacts retained. [Sharing on GitHub](docs/SHARING_ON_GITHUB.md) explains the final publication steps. Historical notices remain in place; see [Rights and Preservation](RIGHTS.md).
+The repository is set up for GitHub: build outputs are ignored and the original PRGs and artifacts are kept. [Sharing on GitHub](docs/SHARING_ON_GITHUB.md) has the final publication steps. The historical notices are all still in place; see [Rights and Preservation](RIGHTS.md).

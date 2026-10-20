@@ -1,0 +1,50 @@
+{
+  "method": "isolated routine calls using a workspace caller; SEI/CLD; controlled RAM; original game instructions unchanged",
+  "source_prg_sha256": "09c9d0e3120e847f63c19b24560d46d08f15a48bfacb6956de01230e15cffbcd",
+  "reference_memory_sha256": "f47d61118fa1a20f1e84bf3fecce22ca7d6885c0e05f99426c1b97c5f98cce2a",
+  "emulator": "VICE xplus4, PAL C16, 16 KB",
+  "scope": "five arithmetic observations; not full gameplay, concurrency, overflow or sound verification",
+  "checks": [
+    {
+      "probe": "score-999-plus-1",
+      "version": "source",
+      "score": "001000",
+      "lives": 4,
+      "cached_digit": 1
+    },
+    {
+      "probe": "score-999-plus-1",
+      "version": "running-reference",
+      "score": "001000",
+      "lives": 3,
+      "cached_digit": 0
+    },
+    {
+      "probe": "pressure-crossing",
+      "before_hi": 10,
+      "before_lo": 1,
+      "amount": 4,
+      "after_hi": 9,
+      "after_lo": 7,
+      "blowout": 0
+    },
+    {
+      "probe": "completion-crossing",
+      "before_hi": 25,
+      "before_lo": 7,
+      "amount": 1,
+      "after_hi": 26,
+      "after_lo": 0,
+      "done": 0
+    },
+    {
+      "probe": "completion-followup",
+      "before_hi": 26,
+      "before_lo": 0,
+      "amount": 1,
+      "after_hi": 26,
+      "after_lo": 0,
+      "done": 1
+    }
+  ]
+}

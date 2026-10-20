@@ -2,11 +2,11 @@
 
 ## Preserved Collections
 
-`Original Source Recovered/TycoonTex-C16.d64` is the primary 2026 disk capture. Its live directory contains 56 sequential files. Every disk file matches the supplied extraction in `Original Source Recovered/2026 - TycoonText-C16/`, including the hashes recorded in its `manifest.json`.
+`Original Source Recovered/TycoonTex-C16.d64` is the main 2026 disk capture, with 56 sequential files in its live directory. Every disk file matches the extraction in `Original Source Recovered/2026 - TycoonText-C16/`, including the hashes in its `manifest.json`.
 
-`Original Source Recovered/1992 - Tycoon Tex C16/` contains the older text exports, graphics binaries, and development utilities. Its `INDEX` maps original Commodore names to PC filenames. The build normalizes uppercase and newlines in memory when consuming those older text exports, leaving their saved bytes unchanged.
+`Original Source Recovered/1992 - Tycoon Tex C16/` holds the older text exports, graphics binaries and development utilities. Its `INDEX` maps the original Commodore names to PC filenames. When the build reads those older text exports it normalizes uppercase and newlines in memory, so the saved bytes stay as they were.
 
-The disk is incomplete as an assembly set: the main program and several required routines are absent from its live directory. The older collection fills those gaps. Selection is explicit and reproducible, rather than based on approximate filename matching.
+The disk alone isn't a complete assembly set. The main program and several required routines are missing from its live directory, and the older collection fills the gaps. The selection is explicit and reproducible, not a guess from similar filenames.
 
 ---
 
@@ -18,15 +18,15 @@ The disk is incomplete as an assembly set: the main program and several required
 | `SET#1-CHAR/ASSEM` | 10      | 7     | 3        |
 | `SET#2-CHAR/ASSEM` | 6       | 4     | 2        |
 
-The first set assembles the main code and embedded data. The second assembles the terrain graphics used in the PRG. The third assembles an earlier actor-graphics variant for comparison; its output does not overwrite the standalone complete font.
+The first set assembles the main code and embedded data, and the second assembles the terrain graphics that go into the PRG. The third assembles an earlier actor-graphics variant for comparison, and its output never overwrites the standalone complete font.
 
-The total is 75 active source modules, including the three assembly roots. The fresh disk contributes 47 of those modules, with 28 supplied by the older collection. The remaining disk files are preserved comparison material, alternative data, or unused source. `OBJ` and `CHAR#1` are hex-listing comparison inputs rather than `.LIB` modules.
+That makes 75 active source modules, counting the three assembly roots. The fresh disk supplies 47 of them and the older collection the other 28. The remaining disk files are kept as comparison material, alternative data or unused source. `OBJ` and `CHAR#1` are hex listings used for comparison, not `.LIB` modules.
 
 ---
 
 ## Fallback Modules
 
-All filenames in the following table are within the 1992 folder. These modules are absent from the 2026 disk's live directory and are explicitly selected through `INDEX`.
+Every filename in this table is in the 1992 folder. None of these modules is in the 2026 disk's live directory, so each is picked explicitly through `INDEX`.
 
 | Commodore module   | Older PC file  |
 | ------------------ | -------------- |
@@ -63,16 +63,16 @@ All filenames in the following table are within the 1992 folder. These modules a
 
 ## Graphics and Reference Inputs
 
-`FRAK.BIN` in the 1992 folder is the complete game-ready upper font: a `$3C00` load header followed by 1,024 bytes. `CHARS.BIN` is retained as a differing font revision. `CHAR#1` and `CHAR#2` are MOS hex listings; `SET#1-CHAR/ASSEM` and `SET#2-CHAR/ASSEM` are the original graphics assembly drivers.
+`FRAK.BIN` in the 1992 folder is the complete game-ready upper font: a `$3C00` load header followed by 1,024 bytes. I've kept `CHARS.BIN` as a font revision that differs from it. `CHAR#1` and `CHAR#2` are MOS hex listings, and `SET#1-CHAR/ASSEM` and `SET#2-CHAR/ASSEM` are the original graphics assembly drivers.
 
-The separately supplied `Original Artifacts/tycoon_tex.prg` is the packed running version. It is used for emulator comparison and original-game launch, and contributes no bytes to the source rebuild. The supplied JPG gameplay reference is likewise not a build input.
+`Original Artifacts/tycoon_tex.prg` is the packed running version, which I supplied separately. It's used for the emulator comparison and for launching the original game, and it contributes no bytes to the source rebuild. The gameplay JPG reference isn't a build input either.
 
-`BACKUP-VARS` is an alternative variable arrangement, not the active `VARS` file. The build follows the main program's includes and does not substitute backup versions based on their names. The BASIC loaders, editor, assembler, DOS utility, and other binaries in the older folder are preserved but are not invoked by the modern build.
+`BACKUP-VARS` is an alternative variable arrangement, not the active `VARS` file. The build follows the main program's includes and never swaps in a backup version because of its name. The BASIC loaders, editor, assembler, DOS utility and other binaries in the older folder are kept, but the modern build doesn't use them.
 
 ---
 
 ## Generated Audit Trail
 
-Each build writes `recovery-manifest.json`, recording the disk image hash, the older index hash, each available module's source, byte count and hash, whether it is a fallback, and the normalization used. Its `used_modules` field identifies active source dependencies; its `assets` field distinguishes graphics included in the PRG from comparison-only outputs.
+Each build writes `recovery-manifest.json`, which records the disk image hash, the older index hash, and for every available module its source, byte count and hash, whether it is a fallback and what normalization was used. The `used_modules` field lists the active source dependencies, and the `assets` field separates graphics that go into the PRG from comparison-only outputs.
 
-The [included manifest](verification/source-manifest.json) records the verified checkpoint. [Source and Validation](SOURCE_AND_VALIDATION.md) explains byte comparisons, graphics revision choices, and the difference from the supplied running game.
+The [included manifest](verification/source-manifest.json) is the one for the verified checkpoint. [Source and Validation](SOURCE_AND_VALIDATION.md) explains the byte comparisons, the graphics revision choices and the difference from the running game.

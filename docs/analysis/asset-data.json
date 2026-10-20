@@ -1,0 +1,300 @@
+{
+  "note": "Hex payloads retain raw bytes; multicolor preview colors identify 2-bit indices, not a final palette.",
+  "terrain": {
+    "address": 4096,
+    "glyphs": 256,
+    "hex": "0d3e3adbbff55555000000000303030f000000000000000000000000000000000000000000000000adbdf5d555555555fadadaeaeb6b6baf0f0d0d0d0e3e3636000000000303030300000000000000005555555555555555bafededfd7575757afababababaaaabaf0f0f0ecec6c6cac0000000000c0c0c0ff7f575555555555adaeb6baaaaaaaea00000000c3f3bfaf00000000000000000000000000000000ffaad5ff7e5f5555aaaaaaaaaaaaaaaac0c0c0f0736f6faf00000000000000000000000000000000ffaa55ffabebff55eaeabaaaaaaaaaaadcdbebeb6b6aaaaa00000000003030dc0000000000000000ebfbbfbdf5d55555b0b0b0bcafaaaaaa0000000000c0c0b000000000000000000000000000000000fb7f7e5e5e5f5755003030dc6cacaceb00000000000000000000000000000000000000000000000036db6bababbff55536363636363636360003030d0d0d0d0d00000000000000000000000000000000fa7a7a7a7e5f5555afababababababeaf0b0b0b0b0b0b0ac0000000000c0c0c00000000000000000bcabaaaaffd75555aa95bfb0b0b0b0f000000000000000ff00000000000000000000000000000000ecffaaaaabff5555bc6cececefeae5ef00000000000000f000000000000000000000000000000000ffeaababfb7f5555f5d5d5d5d5d5d5d50000030300030f3d00000000000000000000000000000000feaffa7f555555557e9e9e9e9e9e9e9ed937ee6ad5bfeafa3bfbd937eed937ee00000c37373b373bdfffaaeaeaff5555b0bfbab5bfb0ffd5c000f07030b0b0b000c0c000c0c000c00000000000000000ecfcafaaaaff555500f0bc6cecececec0000000000000000000000000000000000000000000000003d36fb5babff55550000030303030f0d000000000000000000000000000000000000000000000000aaaafa7b7f555555efeb6b6b6baaaaaa00000030303cecec00000000000000000000000000000000aaafadfd5555555503030f0dcdbeaaaa000000000000000000000000000000000000000000000000fefd5f55555555556a6aaaaaaaaaaaaa363a3adadadaeaea0f0f0f0e3636363600000000000c0c0fbdf5d55555555555aeb6b6daaaaaaeaff0b0b0b3b3bfafad000000c0c0c0c0c00000000000000000f555555555555555c3bfadadadadbdb50000000000000303000000000000000000000000000000005555555555555555707c5f5d5e5f575500000000c0c0707000000000000000000000000000000000fb7b7a7e57555555f0f0ececacacecec00000000303030f0000000000000000000000000000000000ffaaaaabff555550000000000000000000000000000000000000000000000000000000000000000f5b5f5d5d555555500000303030f3d350000000000000000000000000000000000000000000000005555555555555555dcdcdc57575757550000c0c0c0f0fcdc000000000000000000000000000000007e5f5555555555550d0e0e36363afa7a0003030303030d0d00000000000000000000000000000000adfd75f5d5d55555acababababababafc07070b0acacacac000000000000c0c000000000000000005e57555555555555000000c0f0707c5f000000000000000000000000000000000000000000000000abbff5f55d5555550003030303030df6000000000000000000000000000000000000000000000000ec7b7a7e5e5f5555f07070b0acacecec000000000000c0c000000000000000000000000000000000ededbdb5f5d555550c0f3f3b3b3a3a3f0000000000000c0c00000000000000000000000000000000b3efeb7b7b5f55550000000000c0b0b300000000000000000000000000000000000000000000000095bfbcbbbffd5555000000000000ffea00000000000000000000000000000000000000000000000055ffececff5555550e3efae5efecffaa030f0e0e0e0e0e0e0000000000000000000000000000000055ff0e0eff555555c3ffae5efe0effaaffaa55ffc0c0c0c00000000000000000000000000000000056feaeaeeeff5555eaaaaaaaaaaaffabf0bc6cecececeffe00000000000000000000000000000000e9e9e9e9ebff5555ab9aa6a9a9a9a9e93ffae5efecececef00000000000000000000000000000000bbbfb7b9fa7f5555fbfbbbbbbbbbbbbbfcaf5ffb3b3b3b3b00000000000000000000000000000000ffff00000000ffffaaaaaa55555555ffffff00000000ffffaaaaaa55555555fffdfd3d3d3d3dfdffa9adad7d7d7d7dfd6b6b686868686bff6a6a6a696969696bebfa00000000ffff96a5965f7d5f7dfafcff00000000ffffaaa8a249464649f33fff00000000ffffaa2a8a61919161cfffff00000000ffffaaabaa55555555ffa88300000000ffffb8fef05c545558e0aaaaaa55555555ffffff00000000ffffaaea3a350f0925afbf2f00000000ffff0022232a365fffff00000000000000002cbcfcc084a9ffff0000000000000000160600002a7bffff000000000000000000606868d4f5ffff0000000000000000020a3d0f175fffff00000000000000000080a068d8f5ffff0000000000000000001300000330ffffaa286411540045044c0100000c00ffffaaa25a0544500004100430000030ffffaa28664115004403000400c00300ffffaa8222451400011003103000000cffffaa9a621551151040d1f33330303000ffaa6699505ddd5ddd3c3c0c0c0c0000ffaa9666dbd777743475cfcfc3c3c3c3ffaaea95965d9d757dfdfd0f0f0f0300ffaa9a9e795e5dddddf4fc3c3c0c0c00ffaa6bb56b577777f7cfcc3c0c0c0000ffaabf9e7b5e5dcfff"
+  },
+  "font": {
+    "address": 15360,
+    "glyphs": 128,
+    "hex": "7e4299a1a199427e387ceefefeeeee00fcfeeefceefefe003c7ef6f0f67e3c00f8fcfeeefefcf800fefee0f8e0fefe00fefee0f8f8e0e0003c7ee0eee67e3c00eeeefefefeeeee007c7c3838387c7c007e7e1c1cdcfc7800eefefcf8fcfeee00e0e0e0e0e0fefe00c6eefefefeeeee00eefefefeeeeeee00387cfeeefe7c3800fcfeeefefce0e0007cfefeeefe7c3e00fcfeeefcfcfeee007cfef87e1efe7c00fefe383838383800eeeeeeeeeefe7c00eeeeeeeeee7c3800eeeefefefeeec600eeee7c387ceeee00eeeeee7c38383800fefe3e7cf8fefe00000307070301010100c0e0e0c080808001013d3f7f7f7f008080bcfcfefefe00ffffffffffffffff0000000000000000181818303000606066666600000000006666ff66ff666600183e603c067c180062660c18306646003c663c3867663f00060c1800000000001e3c7070703c1e00783c0e0e0e3c78000042243c3c2442000018187e1818000000000000001818300000007e0000000000000000383838000003060c183060007cfeeeeeeefe7c003838787838fefe007cfece1e78fefe007cfece1ccefe7c001c3c7cecfefe1c00fefef0fc1efe7c007cfee0fceefe7c00fefecc18383838007cfeee7ceefe7c007cfeee7e0efe7c0000003838003838000000383800383870ff00838484e300ffff00324b4a3200ffff005d49c94900ffff008c52924c00ff0000000000000003000000000020509800000000002020c004040203030d10214f0c38c4061888f00000000000000000210202020203010118086848170080ff000000207fcc90600100010101020408aafc3212138142200000000000008080080c10110e513c5b3844828105c364e08058a40c1830c000ff00ffffffff00ffff00f0f0f0f000ffff000000000000ff000000ffff0000000304081010080403c0201008081020c0ffa55a342c342c34ff000000000000ff2c342c342c5aa5ff6a6a556f6f6f6a6a0000008142241800001824428100000020100402020408100408204040201008000003030f0c3c3a00000000000000aa00001111114444a8fa3a3c0c0f030300aaaa000000000000a8a8444411111100000000fcebdad6ea0000000000c0b0bf000000000000030f0000000000f00cc30000000000000000fa353f0f00000000aa5a55f50f000000aaff7f55ff000000bfea6a5ff0000000f0acacf000000000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3eeee3eedddf300fcafababa75ffc003fc0000f3f37f5d7ffc0c0c0f0fcefeb00c000030f3f3bfbffeaff3707c4ff3faaaaffdfd013fffcefbcf0c000000000ffffffffffffffffffffffffffffffffffffffff5d5e5f313232373705ff8d3eff4ca4f2f6ff2020"
+  },
+  "tables": {
+    "ANDATA": {
+      "address": 7980,
+      "bytes": 192,
+      "hex": "0100010101020408aafc3212138142200000000000008080080c10110e513c5b3844828105c364e08058a40c1830c000030102020202054854fc3212120408340000000000000000c8306916120a0400244488907088ecbc00000000000000000503040404040a1048f4ce494810305c0000000080804040101821a35ca3383748902966328bcdc6c080000000000000020201020201133492fc32121204188400000000000000000b191d040502000004040890f08ce6dc0000000000000000"
+    },
+    "ARRCHR": {
+      "address": 14066,
+      "bytes": 144,
+      "hex": "000000000003030d0000000000f0707f03030f0f3f3bfbeb0d3ffaffff0000007ffaaffbfeff0000efbfffffabff0000022a2fafbfbfb7b7aafeffdff5fdffff00a0e0e8f8787878b7bdbdaf2f2a0200ffffff5ffffeaa0078f8f8e8e0a00000000a2b2fadb7b7b700aafffff777777700a0e8f87a7e7e7eb7b7b7ad2f2b0a00777777f7ffffaa007e7e7e5ae8e8a000"
+    },
+    "BACHAR": {
+      "address": 14210,
+      "bytes": 144,
+      "hex": "c3333fffe7e7ebebc3ccfcffdbdbebebffd7f5ff3f030303ffd75ffffcc0ffebffebff03ffebff0fffc0ffebffc0f0f03cefebed3d0d3ded3cfbeb7b7c707c7bebed3d0d35ddd7dceb7b7c705c77d737dcdc3f033febebfc3737fcc0fcebeb3f03ffebf3033dd5d5c0ffebcfc0bcababd50dd5ddfdd5dd0dabb0abbbbfabbbb03f030303030f0e0ffcc0c0c0c0f0b0f0"
+    },
+    "SUCHAR": {
+      "address": 14354,
+      "bytes": 144,
+      "hex": "000000030f3bdedf0030f073ffb5e5f7030ffbabff575ffbde3b0f0300000000e5b5ff73f03000005f57ffabfb0f0300000f3adf3737df7faaebaaaaaaebff7d00f0acf7dcdcf7fdd73737353f0000007d7d7d5555d7d73cd7dcdc5cfc0000003fc0000f3f37f5d7ffc0c0c0f0fcefeb00c000030f3f3bfbffeaff3707c4ff3faaaaffdfd013fffcefbcf0c000000000"
+    },
+    "DWIDTH": {
+      "address": 15235,
+      "bytes": 112,
+      "hex": "00ffff0f0f0f0f0f00fcfcc0c0c0c0c000fcfcfc3f0f0f0f00fcfcfcf0c0c0c0003ffff0f0f0ff3f00fcfc000000fcfc003ffff0f0f0ff3f00f0fc3c3c3cfcf000fcfcfffff3f0f0003c3c3cfcfcfcfc003ffff0fff0ff3f00f0fc00c000fcf000fcfc3f0f3ffcfc00fcfcf0c0f0fcfc"
+    },
+    "SHTCOL": {
+      "address": 11572,
+      "bytes": 48,
+      "hex": "4161395759296816226457700671060056713e63562e6841264563707025710041613901512178ee1267017171427700"
+    },
+    "COMPAR": {
+      "address": 7801,
+      "bytes": 8,
+      "hex": "a9acafb2b5b8bbbe"
+    },
+    "LANDSP": {
+      "address": 7809,
+      "bytes": 8,
+      "hex": "0002030405060707"
+    },
+    "HILLSP": {
+      "address": 7817,
+      "bytes": 8,
+      "hex": "0001010102020203"
+    },
+    "ANIMSP": {
+      "address": 7825,
+      "bytes": 8,
+      "hex": "0016100e0a070301"
+    },
+    "DECODE": {
+      "address": 6579,
+      "bytes": 4,
+      "hex": "01030002"
+    },
+    "AMOUNT": {
+      "address": 10905,
+      "bytes": 8,
+      "hex": "0001020303030404"
+    },
+    "YVAL": {
+      "address": 6536,
+      "bytes": 15,
+      "hex": "00010228292a50515278797aa0a1a2"
+    },
+    "FALLY": {
+      "address": 6551,
+      "bytes": 15,
+      "hex": "547ca4537ba3527aa25179a15078a0"
+    },
+    "HILY": {
+      "address": 6566,
+      "bytes": 5,
+      "hex": "00285078a0"
+    },
+    "HILLST": {
+      "address": 6571,
+      "bytes": 8,
+      "hex": "00285078a0285078"
+    },
+    "TIME6": {
+      "address": 6583,
+      "bytes": 4,
+      "hex": "00306090"
+    },
+    "TIM48": {
+      "address": 6587,
+      "bytes": 3,
+      "hex": "003060"
+    },
+    "TIM5": {
+      "address": 6590,
+      "bytes": 3,
+      "hex": "00050a"
+    },
+    "DESCHR": {
+      "address": 9671,
+      "bytes": 6,
+      "hex": "ea04ee04f202"
+    },
+    "ICECHR": {
+      "address": 9677,
+      "bytes": 6,
+      "hex": "f404f804fc04"
+    },
+    "PIPCHR": {
+      "address": 9683,
+      "bytes": 8,
+      "hex": "c804d204cc04d002"
+    },
+    "COUNTR": {
+      "address": 9691,
+      "bytes": 3,
+      "hex": "010407"
+    },
+    "CNTCMP": {
+      "address": 9694,
+      "bytes": 3,
+      "hex": "090e0c"
+    },
+    "HOLECH": {
+      "address": 12607,
+      "bytes": 12,
+      "hex": "d7d9dfe1dcdad6d8dee0dddb"
+    },
+    "HOLEYY": {
+      "address": 12619,
+      "bytes": 12,
+      "hex": "4f50515253547778797a7b7c"
+    },
+    "EXSTAT": {
+      "address": 13066,
+      "bytes": 16,
+      "hex": "000003010705070d070d070503010000"
+    },
+    "EXYTBL": {
+      "address": 13045,
+      "bytes": 21,
+      "hex": "522a51537a02292b5054797ba20103282c787ca1a3"
+    },
+    "COLTBL": {
+      "address": 13037,
+      "bytes": 8,
+      "hex": "7122775271717171"
+    },
+    "PRESCH": {
+      "address": 8657,
+      "bytes": 72,
+      "hex": "ff000000000000ffff008080808000ffff00c0c0c0c000ffff00e0e0e0e000ffff00f0f0f0f000ffff00f8f8f8f800ffff00fcfcfcfc00ffff00fefefefe00ffff00ffffffff00ff"
+    },
+    "PRATT": {
+      "address": 11403,
+      "bytes": 32,
+      "hex": "000000181800000000002418182400000042243c3c244200817e5a66665a7e81"
+    },
+    "OFDAT": {
+      "address": 11397,
+      "bytes": 6,
+      "hex": "000810181008"
+    },
+    "TITTOP": {
+      "address": 10651,
+      "bytes": 20,
+      "hex": "5d5e5f60616263646364656620205d5e6768696a"
+    },
+    "CHSY": {
+      "address": 10671,
+      "bytes": 12,
+      "hex": "0001020328292a2b50515253"
+    },
+    "CHSCHR": {
+      "address": 10683,
+      "bytes": 12,
+      "hex": "3c3d3e3f551b1c55571d1e57"
+    },
+    "CHSCOL": {
+      "address": 10695,
+      "bytes": 12,
+      "hex": "717171715142425151464651"
+    },
+    "DUCHIE": {
+      "address": 13126,
+      "bytes": 5,
+      "hex": "7232123571"
+    },
+    "DATTHE": {
+      "address": 13592,
+      "bytes": 18,
+      "hex": "0000fa2f2228222823ee22282228222f0000"
+    },
+    "EDDAT": {
+      "address": 13610,
+      "bytes": 18,
+      "hex": "0000f45c86528651e55184d184d2f45c0000"
+    },
+    "HISTBL": {
+      "address": 6733,
+      "bytes": 112,
+      "hex": "3030353030304752454d4c494e003030343030302a20202a20202a00303033303030202a202a202a200030303230303020202a2a2a20200030303130303020202a2a2a202000303030353030202a202a202a20003030303235302a20202a20202a003030303130304d2e502e4c544400"
+    },
+    "ARCHAR": {
+      "address": 12000,
+      "bytes": 8,
+      "hex": "5d5e5f2060616220"
+    },
+    "ARY": {
+      "address": 12008,
+      "bytes": 8,
+      "hex": "0001020328292a2b"
+    },
+    "JTCHAR": {
+      "address": 12076,
+      "bytes": 12,
+      "hex": "2063646566672068696a6b6c"
+    },
+    "JTARY": {
+      "address": 12088,
+      "bytes": 12,
+      "hex": "00010203040528292a2b2c2d"
+    },
+    "BALLY": {
+      "address": 12244,
+      "bytes": 6,
+      "hex": "000128295051"
+    },
+    "KAMY": {
+      "address": 12863,
+      "bytes": 6,
+      "hex": "00010228292a"
+    },
+    "BALLST": {
+      "address": 12416,
+      "bytes": 14,
+      "hex": "050e2d0e550e7d0ea50ecd0ef50e"
+    },
+    "SUSTAD": {
+      "address": 12788,
+      "bytes": 16,
+      "hex": "b30ddb0d030e2b0e530e7b0ea30ecb0e"
+    },
+    "RASVAL": {
+      "address": 6272,
+      "bytes": 5,
+      "hex": "1741b0c0cc"
+    },
+    "BTD": {
+      "address": 13784,
+      "bytes": 5,
+      "hex": "1080048002"
+    },
+    "RWD": {
+      "address": 13789,
+      "bytes": 5,
+      "hex": "fdfbbfbffe"
+    },
+    "SKLTBL": {
+      "address": 14887,
+      "bytes": 4,
+      "hex": "80643a01"
+    },
+    "TIMDLY": {
+      "address": 14891,
+      "bytes": 3,
+      "hex": "181008"
+    },
+    "ARAB": {
+      "address": 14894,
+      "bytes": 3,
+      "hex": "18130e"
+    },
+    "LV4TO6": {
+      "address": 15124,
+      "bytes": 6,
+      "hex": "030509060a0c"
+    },
+    "LV7TO9": {
+      "address": 15130,
+      "bytes": 4,
+      "hex": "070b0d0e"
+    },
+    "ABLOFS": {
+      "address": 11106,
+      "bytes": 3,
+      "hex": "000d1a"
+    }
+  }
+}
