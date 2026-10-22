@@ -1,5 +1,13 @@
 # Tycoon Tex C16
 
+![Release v1.0.0](docs/images/badges/release.svg)
+![Platform Commodore 16 / Plus/4](docs/images/badges/platform.svg)
+![Byte match 9,179 of 9,179](docs/images/badges/byte-match.svg)
+![Toolchain cc65](docs/images/badges/toolchain.svg)
+![PlatformIO 6.1](docs/images/badges/platformio.svg)
+![Emulator VICE 3.10](docs/images/badges/emulator.svg)
+![Status preservation](docs/images/badges/status.svg)
+
 This project reassembles the surviving **Tycoon Tex** source for the Commodore 16 and Plus/4 using PlatformIO, VS Code and the cc65 toolchain. I programmed the game at Micro Projects for Gremlin Graphics in 1985.
 
 Open the [complete HTML handbook](docs/TYCOON_TEX.html) for the history, artwork, build guides, validation, code analysis, graphics and reference in one offline document. It's generated from the Markdown files, which stay the source of truth. Run `make docs-html` after editing the docs, or `make docs` to refresh the build and analysis as well. [Maintaining the HTML Documentation](docs/HTML_DOCUMENTATION.md) has the details.
