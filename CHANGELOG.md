@@ -6,7 +6,7 @@ All notable changes to the Tycoon Tex C16 preservation project. Dates are DD-MM-
 
 ## [1.2.0] 22-10-2026
 
-Documentation release. The game build and its output are unchanged. It is not tagged.
+Documentation release, tagged `v1.2.0`. The game build and its output are unchanged.
 
 ### Added
 
@@ -16,6 +16,11 @@ Documentation release. The game build and its output are unchanged. It is not ta
 - Badges in the HTML handbook render inline in a row: the generator gives images under `/badges/` a `badge` class (no zoom), with matching CSS.
 - Two documentation tests: the saved handbook is current, and the full handbook has a diagram, GIF and JPEG images and no warnings.
 - README status badges (release, platform, byte match, toolchain, PlatformIO, emulator, status) as local SVGs in `docs/images/badges/`, so the offline HTML handbook still builds.
+
+### Changed
+
+- The changelog is a chapter in the HTML handbook's reference group, after Rights and Preservation, as in my other restorations.
+- `RIGHTS.md` wording: "a licence that's stated explicitly".
 
 ---
 
