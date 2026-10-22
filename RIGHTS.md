@@ -14,6 +14,6 @@ The images, cassette packaging, scrapbook pages, articles, advertisements, logos
 
 ## Repository Status
 
-I've set this repository up for studying, reassembling and preserving the historical material. I haven't assigned any new open-source or artwork licence. Making the repository public doesn't grant any rights beyond a licence that is expressly supplied.
+I've set this repository up for studying, reassembling and preserving the historical material. I haven't assigned any new open-source or artwork licence. Making the repository public doesn't grant any rights beyond a licence that's stated explicitly.
 
 The build scripts adapt the approach from my [Dorks Dilemma C16 repository](https://github.com/anthonyjclarke/Dorks_Dilemma_C16), where the recovery background and tool acknowledgements are kept. The build never rewrites the original input files.
