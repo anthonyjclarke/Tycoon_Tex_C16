@@ -32,7 +32,7 @@ The direct equivalent is:
 node scripts/build_docs.mjs
 ```
 
-The output is `docs/TYCOON_TEX.html`. Commit the updated HTML together with the Markdown and asset changes, so readers can open it right away. The root README and the other guides can link to it.
+The output is `docs/TYCOON_TEX.html`. Commit the updated HTML together with the Markdown and asset changes, so readers can open it right away. The root README and the other guides can link to it. Local SVG files in `docs/images/badges/` provide the README badges, because the generator rejects remote images.
 
 `make docs` doesn't regenerate the graphics figures, because those need Pillow. After changes to the asset data, run `python3 scripts/render_game_graphics.py` first, then `make docs-html`.
 

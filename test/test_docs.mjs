@@ -94,6 +94,7 @@ test('the complete repository handbook builds with all current links resolved', 
     assert(sources.includes('docs/analysis/CODE_REFERENCE.md'));
     assert.match(html, /data:image\/svg\+xml;base64/);
     assert.match(html, /class="mermaid"/);
+    assert.match(html, /<img class="badge" src="data:image\/svg\+xml;base64/);
     assert.match(html, /data:image\/gif;base64/);
     assert.match(html, /data:image\/jpeg;base64/);
     assert.equal(warnings.length, 0);

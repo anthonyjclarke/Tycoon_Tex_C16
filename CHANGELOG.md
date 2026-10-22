@@ -20,6 +20,7 @@ Documentation release, tagged `v1.2.0`. The game build and its output are unchan
 ### Changed
 
 - The changelog is a chapter in the HTML handbook's reference group, after Rights and Preservation, as in my other restorations.
+- A documentation test that the README badges render as inline `badge` images, and a note in `docs/HTML_DOCUMENTATION.md` that they are local SVGs because the generator rejects remote images.
 - `RIGHTS.md` wording: "a licence that's stated explicitly".
 
 ---
