@@ -18,6 +18,12 @@ The separate `Tycoon Tex Cassette Inlay.jpg` shows the cassette cover, descripti
 
 ---
 
+## The Gremlin Archive and the Book
+
+Mark Hardisty's book *A Gremlin in the Works* (Bitmap Books), the officially endorsed history of Gremlin Graphics, tells the Micro Projects story, and I contributed to it. His [Gremlin Graphics Archive](https://www.gremlinarchive.com/) publishes my 1992 export of the development disks, including this game's `DISK6`, and introduces my part in [A Gremlin in the Works – Anthony Clarke](https://www.gremlinarchive.com/index.php/2017/07/31/a-gremlin-in-the-works-anthony-clarke/). [Gremlin Archive and the Book](GREMLIN_ARCHIVE.md) has the references, the archive's disk list and how my 1992 folder matches `DISK6`.
+
+---
+
 ## Recovery Background and Build Template
 
 My original C64/1541 development setup and the later source recovery are written up in the companion [Dorks Dilemma C16 repository](https://github.com/anthonyjclarke/Dorks_Dilemma_C16). Its [Development History](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/DEVELOPMENT_HISTORY.md) has my recollections and the recovery-tool acknowledgements.
