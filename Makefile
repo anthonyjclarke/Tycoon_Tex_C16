@@ -1,7 +1,7 @@
 PYTHON ?= python3
 NODE ?= node
 
-.PHONY: all run run-original test verify clean docs docs-html docs-watch docs-check test-docs
+.PHONY: all run run-original test verify probes clean docs docs-html docs-watch docs-check test-docs
 
 all:
 	$(PYTHON) scripts/restore_c16.py
@@ -17,6 +17,9 @@ test:
 
 verify: all
 	$(PYTHON) scripts/verify_vice.py
+
+probes: all
+	$(PYTHON) scripts/probe_gameplay_rules.py
 
 docs: all
 	$(PYTHON) scripts/analyze_codebase.py

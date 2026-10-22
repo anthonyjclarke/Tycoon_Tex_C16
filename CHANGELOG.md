@@ -4,6 +4,25 @@ All notable changes to the Tycoon Tex C16 preservation project. Dates are DD-MM-
 
 ---
 
+## [1.3.0] 23-10-2026
+
+Structure and documentation release that aligns this repository with my Dork's Dilemma, Xargon Wars and Xargon's Revenge restorations. The game build is unchanged (SHA-256 `09c9d0e3…5cffbcd`).
+
+### Added
+
+- `docs/GRAPHICS.md`, the "Graphics, Text, Palettes, and Other Assets" section moved out of `CODEBASE_ANALYSIS.md` unchanged apart from links, and added to the handbook after the codebase analysis.
+- `make probes` for the VICE rule probes.
+
+### Changed
+
+- Source folders renamed to the common layout: `1992 - Tycoon Tex C16/` is now `Original Source Recovered/1992/`, and the disk image and its extraction moved into `Original Source Recovered/2026/` (`TycoonTex-C16.d64` and `TycoonText-C16/`). The supplied screenshot `tycoon_tex_main.jpg` moved to `Original Artifacts/`. File contents are unchanged; scripts, docs and the recorded source manifest use the new paths.
+- `rule-probes.json` moved from `docs/analysis/` to `docs/verification/`, with the other reviewed evidence.
+- Links to Dork's Dilemma's history now point at its renamed `docs/HISTORY_AND_CREDITS.md`.
+- Work happens on `dev`, with verified checkpoints merged into `main`; `docs/SHARING_ON_GITHUB.md` describes it.
+- Common `.gitignore` across the restorations (`.venv/` is local). Release badge updated to `v1.3.0`.
+
+---
+
 ## [1.2.0] 22-10-2026
 
 Documentation release, tagged `v1.2.0`. The game build and its output are unchanged.

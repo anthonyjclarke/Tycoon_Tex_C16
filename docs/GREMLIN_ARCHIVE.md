@@ -74,7 +74,7 @@ Each disk ZIP includes an `INDEX` listing the original Commodore directory next 
 
 ## In This Project
 
-The 1992 source in `Original Source Recovered/1992 - Tycoon Tex C16/` is the archive's `DISK6`, "Tycoon Tex C16". There's no copy of `DISK6.ZIP` itself in this project, so I compared file by file. The archive's `Disk 1-6/DISK6.ZIP` is 94,814 bytes with CRC-32 `adbf0f1f` and holds 96 files, all dated 7 October 1992. Each of those 96 matches a file in my 1992 folder by CRC-32 and size:
+The 1992 source in `Original Source Recovered/1992/` is the archive's `DISK6`, "Tycoon Tex C16". There's no copy of `DISK6.ZIP` itself in this project, so I compared file by file. The archive's `Disk 1-6/DISK6.ZIP` is 94,814 bytes with CRC-32 `adbf0f1f` and holds 96 files, all dated 7 October 1992. Each of those 96 matches a file in my 1992 folder by CRC-32 and size:
 
 | Archive `DISK6.ZIP`                         | This project's 1992 folder  |
 | :------------------------------------------ | :-------------------------- |

@@ -2,9 +2,9 @@
 
 ## Preserved Collections
 
-`Original Source Recovered/TycoonTex-C16.d64` is the main 2026 disk capture, with 56 sequential files in its live directory. Every disk file matches the extraction in `Original Source Recovered/2026 - TycoonText-C16/`, including the hashes in its `manifest.json`.
+`Original Source Recovered/2026/TycoonTex-C16.d64` is the main 2026 disk capture, with 56 sequential files in its live directory. Every disk file matches the extraction in `Original Source Recovered/2026/TycoonText-C16/`, including the hashes in its `manifest.json`.
 
-`Original Source Recovered/1992 - Tycoon Tex C16/` holds the older text exports, graphics binaries and development utilities. Its `INDEX` maps the original Commodore names to PC filenames. When the build reads those older text exports it normalizes uppercase and newlines in memory, so the saved bytes stay as they were.
+`Original Source Recovered/1992/` holds the older text exports, graphics binaries and development utilities. Its `INDEX` maps the original Commodore names to PC filenames. When the build reads those older text exports it normalizes uppercase and newlines in memory, so the saved bytes stay as they were.
 
 The disk alone isn't a complete assembly set. The main program and several required routines are missing from its live directory, and the older collection fills the gaps. The selection is explicit and reproducible, not a guess from similar filenames.
 

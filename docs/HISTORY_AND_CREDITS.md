@@ -26,7 +26,7 @@ Mark Hardisty's book *A Gremlin in the Works* (Bitmap Books), the officially end
 
 ## Recovery Background and Build Template
 
-My original C64/1541 development setup and the later source recovery are written up in the companion [Dorks Dilemma C16 repository](https://github.com/anthonyjclarke/Dorks_Dilemma_C16). Its [Development History](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/DEVELOPMENT_HISTORY.md) has my recollections and the recovery-tool acknowledgements.
+My original C64/1541 development setup and the later source recovery are written up in the companion [Dorks Dilemma C16 repository](https://github.com/anthonyjclarke/Dorks_Dilemma_C16). Its [History and Credits](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/HISTORY_AND_CREDITS.md) has my recollections and the recovery-tool acknowledgements.
 
 This project adapts the Dorks Dilemma source conversion, disk reader, ca65/ld65 build, PlatformIO integration and VICE-monitor approach. Tycoon Tex's source order, memory layout, graphics choices, original object listing and comparison with the running version are validated separately here. I've left the recovery story in the companion repository on purpose.
 

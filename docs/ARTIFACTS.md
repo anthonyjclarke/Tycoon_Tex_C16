@@ -40,7 +40,7 @@ The Tycoon Tex cassette inlay is on **page 5**, on the left of the scanned sheet
 
 [tycoon_tex.prg](../Original%20Artifacts/tycoon_tex.prg) is the running game I have. It is 8,662 bytes, loads at `$1001` and holds a BASIC `SYS 4109` stub followed by compressed data. The verification script runs it and compares the decompressed memory with the rebuilt source version. It's there for comparison and contributes no bytes to the rebuilt game.
 
-[tycoon_tex_main.jpg](../Original%20Source%20Recovered/tycoon_tex_main.jpg) is a gameplay screenshot I supplied. It's a visual reference, not a capture of the rebuilt project.
+[tycoon_tex_main.jpg](../Original%20Artifacts/tycoon_tex_main.jpg) is a gameplay screenshot I supplied. It's a visual reference, not a capture of the rebuilt project.
 
 `docs/images/restored-title.png` and `docs/images/restored-gameplay.png` are VICE screenshots of this project's source-built PRG, taken during verification on 20 October 2026.
 

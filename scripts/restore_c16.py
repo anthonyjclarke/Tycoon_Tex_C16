@@ -14,9 +14,9 @@ from source_converter import convert, flatten
 
 ROOT = Path(__file__).resolve().parents[1]
 INPUTS = ROOT / 'Original Source Recovered'
-IMAGE = INPUTS / 'TycoonTex-C16.d64'
-OLDER = INPUTS / '1992 - Tycoon Tex C16'
-EXTRACTED = INPUTS / '2026 - TycoonText-C16'
+IMAGE = INPUTS / '2026/TycoonTex-C16.d64'
+OLDER = INPUTS / '1992'
+EXTRACTED = INPUTS / '2026/TycoonText-C16'
 REFERENCE = ROOT / 'Original Artifacts/tycoon_tex.prg'
 
 

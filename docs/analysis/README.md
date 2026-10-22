@@ -6,9 +6,9 @@
 
 The three SVG atlases show the [terrain multicolor indices](terrain-multicolor.svg), the [upper font as one-bit pixels](font-hires.svg) and the [upper font as two-bit pixels](font-multicolor.svg). They decode the original bytes into vector rectangles and label each glyph code and address. The colors are index keys, not a calibrated TED palette or a rebuilt final frame.
 
-The [illustrated graphics section](../../CODEBASE_ANALYSIS.md#main-character--tex-and-his-walk-frames) reconstructs complete Tex frames, environment-specific aliens, pipeline pieces and breaks, and background motifs. Five PNG figures and a walking GIF are stored in `graphics/`, together with a [manifest](graphics/graphics-manifest.json) recording their input/output hashes and VICE TED palette. The screen-composition figure annotates the existing verified gameplay capture; the other figures decode original asset bytes with environment colors.
+The [illustrated graphics section](../GRAPHICS.md#main-character--tex-and-his-walk-frames) reconstructs complete Tex frames, environment-specific aliens, pipeline pieces and breaks, and background motifs. Five PNG figures and a walking GIF are stored in `graphics/`, together with a [manifest](graphics/graphics-manifest.json) recording their input/output hashes and VICE TED palette. The screen-composition figure annotates the existing verified gameplay capture; the other figures decode original asset bytes with environment colors.
 
-[Rule Probes](rule-probes.json) records five controlled observations from original routines in VICE. It's a reviewed snapshot of evidence and isn't regenerated automatically.
+[Rule Probes](../verification/rule-probes.json) records five controlled observations from original routines in VICE. It's a reviewed snapshot of evidence and isn't regenerated automatically.
 
 ---
 

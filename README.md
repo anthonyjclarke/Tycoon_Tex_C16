@@ -1,6 +1,6 @@
 # Tycoon Tex C16
 
-![Release v1.2.0](docs/images/badges/release.svg)
+![Release v1.3.0](docs/images/badges/release.svg)
 ![Platform Commodore 16 / Plus/4](docs/images/badges/platform.svg)
 ![Byte match 9,179 of 9,179](docs/images/badges/byte-match.svg)
 ![Toolchain cc65](docs/images/badges/toolchain.svg)
@@ -53,7 +53,7 @@ In the source, the keyboard is `Z` / `X` for left / right, `;` / `/` for up / do
 
 `Original Source Recovered/` holds the 2026 disk image and its extraction, along with the more complete 1992 text export. The build uses the fresh disk sources first and checks them against the extracted files. Anything missing comes from the 1992 collection, through its original `INDEX` filename mapping. Terrain graphics are assembled from source, and the font is the surviving `FRAK.BIN`. Nothing executable or graphical is copied from the running PRG into the rebuild.
 
-`Original Artifacts/` has the running game, the artwork and a scanned scrapbook. The [Artifact Catalogue](docs/ARTIFACTS.md) covers the cassette inlay and points to the relevant scrapbook pages.
+`Original Artifacts/` has the running game, the artwork, a gameplay screenshot and a scanned scrapbook. The [Artifact Catalogue](docs/ARTIFACTS.md) covers the cassette inlay and points to the relevant scrapbook pages.
 
 Generated assembly, extracted working copies and build reports all go into `build/`, and the original inputs stay byte for byte as they were. The [Source Inventory](docs/SOURCE_INVENTORY.md) lists the dependencies and fallback files.
 
@@ -63,13 +63,13 @@ Generated assembly, extracted working copies and build reports all go into `buil
 
 I remember playing Moon Patrol in pubs and elsewhere at the time, and Tycoon Tex looks a lot like it, but I can't recall exactly where the concept came from. The source credits the concept to **Matthew Clarke, Anthony Clarke, and Ian Stewart**, the programming to **Micro Projects** and the publication to **Gremlin Graphics Ltd.** See [History and Credits](docs/HISTORY_AND_CREDITS.md).
 
-The recovery story, my original development setup and the recovery-tool acknowledgements are in my companion [Dorks Dilemma C16 repository](https://github.com/anthonyjclarke/Dorks_Dilemma_C16), especially its [Development History](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/DEVELOPMENT_HISTORY.md). This project reuses that restoration's build approach, so I haven't repeated the story here.
+The recovery story, my original development setup and the recovery-tool acknowledgements are in my companion [Dorks Dilemma C16 repository](https://github.com/anthonyjclarke/Dorks_Dilemma_C16), especially its [History and Credits](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/HISTORY_AND_CREDITS.md). This project reuses that restoration's build approach, so I haven't repeated the story here.
 
 ---
 
 ## Learning, Modification, and Ports
 
-[Codebase Analysis](CODEBASE_ANALYSIS.md) walks through the game states, raster scheduling, player and hazard rules, collision model, graphics, audio, scoring and the differences between revisions. The [Porting Guide](docs/PORTING_GUIDE.md) keeps the original behavior apart from the architecture I'd propose for new platforms. A [generated code reference](docs/analysis/CODE_REFERENCE.md), [asset data](docs/analysis/asset-data.json) and indexed graphics atlases help with finding your way around the source.
+[Codebase Analysis](CODEBASE_ANALYSIS.md) walks through the game states, raster scheduling, player and hazard rules, collision model, graphics, audio, scoring and the differences between revisions. [Illustrated Graphics](docs/GRAPHICS.md) shows Tex, the aliens, the pipeline and the background decoded from the original bytes. The [Porting Guide](docs/PORTING_GUIDE.md) keeps the original behavior apart from the architecture I'd propose for new platforms. A [generated code reference](docs/analysis/CODE_REFERENCE.md), [asset data](docs/analysis/asset-data.json) and indexed graphics atlases help with finding your way around the source.
 
 ---
 

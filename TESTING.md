@@ -77,7 +77,7 @@ For controlled arithmetic observations, generate the unpacked reference capture 
 
 ```sh
 python3 scripts/verify_vice.py
-python3 scripts/probe_gameplay_rules.py
+make probes
 ```
 
-Five observations cover source and reference scoring across 999, pressure borrowing, and the completion flag at and after a coarse-meter carry. The probe calls the original routines through a small workspace caller with interrupts disabled and decimal mode cleared, asserts the expected state and leaves the game instructions untouched. Reports and monitor logs go to `build/rule-probes/`, and the reviewed [included report](docs/analysis/rule-probes.json) records this checkpoint. These probes are narrow. They don't turn the gameplay-entry check into a full play-through or a concurrency test.
+Five observations cover source and reference scoring across 999, pressure borrowing, and the completion flag at and after a coarse-meter carry. The probe calls the original routines through a small workspace caller with interrupts disabled and decimal mode cleared, asserts the expected state and leaves the game instructions untouched. Reports and monitor logs go to `build/rule-probes/`, and the reviewed [included report](docs/verification/rule-probes.json) records this checkpoint. These probes are narrow. They don't turn the gameplay-entry check into a full play-through or a concurrency test.

@@ -204,7 +204,7 @@ def analyze(build, output):
     text += '---\n\n## Source Locations\n\n'
     for name in sorted(sources):
         m=module_map[name]
-        path = 'Original Source Recovered/2026 - TycoonText-C16/'+provenance[name]['extracted_copy'] if not m['fallback'] else m['path']
+        path = 'Original Source Recovered/2026/TycoonText-C16/'+provenance[name]['extracted_copy'] if not m['fallback'] else m['path']
         text += f"`{name}` – [preserved input](../../{quote(path, safe='/')}); {m['raw_bytes']} raw bytes, {m['logical_lines']} logical lines.\n\n"
     text += '---\n\n## Zero-Page Variables\n\n'
     text += table(['Symbol','Address','Bytes','Source line'],[(f"`{v['symbol']}`",f"`${v['address']:04X}`",v['bytes'],v['source_line']) for v in variables])+'\n\n'

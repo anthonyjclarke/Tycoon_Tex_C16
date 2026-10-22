@@ -88,7 +88,7 @@
   "modules": [
     {
       "name": "ALIEN-CHRGET",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 904,
       "extracted_copy": "001_ALIEN-CHRGET.seq",
@@ -101,7 +101,7 @@
     },
     {
       "name": "ALTERABLES",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1043,
       "extracted_copy": "002_ALTERABLES.seq",
@@ -114,7 +114,7 @@
     },
     {
       "name": "ANIMATIONS",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1420,
       "extracted_copy": "003_ANIMATIONS.seq",
@@ -127,7 +127,7 @@
     },
     {
       "name": "ARROW-PRINT",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 443,
       "extracted_copy": "004_ARROW-PRINT.seq",
@@ -140,7 +140,7 @@
     },
     {
       "name": "BACKUP-VARS",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 6166,
       "extracted_copy": "005_BACKUP-VARS.seq",
@@ -151,7 +151,7 @@
     },
     {
       "name": "BALL-PRINT",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 404,
       "extracted_copy": "006_BALL-PRINT.seq",
@@ -164,7 +164,7 @@
     },
     {
       "name": "BASIC-ALIENS",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 494,
       "extracted_copy": "007_BASIC-ALIENS.seq",
@@ -177,7 +177,7 @@
     },
     {
       "name": "BONUS",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 99,
       "extracted_copy": "008_BONUS.seq",
@@ -188,7 +188,7 @@
     },
     {
       "name": "BOUNC/BALL-MVE",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1833,
       "extracted_copy": "009_BOUNC~2FBALL-MVE.seq",
@@ -201,7 +201,7 @@
     },
     {
       "name": "BREAK-IN-PIPE",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 2224,
       "extracted_copy": "010_BREAK-IN-PIPE.seq",
@@ -214,7 +214,7 @@
     },
     {
       "name": "BUSTER",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1181,
       "extracted_copy": "011_BUSTER.seq",
@@ -227,7 +227,7 @@
     },
     {
       "name": "CDATA-ARROW",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 236,
       "extracted_copy": "012_CDATA-ARROW.seq",
@@ -240,7 +240,7 @@
     },
     {
       "name": "CDATA-BOMB",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 129,
       "extracted_copy": "013_CDATA-BOMB.seq",
@@ -253,7 +253,7 @@
     },
     {
       "name": "CDATA-DESERT",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 360,
       "extracted_copy": "014_CDATA-DESERT.seq",
@@ -266,7 +266,7 @@
     },
     {
       "name": "CDATA-HIL1",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1564,
       "extracted_copy": "015_CDATA-HIL1.seq",
@@ -279,7 +279,7 @@
     },
     {
       "name": "CDATA-HIL2",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1562,
       "extracted_copy": "016_CDATA-HIL2.seq",
@@ -292,7 +292,7 @@
     },
     {
       "name": "CDATA-HIL3",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1562,
       "extracted_copy": "017_CDATA-HIL3.seq",
@@ -305,7 +305,7 @@
     },
     {
       "name": "CDATA-HIL4",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1562,
       "extracted_copy": "018_CDATA-HIL4.seq",
@@ -318,7 +318,7 @@
     },
     {
       "name": "CDATA-HIL5",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1562,
       "extracted_copy": "019_CDATA-HIL5.seq",
@@ -331,7 +331,7 @@
     },
     {
       "name": "CDATA-HILLS",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1099,
       "extracted_copy": "020_CDATA-HILLS.seq",
@@ -342,7 +342,7 @@
     },
     {
       "name": "CDATA-ICELAND",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 474,
       "extracted_copy": "021_CDATA-ICELAND.seq",
@@ -355,7 +355,7 @@
     },
     {
       "name": "CDATA-PIPES",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 552,
       "extracted_copy": "022_CDATA-PIPES.seq",
@@ -366,7 +366,7 @@
     },
     {
       "name": "CDATA-SUICIDE",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 211,
       "extracted_copy": "023_CDATA-SUICIDE.seq",
@@ -379,7 +379,7 @@
     },
     {
       "name": "CDATA-TEXMAN",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 386,
       "extracted_copy": "024_CDATA-TEXMAN.seq",
@@ -392,7 +392,7 @@
     },
     {
       "name": "CHAR#1",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 5140,
       "extracted_copy": "025_CHAR~231.seq",
@@ -403,7 +403,7 @@
     },
     {
       "name": "CHAR#2",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 682,
       "extracted_copy": "026_CHAR~232.seq",
@@ -414,7 +414,7 @@
     },
     {
       "name": "CHAR-TABLES",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 2330,
       "extracted_copy": "027_CHAR-TABLES.seq",
@@ -427,7 +427,7 @@
     },
     {
       "name": "DEATH-MARCH !",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 2008,
       "extracted_copy": "028_DEATH-MARCH_~21.seq",
@@ -440,7 +440,7 @@
     },
     {
       "name": "DEMO-MEGA/CODE",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 689,
       "extracted_copy": "029_DEMO-MEGA~2FCODE.seq",
@@ -453,7 +453,7 @@
     },
     {
       "name": "DIFFICULTY",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 2556,
       "extracted_copy": "030_DIFFICULTY.seq",
@@ -466,7 +466,7 @@
     },
     {
       "name": "DOUBLE-BIT",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 875,
       "extracted_copy": "031_DOUBLE-BIT.seq",
@@ -479,7 +479,7 @@
     },
     {
       "name": "EXPLOSIONS",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1764,
       "extracted_copy": "032_EXPLOSIONS.seq",
@@ -492,7 +492,7 @@
     },
     {
       "name": "EXTRA-MEMORY",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 206,
       "extracted_copy": "033_EXTRA-MEMORY.seq",
@@ -505,7 +505,7 @@
     },
     {
       "name": "FLASH-COLOURS",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 558,
       "extracted_copy": "034_FLASH-COLOURS.seq",
@@ -518,7 +518,7 @@
     },
     {
       "name": "HEXER",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 193,
       "extracted_copy": "035_HEXER.seq",
@@ -529,7 +529,7 @@
     },
     {
       "name": "HIGH-STUFF",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 4054,
       "extracted_copy": "036_HIGH-STUFF.seq",
@@ -542,7 +542,7 @@
     },
     {
       "name": "INIT-ALIENS",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1187,
       "extracted_copy": "037_INIT-ALIENS.seq",
@@ -553,7 +553,7 @@
     },
     {
       "name": "IRQ",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1125,
       "extracted_copy": "038_IRQ.seq",
@@ -566,7 +566,7 @@
     },
     {
       "name": "JOYSTIK",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 680,
       "extracted_copy": "039_JOYSTIK.seq",
@@ -579,7 +579,7 @@
     },
     {
       "name": "JUMPING-CODE",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 827,
       "extracted_copy": "040_JUMPING-CODE.seq",
@@ -592,7 +592,7 @@
     },
     {
       "name": "KAMAKAZE-PRINT",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 453,
       "extracted_copy": "041_KAMAKAZE-PRINT.seq",
@@ -605,7 +605,7 @@
     },
     {
       "name": "KEY-SCAN",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 650,
       "extracted_copy": "042_KEY-SCAN.seq",
@@ -618,7 +618,7 @@
     },
     {
       "name": "KWAHERI",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 2448,
       "extracted_copy": "043_KWAHERI.seq",
@@ -631,7 +631,7 @@
     },
     {
       "name": "LANDSCAPE",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 669,
       "extracted_copy": "044_LANDSCAPE.seq",
@@ -644,7 +644,7 @@
     },
     {
       "name": "LEVEL-OVER",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1387,
       "extracted_copy": "045_LEVEL-OVER.seq",
@@ -657,7 +657,7 @@
     },
     {
       "name": "MACROS",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 160,
       "extracted_copy": "046_MACROS.seq",
@@ -670,7 +670,7 @@
     },
     {
       "name": "MAGNIFICENT",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1229,
       "extracted_copy": "047_MAGNIFICENT.seq",
@@ -683,7 +683,7 @@
     },
     {
       "name": "MESSAGE-STUFF",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 469,
       "extracted_copy": "048_MESSAGE-STUFF.seq",
@@ -696,7 +696,7 @@
     },
     {
       "name": "MOVE-SPACEY",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1663,
       "extracted_copy": "049_MOVE-SPACEY.seq",
@@ -709,7 +709,7 @@
     },
     {
       "name": "OBJ",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 22978,
       "extracted_copy": "050_OBJ.seq",
@@ -720,7 +720,7 @@
     },
     {
       "name": "OIL-PRES/GAUGE",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1359,
       "extracted_copy": "051_OIL-PRES~2FGAUGE.seq",
@@ -733,7 +733,7 @@
     },
     {
       "name": "PAUSER",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 578,
       "extracted_copy": "052_PAUSER.seq",
@@ -746,7 +746,7 @@
     },
     {
       "name": "PLAY-GAME",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 1923,
       "extracted_copy": "053_PLAY-GAME.seq",
@@ -759,7 +759,7 @@
     },
     {
       "name": "PRINT-MAN",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 641,
       "extracted_copy": "054_PRINT-MAN.seq",
@@ -772,7 +772,7 @@
     },
     {
       "name": "ROAD/BUILDER",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 2319,
       "extracted_copy": "055_ROAD~2FBUILDER.seq",
@@ -785,7 +785,7 @@
     },
     {
       "name": "ROTATOR-!",
-      "path": "Original Source Recovered/TycoonTex-C16.d64",
+      "path": "Original Source Recovered/2026/TycoonTex-C16.d64",
       "fallback": false,
       "raw_bytes": 474,
       "extracted_copy": "056_ROTATOR-~21.seq",
@@ -798,7 +798,7 @@
     },
     {
       "name": "CDATA-JET/PLANE",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/CDATAJET.SEQ",
+      "path": "Original Source Recovered/1992/CDATAJET.SEQ",
       "fallback": true,
       "raw_bytes": 364,
       "extracted_copy": null,
@@ -811,7 +811,7 @@
     },
     {
       "name": "CDATA-NORM/PIPE",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/CDATANOR.SEQ",
+      "path": "Original Source Recovered/1992/CDATANOR.SEQ",
       "fallback": true,
       "raw_bytes": 683,
       "extracted_copy": null,
@@ -824,7 +824,7 @@
     },
     {
       "name": "CDATA-PIPE/BREAK",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/CDATAPIP.SEQ",
+      "path": "Original Source Recovered/1992/CDATAPIP.SEQ",
       "fallback": true,
       "raw_bytes": 804,
       "extracted_copy": null,
@@ -837,7 +837,7 @@
     },
     {
       "name": "COMPLETED-GAUGE",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/COMPLETE.SEQ",
+      "path": "Original Source Recovered/1992/COMPLETE.SEQ",
       "fallback": true,
       "raw_bytes": 1094,
       "extracted_copy": null,
@@ -850,7 +850,7 @@
     },
     {
       "name": "FIRING/MEGACODE",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/FIRINGME.SEQ",
+      "path": "Original Source Recovered/1992/FIRINGME.SEQ",
       "fallback": true,
       "raw_bytes": 3142,
       "extracted_copy": null,
@@ -863,7 +863,7 @@
     },
     {
       "name": "GLOP-ANIMATIONS",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/GLOPANIM.SEQ",
+      "path": "Original Source Recovered/1992/GLOPANIM.SEQ",
       "fallback": true,
       "raw_bytes": 1434,
       "extracted_copy": null,
@@ -876,7 +876,7 @@
     },
     {
       "name": "INTERRUPT-ALIENS",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/INTERRUP.SEQ",
+      "path": "Original Source Recovered/1992/INTERRUP.SEQ",
       "fallback": true,
       "raw_bytes": 3664,
       "extracted_copy": null,
@@ -889,7 +889,7 @@
     },
     {
       "name": "JET/PLANE-PRINT",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/JETPLANE.SEQ",
+      "path": "Original Source Recovered/1992/JETPLANE.SEQ",
       "fallback": true,
       "raw_bytes": 966,
       "extracted_copy": null,
@@ -902,7 +902,7 @@
     },
     {
       "name": "JO/KE SELECTION",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/JOKESELE.SEQ",
+      "path": "Original Source Recovered/1992/JOKESELE.SEQ",
       "fallback": true,
       "raw_bytes": 1019,
       "extracted_copy": null,
@@ -915,7 +915,7 @@
     },
     {
       "name": "PIXEL-MOVE STUFF",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/PIXELMOV.SEQ",
+      "path": "Original Source Recovered/1992/PIXELMOV.SEQ",
       "fallback": true,
       "raw_bytes": 957,
       "extracted_copy": null,
@@ -928,7 +928,7 @@
     },
     {
       "name": "RASTER-ROUTINES",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/RASTERRO.SEQ",
+      "path": "Original Source Recovered/1992/RASTERRO.SEQ",
       "fallback": true,
       "raw_bytes": 2813,
       "extracted_copy": null,
@@ -941,7 +941,7 @@
     },
     {
       "name": "SCORE-ROUTINES",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/SCOREROU.SEQ",
+      "path": "Original Source Recovered/1992/SCOREROU.SEQ",
       "fallback": true,
       "raw_bytes": 619,
       "extracted_copy": null,
@@ -954,7 +954,7 @@
     },
     {
       "name": "SCR/BUFFER-ON",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/SCRBUFFE.SEQ",
+      "path": "Original Source Recovered/1992/SCRBUFFE.SEQ",
       "fallback": true,
       "raw_bytes": 272,
       "extracted_copy": null,
@@ -967,7 +967,7 @@
     },
     {
       "name": "SCREEN-SETUP",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/SCREENSE.SEQ",
+      "path": "Original Source Recovered/1992/SCREENSE.SEQ",
       "fallback": true,
       "raw_bytes": 1533,
       "extracted_copy": null,
@@ -980,7 +980,7 @@
     },
     {
       "name": "SET#1-CHAR/ASSEM",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/SET1CHAR.SEQ",
+      "path": "Original Source Recovered/1992/SET1CHAR.SEQ",
       "fallback": true,
       "raw_bytes": 304,
       "extracted_copy": null,
@@ -993,7 +993,7 @@
     },
     {
       "name": "SET#2-CHAR/ASSEM",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/SET2CHAR.SEQ",
+      "path": "Original Source Recovered/1992/SET2CHAR.SEQ",
       "fallback": true,
       "raw_bytes": 199,
       "extracted_copy": null,
@@ -1006,7 +1006,7 @@
     },
     {
       "name": "SET-SHEET",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/SETSHEET.SEQ",
+      "path": "Original Source Recovered/1992/SETSHEET.SEQ",
       "fallback": true,
       "raw_bytes": 2193,
       "extracted_copy": null,
@@ -1019,7 +1019,7 @@
     },
     {
       "name": "SETUP",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/SETUP.SEQ",
+      "path": "Original Source Recovered/1992/SETUP.SEQ",
       "fallback": true,
       "raw_bytes": 304,
       "extracted_copy": null,
@@ -1032,7 +1032,7 @@
     },
     {
       "name": "SINKER !",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/SINKER.SEQ",
+      "path": "Original Source Recovered/1992/SINKER.SEQ",
       "fallback": true,
       "raw_bytes": 581,
       "extracted_copy": null,
@@ -1045,7 +1045,7 @@
     },
     {
       "name": "SOUND",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/SOUND.SEQ",
+      "path": "Original Source Recovered/1992/SOUND.SEQ",
       "fallback": true,
       "raw_bytes": 1921,
       "extracted_copy": null,
@@ -1058,7 +1058,7 @@
     },
     {
       "name": "STARTER",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/STARTER.SEQ",
+      "path": "Original Source Recovered/1992/STARTER.SEQ",
       "fallback": true,
       "raw_bytes": 2217,
       "extracted_copy": null,
@@ -1071,7 +1071,7 @@
     },
     {
       "name": "SUICIDE/OBJ-MOVE",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/SUICIDEO.SEQ",
+      "path": "Original Source Recovered/1992/SUICIDEO.SEQ",
       "fallback": true,
       "raw_bytes": 2101,
       "extracted_copy": null,
@@ -1084,7 +1084,7 @@
     },
     {
       "name": "TABLES",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/TABLES.SEQ",
+      "path": "Original Source Recovered/1992/TABLES.SEQ",
       "fallback": true,
       "raw_bytes": 1221,
       "extracted_copy": null,
@@ -1097,7 +1097,7 @@
     },
     {
       "name": "TITLE-PAGE",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/TITLEPAG.SEQ",
+      "path": "Original Source Recovered/1992/TITLEPAG.SEQ",
       "fallback": true,
       "raw_bytes": 2786,
       "extracted_copy": null,
@@ -1110,7 +1110,7 @@
     },
     {
       "name": "TYCOON-TEX",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/TYCOONTE.SEQ",
+      "path": "Original Source Recovered/1992/TYCOONTE.SEQ",
       "fallback": true,
       "raw_bytes": 3071,
       "extracted_copy": null,
@@ -1123,7 +1123,7 @@
     },
     {
       "name": "UTILS",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/UTILS.SEQ",
+      "path": "Original Source Recovered/1992/UTILS.SEQ",
       "fallback": true,
       "raw_bytes": 1306,
       "extracted_copy": null,
@@ -1136,7 +1136,7 @@
     },
     {
       "name": "VARS",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/VARS.SEQ",
+      "path": "Original Source Recovered/1992/VARS.SEQ",
       "fallback": true,
       "raw_bytes": 6243,
       "extracted_copy": null,
@@ -1149,7 +1149,7 @@
     },
     {
       "name": "WHOOPPEE-MESSAGE",
-      "path": "Original Source Recovered/1992 - Tycoon Tex C16/WHOOPPEE.SEQ",
+      "path": "Original Source Recovered/1992/WHOOPPEE.SEQ",
       "fallback": true,
       "raw_bytes": 492,
       "extracted_copy": null,

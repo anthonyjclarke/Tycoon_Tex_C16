@@ -2,7 +2,7 @@
 
 ## Repository
 
-The public repository is [anthonyjclarke/Tycoon_Tex_C16](https://github.com/anthonyjclarke/Tycoon_Tex_C16). I work on `main`, and the annotated tag `v1.0.0` marks the first preservation checkpoint.
+The public repository is [anthonyjclarke/Tycoon_Tex_C16](https://github.com/anthonyjclarke/Tycoon_Tex_C16). I work on `dev` and merge verified checkpoints into `main`. The annotated tag `v1.0.0` marks the first preservation checkpoint.
 
 `.gitignore` leaves out generated output, PlatformIO caches, Python caches and macOS metadata. It deliberately keeps the original `.prg`, `.BIN`, `.SEQ`, `.d64` files, the images and the scrapbook. `.gitattributes` turns off text normalization for both preserved input folders, including the original CRLF source exports.
 
@@ -18,7 +18,8 @@ Run these commands from the project root:
 ./build.sh
 make test
 pio run -e c16 -e c16_debug
-python3 scripts/verify_vice.py
+make verify
+make docs-check
 git status --short
 ```
 
@@ -43,20 +44,20 @@ To check out the initial tagged checkpoint:
 git switch --detach v1.0.0
 ```
 
-For later work, go back to `main`, review the changes, run the relevant checks, then commit and push:
+For later work, use `dev`, review the changes, run the relevant checks, then commit. Merge into `main` only when a checkpoint is verified:
 
 ```sh
-git switch main
+git switch dev
 git add .
 git diff --cached --stat
-git commit -m "Describe the change"
-git push origin main
+git commit -m "docs(scope): describe the change"
+git push origin dev
 ```
 
-On every push and pull request, the GitHub Actions workflow runs the source build, the regression tests, both PlatformIO environments and the output agreement checks. It uploads the rebuilt PRG and reports as a workflow artifact, and it doesn't run a graphical emulator. Results are on the repository's [Actions page](https://github.com/anthonyjclarke/Tycoon_Tex_C16/actions).
+On every push and pull request, the GitHub Actions workflow runs the source build, the regression tests, both PlatformIO environments, the handbook freshness check, the documentation tests and the output agreement checks. It uploads the rebuilt PRG and reports as a workflow artifact, and it doesn't run a graphical emulator. Results are on the repository's [Actions page](https://github.com/anthonyjclarke/Tycoon_Tex_C16/actions).
 
 ---
 
 ## Version Tags
 
-`v1.0.0` is the first published preservation checkpoint. Later verified checkpoints can get new annotated version tags. Leave published tags alone, so their source, documentation and recorded evidence can still be reproduced.
+`v1.0.0` is the first published preservation checkpoint and `v1.2.0` the documentation release; 1.1.0 was recorded in the changelog but never tagged. Later verified checkpoints get new annotated version tags on `main`. Leave published tags alone, so their source, documentation and recorded evidence can still be reproduced.

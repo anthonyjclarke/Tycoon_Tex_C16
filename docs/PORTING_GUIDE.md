@@ -145,7 +145,7 @@ The artwork and cassette scans provide design references for a new title screen,
 | RNG                        | Timer and CPU-carry dependent         |
 | High-score persistence     | In-memory only                        |
 
-The five [routine probes](analysis/rule-probes.json) establish concrete arithmetic cases for extra lives, pressure, and completion. Use those as initial conformance fixtures. They do not substitute for testing score overflow, unusual accumulator values, multiple hazards, or interrupted execution.
+The five [routine probes](verification/rule-probes.json) establish concrete arithmetic cases for extra lives, pressure, and completion. Use those as initial conformance fixtures. They do not substitute for testing score overflow, unusual accumulator values, multiple hazards, or interrupted execution.
 
 For a new design, numerical score, linear meters, explicit collision layers, multiple projectiles, richer animation, and persistent high scores can all be sensible changes. They should appear in a documented derivative rules profile rather than being described as behavior recovered from the original.
 

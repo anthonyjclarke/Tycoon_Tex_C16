@@ -1,5 +1,12 @@
 {
     "output": "docs/TYCOON_TEX.html",
+    "title": "Tycoon Tex",
+    "brand": [
+        "TYCOON",
+        "TEX"
+    ],
+    "description": "Tycoon Tex C16 restoration: history, packaging, build instructions, validation, source analysis, graphics, porting and reference.",
+    "includes": "the artwork, scrapbook, graphics sheets, diagrams and code reference",
     "groups": [
         {
             "id": "guide",
@@ -14,6 +21,7 @@
                 "TESTING.md",
                 "docs/SOURCE_AND_VALIDATION.md",
                 "CODEBASE_ANALYSIS.md",
+                "docs/GRAPHICS.md",
                 "docs/PORTING_GUIDE.md"
             ]
         },

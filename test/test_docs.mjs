@@ -12,7 +12,8 @@ before(() => {
     fs.cpSync(path.join(ROOT, 'scripts'), path.join(root, 'scripts'), { recursive: true });
     fs.mkdirSync(path.join(root, 'docs'), { recursive: true });
     fs.writeFileSync(path.join(root, 'docs/handbook.json'), JSON.stringify({
-        output: 'docs/TYCOON_TEX.html', groups: [
+        output: 'docs/TYCOON_TEX.html', title: 'Test Game', brand: ['TEST', 'GAME'],
+        description: 'Test handbook.', includes: 'test images', groups: [
             { id: 'guide', label: 'Guide', sources: ['README.md', 'docs/second.md'] },
             { id: 'history', label: 'History', historical: true, sources: [], discover: 'docs/*.md' },
         ],
@@ -90,6 +91,9 @@ test('escapes raw HTML from document content', () => {
 test('the complete repository handbook builds with all current links resolved', () => {
     const { html, sources, warnings } = buildHandbook();
     assert(sources.includes('docs/PORTING_GUIDE.md'));
+    assert(sources.includes('docs/GRAPHICS.md'));
+    assert(sources.includes('docs/GREMLIN_ARCHIVE.md'));
+    assert.match(html, /<title>Tycoon Tex – Complete Documentation<\/title>/);
     assert(sources.includes('CODEBASE_ANALYSIS.md'));
     assert(sources.includes('docs/analysis/CODE_REFERENCE.md'));
     assert.match(html, /data:image\/svg\+xml;base64/);

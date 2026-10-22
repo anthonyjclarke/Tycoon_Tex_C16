@@ -59,7 +59,7 @@ If Node isn't on the normal executable path, pass its location to Make as `NODE`
 
 ## Chapter Selection and Presentation
 
-`docs/handbook.json` sets the chapter order and groups. It holds source paths and navigation settings, not copies of the documents. Every chapter is listed explicitly, so a new guide has to be added to the right group before it shows up. Machine instructions such as `CLAUDE.md` are not chapters.
+`docs/handbook.json` sets the chapter order and groups. It holds source paths and navigation settings, not copies of the documents. Every chapter is listed explicitly, so a new guide has to be added to the right group before it shows up.
 
 `scripts/build_docs.mjs` does the conversion. It namespaces headings by document so repeated titles stay distinct, rewrites links to included Markdown files, embeds local images and reports broken links. A broken link in any chapter fails the build.
 

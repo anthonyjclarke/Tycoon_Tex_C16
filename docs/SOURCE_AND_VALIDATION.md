@@ -33,7 +33,7 @@ The [build comparison](verification/build-comparison.json), [VICE report](verifi
 
 ## Source Selection and Assembly
 
-The main input is `Original Source Recovered/TycoonTex-C16.d64`. Its 56 live files match the 2026 extraction byte for byte and pass the hashes in the extraction manifest. Modules missing from the disk come from the 1992 export, and its `INDEX` ties the Commodore filenames back to the shortened PC filenames, including names with `/`, `#` and spaces.
+The main input is `Original Source Recovered/2026/TycoonTex-C16.d64`. Its 56 live files match the 2026 extraction byte for byte and pass the hashes in the extraction manifest. Modules missing from the disk come from the 1992 export, and its `INDEX` ties the Commodore filenames back to the shortened PC filenames, including names with `/`, `#` and spaces.
 
 The main source is the older `TYCOONTE.SEQ`, mapped to `TYCOON-TEX`, and its original `.LIB` order is kept. The main assembly expands 59 modules: 36 from the fresh disk and 23 fallbacks. For the older text exports the build restores uppercase source and universal newlines without rewriting the files. Every include has to resolve to exactly one file, and a missing, ambiguous or recursive reference fails the build.
 
@@ -71,7 +71,7 @@ Every graphics dependency is either a surviving standalone asset or assembled so
 
 The running PRG is compressed, so comparing the raw files would compare two different formats. VICE runs its BASIC-stub entry at `$100D` and stops at `$1800`, before the first game instruction. The script saves `$1000–$3FFF` and compares that decompressed memory with the rebuilt payload.
 
-Across the addresses in `OBJ`, exactly one byte differs: `$3262` is `$58` in the source build and `$57` in the running version. It is the low byte of `LDA SCRPOS+2` at `$3261`. The source reads `$0C58` and the running version reads `$0C57`. The instruction sits in the scoring routine, and its source comment names the thousands digit. The build keeps the source instruction. I don't know why the two revisions differ or everything the difference does in play. The [isolated routine probes](analysis/rule-probes.json) did confirm one effect: adding a point at score 999 grants an extra life in the source build and not in the running reference. The [codebase analysis](../CODEBASE_ANALYSIS.md#confirmed-sourcerunning-version-difference) explains the thousands and ten-thousands digit distinction.
+Across the addresses in `OBJ`, exactly one byte differs: `$3262` is `$58` in the source build and `$57` in the running version. It is the low byte of `LDA SCRPOS+2` at `$3261`. The source reads `$0C58` and the running version reads `$0C57`. The instruction sits in the scoring routine, and its source comment names the thousands digit. The build keeps the source instruction. I don't know why the two revisions differ or everything the difference does in play. The [isolated routine probes](verification/rule-probes.json) did confirm one effect: adding a point at score 999 grants an extra life in the source build and not in the running reference. The [codebase analysis](../CODEBASE_ANALYSIS.md#confirmed-sourcerunning-version-difference) explains the thousands and ten-thousands digit distinction.
 
 There are 41 differences across the full memory comparison:
 
@@ -101,4 +101,4 @@ The screenshots have been checked by eye. The test shows that the game renders a
 
 ## Recovery Background
 
-My original development environment and the disk and source recovery are covered in [Dorks Dilemma C16](https://github.com/anthonyjclarke/Dorks_Dilemma_C16) and its [Development History](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/DEVELOPMENT_HISTORY.md). This document sticks to Tycoon Tex's inputs, build and validation.
+My original development environment and the disk and source recovery are covered in [Dorks Dilemma C16](https://github.com/anthonyjclarke/Dorks_Dilemma_C16) and its [History and Credits](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/HISTORY_AND_CREDITS.md). This document sticks to Tycoon Tex's inputs, build and validation.
