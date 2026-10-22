@@ -13,6 +13,7 @@ Documentation release. The game build and its output are unchanged. It is not ta
 - `docs/GREMLIN_ARCHIVE.md`: Mark Hardisty's book *A Gremlin in the Works* and his Gremlin Graphics Archive, the 1992 disk list from the archive's `READ.ME`, and how to cite them. Its project section shows that all 96 files in the archive's `DISK6.ZIP` match the 1992 folder by CRC-32 and size, lists the files the archive doesn't have, compares the C64 `DISK1A`, and links the archive's three Tycoon Tex posts. The first five sections are shared with the other Micro Projects reconstructions.
 - History and Credits: a section on the Gremlin Archive and the book.
 - The new chapter in the HTML handbook, after History and Credits.
+- Badges in the HTML handbook render inline in a row: the generator gives images under `/badges/` a `badge` class (no zoom), with matching CSS.
 - Two documentation tests: the saved handbook is current, and the full handbook has a diagram, GIF and JPEG images and no warnings.
 - README status badges (release, platform, byte match, toolchain, PlatformIO, emulator, status) as local SVGs in `docs/images/badges/`, so the offline HTML handbook still builds.
 
